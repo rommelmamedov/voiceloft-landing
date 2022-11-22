@@ -1,15 +1,20 @@
-import { Nunito } from '@next/font/google';
-
-import { Layout } from '@components/Layout';
+import { Jost } from '@next/font/google';
 
 import '@styles/globals.css';
+import '@styles/reset.css';
 
-const nunito = Nunito({ subsets: ['latin'] });
+const jost = Jost({ subsets: ['latin'] });
 
 const MyApp = ({ Component, pageProps }) => (
-	<Layout className={nunito.className}>
+	<>
+		<style jsx global>{`
+			html,
+			body {
+				font-family: ${jost.style.fontFamily};
+			}
+		`}</style>
 		<Component {...pageProps} />
-	</Layout>
+	</>
 );
 
 export default MyApp;

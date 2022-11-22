@@ -1,4 +1,28 @@
 .header {
-	height: 30px;
-	background-color: red;
+	height: 100px;
+	display: flex;
+	align-items: center;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.list {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	gap: 40px;
+	margin: 0;
+}
+
+.link {
+	color: var(--blue);
+	transition: all 0.4s ease;
+}
+
+.link:hover {
+	color: var(--black);
 }

@@ -1,3 +1,15 @@
+:root {
+	--white: #fff;
+	--black: #000;
+	--blue: #272ffb;
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	padding: 0;
@@ -6,21 +18,54 @@ body {
 		sans-serif;
 }
 
+body {
+	font-size: 16px;
+	font-weight: 300;
+	background-image: url('../assets/images/background.svg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position-y: -50px;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
 }
 
-* {
-	box-sizing: border-box;
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
+@media (min-width: 576px) {
+	.container {
+		max-width: 540px;
 	}
-	body {
-		color: white;
-		background: black;
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 720px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+	}
+}
+
+@media (min-width: 1460px) {
+	.container {
+		max-width: 1400px;
 	}
 }

@@ -8,16 +8,7 @@
 	"trailingComma": "es5",
 	"arrowParens": "avoid",
 	"proseWrap": "preserve",
-	"importOrder": [
-		"^pages/(.*)$",
-		"components/(.*)$",
-		"styles/(.*)$",
-		"^state/(.*)$",
-		"^utils/(.*)$",
-		"^fonts/(.*)$",
-		"^images/(.*)$",
-		"^[./]"
-	],
+	"importOrder": ["@components/(.*)$", "@images/(.*)$", "@styles/(.*)$", "^utils/(.*)$", "^[./]"],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true,
 	"overrides": [
