@@ -8,7 +8,7 @@
 	"trailingComma": "es5",
 	"arrowParens": "avoid",
 	"proseWrap": "preserve",
-	"importOrder": ["@components/(.*)$", "@images/(.*)$", "@styles/(.*)$", "^utils/(.*)$", "^[./]"],
+	"importOrder": ["@libs/(.*)$", "@components/(.*)$", "@images/(.*)$", "@styles/(.*)$", "^utils/(.*)$", "^[./]"],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true,
 	"overrides": [
