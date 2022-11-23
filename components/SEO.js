@@ -12,6 +12,7 @@ export const SEO = ({ title: titleProp, description = 'Speech recognition system
 	return (
 		<Head>
 			<title>{title}</title>
+			<meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no" />
 			{/* Some SEO Tags */}
 			<link rel="index" href={domain} />
 			<link rel="canonical" href={domain} />
