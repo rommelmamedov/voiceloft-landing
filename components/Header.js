@@ -1,14 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Button } from '@components/Button';
+
 import logo from '@images/logo.svg';
 
 import styles from '@styles/components/Header.module.css';
-
-const navigationItems = [
-	{ title: 'About', href: '/about' },
-	{ title: 'Contact', href: '/contact' },
-];
 
 export const Header = () => {
 	return (
@@ -18,7 +15,7 @@ export const Header = () => {
 					<Link href="/">
 						<Image src={logo} alt="Voiceloft Logo" width={200} height={60} priority />
 					</Link>
-					<button>Schedule a call</button>
+					<Button content="Schedule a call" />
 				</nav>
 			</div>
 		</header>
