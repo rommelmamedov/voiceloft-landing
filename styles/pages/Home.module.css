@@ -1,4 +1,6 @@
-.intro {
+/* Intro section  */
+
+section.intro {
 	text-align: center;
 	margin-top: 100px;
 	margin-bottom: 100px;
@@ -13,4 +15,8 @@
 .intro p {
 	font-size: 27px;
 	line-height: 1.2;
+}
+
+section.speech-to-text {
+	background: #000;
 }

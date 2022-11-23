@@ -37,8 +37,7 @@ export const SEO = ({ title: titleProp, description = 'Speech recognition system
 			{/* Installation credentials for the Website */}
 			{/* Add to homescreen for Chrome on Android */}
 			<meta name="application-name" content={appTitle} />
-			<meta name="theme-color" content="#fff" />
-			{/* TODO: */}
+			<meta name="theme-color" content="#ffffff" />
 			<link rel="manifest" href="/manifest.json" />
 			<meta name="mobile-web-app-capable" content="yes" />
 			{/* Add to homescreen for Safari on iOS */}
@@ -47,20 +46,19 @@ export const SEO = ({ title: titleProp, description = 'Speech recognition system
 			<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 			{/* Microsoft Windows Tiles */}
 			<meta name="msapplication-starturl" content={domain} />
-			<meta name="msapplication-TileColor" content="#fff" />
+			<meta name="msapplication-TileColor" content="#ffffff" />
 			<meta name="msapplication-tap-highlight" content="no" />
-			{/* TODO: */}
 			<meta name="msapplication-config" content="/browserconfig.xml" />
 			<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png" />
-			{/* Favicons */}
-			{/* TODO: */}
+			{/* Favicons: */}
 			<link rel="icon" href="/favicons/favicon.ico" />
-			<link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
-			<link rel="mask-icon" href="/favicons/favicon.svg" color="#000000" />
-			{/* Apple */}
+			<link rel="icon" href="/favicons/safari-pinned-tab.svg" type="image/svg+xml" />
+			<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#231f20" />
+			{/* Favicons / Apple */}
 			<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-			<link rel="apple-touch-icon-precomposed" type="image/png" href="/favicons/apple-touch-icon-precomposed.png" />
-			{/* Android */}
+			{/* Favicons / Android */}
+			<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+			<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 			<link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png" />
 			<link rel="icon" type="image/png" sizes="512x512" href="/favicons/android-chrome-512x512.png" />
 		</Head>

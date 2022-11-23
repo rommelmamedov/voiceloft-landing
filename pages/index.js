@@ -6,7 +6,7 @@ import styles from '@styles/pages/Home.module.css';
 
 const Home = () => {
 	return (
-		<Layout title="Speech recognition system">
+		<Layout className="home" title="Speech recognition system">
 			<section className={styles.intro}>
 				<div className="container">
 					<h1>
@@ -20,6 +20,7 @@ const Home = () => {
 					</p>
 				</div>
 			</section>
+			<section className={styles['speech-to-text']}>sik</section>
 		</Layout>
 	);
 };

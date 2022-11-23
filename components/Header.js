@@ -16,7 +16,7 @@ export const Header = () => {
 			<div className="container">
 				<div className={styles.wrapper}>
 					<Link href="/">
-						<Image src={logo} alt="Voiceloft Logo" width={120} height={30} priority />
+						<Image src={logo} alt="Voiceloft Logo" width={200} height={60} priority />
 					</Link>
 					<nav>
 						<ul className={styles.list}>
