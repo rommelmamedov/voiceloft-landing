@@ -3,7 +3,8 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useEffect } from 'react';
 
-import { FB_PIXEL_ID, pageView } from '@libs/facebook-pixel';
+import { FB_PIXEL_ID, pageView as fbPageView } from '@libs/facebook-pixel';
+import { GA_TRACKING_ID, pageView as gtagPageView } from '@libs/gtag';
 
 import '@styles/globals.css';
 import '@styles/reset.css';
@@ -15,11 +16,18 @@ const MyApp = ({ Component, pageProps }) => {
 
 	useEffect(() => {
 		// NOTE: This pageView only triggers the first time (it's important for Pixel to have real information)
-		pageView();
+		fbPageView();
 
-		router.events.on('routeChangeComplete', pageView);
+		const handleRouteChange = url => {
+			gtagPageView(url);
+			fbPageView();
+		};
+
+		router.events.on('routeChangeComplete', handleRouteChange);
+		router.events.on('hashChangeComplete', handleRouteChange);
 		return () => {
-			router.events.off('routeChangeComplete', pageView);
+			router.events.off('routeChangeComplete', handleRouteChange);
+			router.events.off('hashChangeComplete', handleRouteChange);
 		};
 	}, [router.events]);
 
@@ -31,6 +39,20 @@ const MyApp = ({ Component, pageProps }) => {
 					font-family: ${jost.style.fontFamily};
 				}
 			`}</style>
+			{/* Global Site Tag (gtag.js) - Google Analytics */}
+			<Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+			<Script
+				id="gtag-init"
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					__html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', { page_path: window.location.pathname });
+          `,
+				}}
+			/>
 			{/* Global Site Code Pixel - Facebook Pixel */}
 			<Script
 				id="fb-pixel"
