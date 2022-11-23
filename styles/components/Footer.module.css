@@ -1,0 +1,31 @@
+.footer {
+	height: 100px;
+	display: flex;
+	align-items: center;
+}
+
+.footer nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.list {
+	display: flex;
+	gap: 40px;
+	align-items: center;
+}
+
+.link {
+	font-size: 24px;
+	color: var(--black);
+	transition: all 0.4s ease;
+}
+
+.link:hover {
+	color: var(--theme-color);
+}
+
+.social {
+	display: flex;
+	align-items: center;
+}
