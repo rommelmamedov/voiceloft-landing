@@ -2,18 +2,38 @@ import Link from 'next/link';
 
 const navigationItems = [
 	{ title: 'About', href: '/about' },
+	{ title: 'API Docs', href: '/' },
 	{ title: 'Contact', href: '/contact' },
-	{ title: 'API', href: 'https://docs.voiceloft.az' },
-	{ title: 'mail@voiceloft.com', href: 'mailto:mail@voiceloft.com' },
+	{ title: 'Supported languages', href: '/' },
+	// { title: 'mail@voiceloft.com', href: 'mailto:mail@voiceloft.com' },
 ];
 
 const socialMedias = [
+	{
+		title: 'Voiceloft Email',
+		href: 'mailto:mail@voiceloft.com',
+		icon: (
+			<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+				<path d="m18.73 5.41-1.28 1L12 10.46 6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64z"></path>
+			</svg>
+		),
+	},
 	{
 		title: 'Voiceloft Facebook',
 		href: 'https://www.facebook.com/voiceloftinc',
 		icon: (
 			<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
 				<path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"></path>
+			</svg>
+		),
+	},
+	{
+		title: 'Voiceloft Instagram',
+		href: 'https://www.instagram.com/voiceloft',
+		icon: (
+			<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+				<path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path>
+				<circle cx="11.994" cy="11.979" r="3.003"></circle>
 			</svg>
 		),
 	},
@@ -32,27 +52,37 @@ export const Footer = () => {
 	return (
 		<footer className="footer">
 			<div className="container">
-				<nav>
-					<ul className="list">
-						{navigationItems.map(({ title, href }) => (
-							<li key={href}>
-								<Link className="link" href={href} title={title}>
-									{title}
-								</Link>
-							</li>
-						))}
-					</ul>
-					<ul className="list">
-						{socialMedias.map(({ title, href, icon }) => (
-							<li key={href}>
-								<Link className="social" href={href} target="_blank" rel="noopener noreferrer" title={title}>
-									{icon}
-								</Link>
-							</li>
-						))}
-					</ul>
-				</nav>
-				<small>Copyright © {new Date().getFullYear()} Voiceloft</small>
+				<div className="wrapper">
+					<div className="copyright-and-partners">
+						<small>Copyright © {new Date().getFullYear()} Voiceloft. All Rights Reserved.</small>
+						<Link class="partner-link" href="https://500.co" target="_blank" rel="noopener noreferrer" title="500 Startups">
+							<svg width="64" height="64" viewBox="0 0 64 64" fill="#000">
+								<path d="M63.88.12h-.105V0H.075v.12H0v63.67h.09v.09h63.7v-.09h.09V.12zm-4.072 59.688H4.071V4.071h55.737v55.737z"></path>
+								<path d="M11.463 32.255l.54-8.263h11.493v2.93h-8.383l-.27 3.41.18.03c.886-.781 1.382-.916 2.885-.916h2.073c1.517 0 2.313.255 2.93.871.796.796 1.096 2.043 1.096 4.132 0 2.764-.315 3.725-1.112 4.567-.54.57-1.382.886-2.794.886h-4.868c-1.457 0-2.448-.255-3.004-.766-.721-.751-1.052-1.788-1.052-4.342l3.56-.03c.03 1.292.211 1.788.391 1.953.18.195.496.27 1.232.27h2.48c.615 0 .9-.09 1.08-.255.211-.21.391-.676.391-2.088s-.18-1.863-.39-2.073c-.18-.166-.45-.256-1.082-.256h-1.592c-1.067 0-1.728.226-2.705.841l-3.08-.9zm21.964-8.263c1.758 0 2.584.21 3.275.841.931.842 1.698 2.494 1.698 7.107 0 4.582-.767 6.25-1.698 7.106-.676.616-1.517.841-3.275.841H29.73c-1.758 0-2.569-.225-3.245-.841-.946-.857-1.698-2.524-1.698-7.106 0-4.613.752-6.265 1.698-7.107.676-.63 1.502-.84 3.245-.84h3.696zm-2.885 2.93c-.841 0-1.111.09-1.292.255-.255.225-.616.841-.616 4.778 0 3.936.36 4.537.616 4.747.18.18.451.255 1.292.255h2.074c.856 0 1.111-.075 1.322-.255.255-.21.616-.811.616-4.747 0-3.937-.36-4.537-.616-4.778-.21-.165-.451-.255-1.322-.255h-2.074zm17.172-2.93c1.758 0 2.584.21 3.275.841.932.842 1.698 2.494 1.698 7.107 0 4.582-.766 6.25-1.698 7.106-.676.616-1.517.841-3.275.841h-3.696c-1.757 0-2.569-.225-3.245-.841-.946-.857-1.697-2.524-1.697-7.106 0-4.613.75-6.265 1.697-7.107.676-.63 1.503-.84 3.245-.84h3.696zm-2.884 2.93c-.842 0-1.112.09-1.292.255-.256.225-.616.841-.616 4.778 0 3.936.36 4.537.616 4.747.18.18.45.255 1.292.255h2.073c.856 0 1.112-.075 1.307-.255.255-.21.616-.811.616-4.747 0-3.937-.36-4.537-.616-4.778-.195-.165-.45-.255-1.307-.255H44.83z"></path>
+							</svg>
+						</Link>
+					</div>
+					<nav>
+						<ul className="list">
+							{navigationItems.map(({ title, href }, index) => (
+								<li key={index}>
+									<Link className="link" href={href} title={title}>
+										{title}
+									</Link>
+								</li>
+							))}
+						</ul>
+						<ul className="socials">
+							{socialMedias.map(({ title, href, icon }, index) => (
+								<li key={index}>
+									<Link className="link" href={href} target="_blank" rel="noopener noreferrer" title={title}>
+										{icon}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</footer>
 	);
