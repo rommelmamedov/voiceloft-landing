@@ -6,11 +6,15 @@
 	margin-left: auto;
 }
 
+/* Mobile */
+
 @media (min-width: 576px) {
 	.container {
 		max-width: 540px;
 	}
 }
+
+/* Large Screen Mobile */
 
 @media (min-width: 768px) {
 	.container {
@@ -18,11 +22,15 @@
 	}
 }
 
+/* Tablet */
+
 @media (min-width: 992px) {
 	.container {
 		max-width: 960px;
 	}
 }
+
+/* Desktop */
 
 @media (min-width: 1200px) {
 	.container {
