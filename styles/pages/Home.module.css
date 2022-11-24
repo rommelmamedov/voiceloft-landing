@@ -1,24 +1,60 @@
 /* Intro */
 
 section.intro {
-	text-align: center;
-	margin-top: 100px;
 	margin-bottom: 100px;
+	margin-top: 100px;
+	text-align: center;
 }
 
 .intro h1 {
-	font-weight: 600;
-	font-size: 84px;
 	margin-bottom: 40px;
+	font-size: 84px;
+	font-weight: 600;
 }
 
 .intro p {
 	font-size: 27px;
-	line-height: 1.2;
 }
 
-/* STT */
+/* Speech to text */
 
-section.speech-to-text {
-	background: #000;
+section.stt {
+}
+
+.stt-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.stt h2 {
+	font-size: 64px;
+	font-weight: 600;
+}
+
+.stt p {
+	margin-bottom: 30px;
+	margin-top: 30px;
+	font-size: 26px;
+	font-weight: 300;
+}
+
+.stt a {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.2;
+	letter-spacing: 1px;
+	color: var(--blue);
+}
+
+/* Motto */
+
+section.motto {
+	margin-top: 40px;
+	margin-bottom: 70px;
+}
+
+.motto h2 {
+	letter-spacing: -2.4px;
+	font-size: 80px;
+	font-weight: 600;
 }

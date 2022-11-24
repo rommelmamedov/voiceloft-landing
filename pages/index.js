@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Link from 'next/link';
 
 import { Layout } from '@components/Layout';
 
@@ -20,7 +20,31 @@ const Home = () => {
 					</p>
 				</div>
 			</section>
-			<section className={styles['speech-to-text']}>sik</section>
+			<section className={styles.stt}>
+				<div className="container">
+					<div className={styles['stt-wrapper']}>
+						<div className="voices"></div>
+						<div className="description">
+							<h2>Speech to text</h2>
+							<p>
+								There are many challenges with using automatic speech recognition within real-world applications including noisy
+								environments, different dialects, accents and context specifics. So, we are using our expertise to provide solutions,
+								enabling ASR to be used effectively within use-cases regardless of the environmental conditions.
+							</p>
+							<Link href="/speech-to-text">Read more</Link>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className={styles.motto}>
+				<div className="container">
+					<h2>
+						Want to try our cutting
+						<br />
+						edge voice technologies?
+					</h2>
+				</div>
+			</section>
 		</Layout>
 	);
 };
