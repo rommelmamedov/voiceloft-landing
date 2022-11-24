@@ -1,8 +1,6 @@
-import styles from '@styles/components/Button.module.css';
-
 export const Button = ({ content, ...otherProps }) => {
 	return (
-		<button className={styles.button} {...otherProps}>
+		<button className="button" {...otherProps}>
 			{content}
 		</button>
 	);

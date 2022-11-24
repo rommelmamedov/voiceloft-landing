@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-import styles from '@styles/components/Footer.module.css';
-
 const navigationItems = [
 	{ title: 'About', href: '/about' },
 	{ title: 'Contact', href: '/contact' },
@@ -32,22 +30,22 @@ const socialMedias = [
 
 export const Footer = () => {
 	return (
-		<footer className={styles.footer}>
+		<footer className="footer">
 			<div className="container">
 				<nav>
-					<ul className={styles.list}>
+					<ul className="list">
 						{navigationItems.map(({ title, href }) => (
 							<li key={href}>
-								<Link className={styles.link} href={href} title={title}>
+								<Link className="link" href={href} title={title}>
 									{title}
 								</Link>
 							</li>
 						))}
 					</ul>
-					<ul className={styles.list}>
+					<ul className="list">
 						{socialMedias.map(({ title, href, icon }) => (
 							<li key={href}>
-								<Link className={styles.social} href={href} target="_blank" rel="noopener noreferrer" title={title}>
+								<Link className="social" href={href} target="_blank" rel="noopener noreferrer" title={title}>
 									{icon}
 								</Link>
 							</li>

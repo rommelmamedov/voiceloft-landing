@@ -9,23 +9,23 @@
 	justify-content: space-between;
 }
 
-.list {
+.footer nav .list {
 	display: flex;
 	align-items: center;
 	gap: 40px;
 }
 
-.link {
+.footer .link {
 	color: var(--black);
 	font-size: 24px;
 	transition: all 0.3s ease;
 }
 
-.link:hover {
+.footer .link:hover {
 	color: var(--theme-color);
 }
 
-.social {
+.footer .social {
 	display: flex;
 	align-items: center;
 }

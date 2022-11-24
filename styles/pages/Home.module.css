@@ -1,4 +1,4 @@
-/* Intro section  */
+/* Intro */
 
 section.intro {
 	text-align: center;
@@ -16,6 +16,8 @@ section.intro {
 	font-size: 27px;
 	line-height: 1.2;
 }
+
+/* STT */
 
 section.speech-to-text {
 	background: #000;

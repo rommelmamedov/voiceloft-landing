@@ -6,8 +6,7 @@ import { useEffect } from 'react';
 import { FB_PIXEL_ID, pageView as fbPageView } from '@libs/facebook-pixel';
 import { GA_TRACKING_ID, pageView as gtagPageView } from '@libs/gtag';
 
-import '@styles/globals.css';
-import '@styles/reset.css';
+import '@styles/main.css';
 
 const jost = Jost({ subsets: ['latin'] });
 

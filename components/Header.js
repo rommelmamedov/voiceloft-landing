@@ -5,13 +5,11 @@ import { Button } from '@components/Button';
 
 import logo from '@images/logo.svg';
 
-import styles from '@styles/components/Header.module.css';
-
 export const Header = () => {
 	return (
-		<header className={styles.header}>
+		<header className="header">
 			<div className="container">
-				<nav className={styles.wrapper}>
+				<nav>
 					<Link href="/">
 						<Image src={logo} alt="Voiceloft Logo" width={200} height={60} priority />
 					</Link>
