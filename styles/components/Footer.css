@@ -19,14 +19,14 @@
 .footer small {
 	display: block;
 	margin-bottom: auto;
+	font-size: 18px;
 	font-weight: 400;
 	opacity: 0.5;
-	font-size: 18px;
 }
 
 .footer .list {
 	display: grid;
-	gap: 30px;
+	grid-row-gap: 20px;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 }
@@ -39,6 +39,10 @@
 
 .footer .link:hover {
 	color: var(--blue-hover);
+}
+
+.footer .list .link {
+	display: inline-flex;
 }
 
 .footer .socials {
