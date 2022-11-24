@@ -37,7 +37,29 @@ a {
 	transition: all 0.3s ease;
 }
 
+h1,
+h2 {
+	line-height: 1.1;
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+
+h2 {
+	font-size: 64px;
+}
+
 p {
+	font-size: 26px;
 	line-height: 1.2;
 	letter-spacing: 0.4px;
+}
+
+.section-wrapper-flex {
+	display: flex;
+}
+
+.separator-svg {
+	overflow: hidden;
+	margin-top: 100px;
+	margin-bottom: 100px;
 }

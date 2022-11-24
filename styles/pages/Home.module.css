@@ -1,44 +1,16 @@
-/* Intro */
-
-section.intro {
+.intro {
 	margin-bottom: 100px;
 	margin-top: 100px;
 	text-align: center;
 }
 
 .intro h1 {
-	margin-bottom: 40px;
-	font-size: 84px;
-	font-weight: 600;
-}
-
-.intro p {
-	font-size: 27px;
-}
-
-/* Speech to text */
-
-section.stt {
-}
-
-.stt-wrapper {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.stt h2 {
-	font-size: 64px;
-	font-weight: 600;
-}
-
-.stt p {
-	margin-bottom: 30px;
-	margin-top: 30px;
-	font-size: 26px;
-	font-weight: 300;
+	font-size: 78px;
 }
 
 .stt a {
+	display: inline-block;
+	margin-top: 40px;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 1.2;
@@ -46,15 +18,21 @@ section.stt {
 	color: var(--blue);
 }
 
-/* Motto */
+/* NOTE: .section-wrapper-flex */
+.speech-identification > div > div {
+	display: grid;
+	gap: 40px;
+	grid-auto-columns: minmax(0, 1fr);
+	grid-auto-flow: column;
+}
 
-section.motto {
-	margin-top: 40px;
-	margin-bottom: 100px;
+.motto {
+	margin-top: 100px;
+	margin-bottom: 130px;
 }
 
 .motto h2 {
 	letter-spacing: -2.4px;
 	font-size: 80px;
-	font-weight: 600;
+	margin-bottom: unset;
 }
