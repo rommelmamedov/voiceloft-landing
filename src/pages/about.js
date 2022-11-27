@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useCountUp } from 'react-countup';
 
 import { Layout } from '@components/Layout';
 
@@ -8,6 +9,9 @@ import wave from '@images/wave.svg';
 import styles from '@styles/pages/About.module.css';
 
 const About = () => {
+	useCountUp({ ref: 'counter-1', end: 95, duration: 5, suffix: '%' });
+	useCountUp({ ref: 'counter-2', end: 95, duration: 5, suffix: '%' });
+
 	return (
 		<Layout className="about" title="About">
 			<section className="intro">
@@ -28,19 +32,21 @@ const About = () => {
 					strokeMiterlimit="10"
 				/>
 			</svg>
-			<section className={styles[`about-percentage`]}>
+			<section className={styles.percentage}>
 				<div className="container">
-					<h2 className="icon-percentage">95%</h2>
+					<svg viewBox="0 0 360 140">
+						<text id="counter-1" fill="#ccf3ff" transform="matrix(1 0 0 1 10.9488 133.6656)" />
+						<text id="counter-2" fill="none" stroke="var(--blue)" strokeMiterlimit="10" transform="matrix(1 0 0 1 -0.9911 122.9283)" />
+					</svg>
 					<p>
 						We constantly benchmark our solution against our competitors for a range of use cases specifically designed to replicate the
 						real-world. Our models are developed and iterated throughout this process, along with our expertise within the ASR market. These
 						tests help to highlight where we can improve and how we compare against our global competitors.
 					</p>
-					{/* Asaqida small tagini yazirdim css edit ede bilmjirdi, daje className={styles[`small-text`]} da yaanda eleye bilmirdi */}
 					<small>*All benchmarking data collected by Voiceloft as part of benchmarking activities.</small>
 				</div>
 			</section>
-			<section className={styles[`about-info`]}>
+			<section className={styles.info}>
 				<Image className={styles.human} src={human} alt="human" width={600} />
 				<div className={styles.waves}>
 					<Image src={wave} alt="wave" />
