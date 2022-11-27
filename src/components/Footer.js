@@ -5,7 +5,6 @@ const navigationItems = [
 	{ title: 'API Docs', href: '/' },
 	{ title: 'Contact', href: '/contact' },
 	{ title: 'Supported languages', href: '/' },
-	// { title: 'mail@voiceloft.com', href: 'mailto:mail@voiceloft.com' },
 ];
 
 const socialMedias = [

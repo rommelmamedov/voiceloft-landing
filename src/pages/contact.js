@@ -69,17 +69,8 @@ const Contact = () => {
 					stroke="#272FFB"
 					strokeWidth="0.26123"
 					strokeMiterlimit="10"
-				></path>
+				/>
 			</svg>
-			<section className={styles.motto}>
-				<div className="container">
-					<h2>
-						Want to try our cutting
-						<br />
-						edge voice technologies?
-					</h2>
-				</div>
-			</section>
 		</Layout>
 	);
 };

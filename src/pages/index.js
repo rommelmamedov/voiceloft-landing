@@ -65,15 +65,6 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
-			<section className={styles.motto}>
-				<div className="container">
-					<h2>
-						Want to try our cutting
-						<br />
-						edge voice technologies?
-					</h2>
-				</div>
-			</section>
 		</Layout>
 	);
 };

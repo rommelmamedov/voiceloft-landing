@@ -17,14 +17,3 @@
 	grid-auto-columns: minmax(0, 1fr);
 	grid-auto-flow: column;
 }
-
-.motto {
-	margin-top: 100px;
-	margin-bottom: 130px;
-}
-
-.motto h2 {
-	letter-spacing: -2.4px;
-	font-size: 80px;
-	margin-bottom: unset;
-}
