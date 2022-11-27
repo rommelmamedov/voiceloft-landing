@@ -33,15 +33,15 @@ body {
 a {
 	display: inline-flex;
 	color: inherit;
-	text-decoration: none;
 	transition: all 0.3s ease;
+	text-decoration: none;
 }
 
 h1,
 h2 {
-	line-height: 1.1;
-	font-weight: 600;
 	margin-bottom: 40px;
+	font-weight: 600;
+	line-height: 1.1;
 }
 
 h2 {
@@ -59,9 +59,9 @@ p {
 }
 
 .separator-svg {
-	overflow: hidden;
-	margin-top: 100px;
 	margin-bottom: 100px;
+	margin-top: 100px;
+	overflow: hidden;
 }
 
 /* Intro */
@@ -83,14 +83,75 @@ p {
 /*  */
 
 .motto {
-	margin-top: 50px;
 	margin-bottom: 70px;
+	margin-top: 50px;
 }
 
 .motto h2 {
-	font-size: 80px;
-	font-weight: 600;
-	letter-spacing: -2.78px;
-	line-height: 88.1%;
 	margin-bottom: unset;
+}
+
+/*  */
+
+.upload-container {
+	background-color: #ffffff;
+	/* border: 1px solid #dcdcdc; */
+	/* border-radius: 10px; */
+	box-shadow: 0px 22px 29px rgba(0, 0, 0, 0.01);
+}
+
+.tab-buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tab-buttons button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+	padding: 20px 100px;
+	background-color: #f9f9f9;
+	border: 1px solid #dcdcdc;
+	color: #565656;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 23px;
+	cursor: pointer;
+	gap: 10px;
+}
+
+.tab-buttons button.active {
+	background-color: #fff;
+}
+
+.tab-buttons button::before {
+	content: '';
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.tab-buttons button.speech-record {
+	border-top-left-radius: 10px;
+}
+.tab-buttons button.you-tube {
+	border-top-right-radius: 10px;
+}
+
+.tab-buttons button.speech-record::before {
+	background-image: url('../assets/icons/speech-record.svg');
+}
+
+.tab-buttons button.file-import::before {
+	background-image: url('../assets/icons/file-import.svg');
+}
+
+.tab-buttons button.you-tube::before {
+	background-image: url('../assets/icons/you-tube.svg');
 }

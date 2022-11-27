@@ -1,5 +1,7 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useCallback, useState } from 'react';
 
 import { Layout } from '@components/Layout';
 
@@ -7,7 +9,26 @@ import speechIdentification from '@images/persons.webp';
 
 import styles from '@styles/pages/Home.module.css';
 
+const tabButtons = [
+	{ title: 'Speech record', className: 'speech-record' },
+	{ title: 'Import audio file', className: 'file-import' },
+	{ title: 'YouTube link', className: 'you-tube' },
+];
+
+const tabContents = [
+	{ title: 'Microphone', description: 'Click on the following link to convert our demo file from WAV to MP3', content: <></> },
+	{ title: 'Drag and drop file', description: 'Click on the following link to convert our demo file from WAV to MP3', content: <></> },
+	{ title: 'YouTube link', description: 'Click on the following link to convert our demo file from WAV to MP3', content: <></> },
+];
+
 const Home = () => {
+	const [activeTab, setActiveTab] = useState('file-import');
+
+	const handleClick = useCallback(event => {
+		// NOTE: Order of the class names matters.
+		setActiveTab(event.target.classList[0]);
+	}, []);
+
 	return (
 		<Layout className="home" title="Speech recognition system">
 			<section className="intro">
@@ -32,7 +53,7 @@ const Home = () => {
 							<p>
 								There are many challenges with using automatic speech recognition within real-world applications including noisy
 								environments, different dialects, accents and context specifics. So, we are using our expertise to provide solutions,
-								enabling ASR to be used effectively within use-cases regardless of the environmental conditions.
+								enabling ASR to be used effectively within use cases regardless of the environmental conditions.
 							</p>
 							<Link href="/speech-to-text">Read more</Link>
 						</div>
@@ -61,6 +82,24 @@ const Home = () => {
 								Speaker Identification (SID) technology uses the power of voice biometrics to recognize a speaker automatically and with
 								high accuracy based on their voice. Its latest generation uses deep neural networks for even greater performance.
 							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className="upload">
+				<div className="container">
+					<div className="upload-container">
+						<div className="tab-buttons">
+							{tabButtons.map(({ title, className }, index) => (
+								<button key={index} onClick={handleClick} className={classNames(className, { active: activeTab === className })}>
+									{title}
+								</button>
+							))}
+						</div>
+						<div className="tab-list">
+							<div className="tab-content"></div>
+							<div className="tab-content"></div>
+							<div className="tab-content"></div>
 						</div>
 					</div>
 				</div>
