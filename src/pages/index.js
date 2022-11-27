@@ -9,6 +9,45 @@ import speechIdentification from '@images/persons.webp';
 
 import styles from '@styles/pages/Home.module.css';
 
+const voices = [
+	{
+		avatar: '',
+		audio: '',
+		style: { backgroundColor: '#a7fbec', color: '#03b998' },
+		text: 'Welcome, can I get your order?',
+	},
+	{
+		avatar: '',
+		audio: '',
+		style: { backgroundColor: '#ffd9d9', color: '#d17272' },
+		text: 'Hi, Can I get a chicken sandwich?',
+	},
+	{
+		avatar: '',
+		audio: '',
+		style: { backgroundColor: '#e8f0be', color: '#f19b5f' },
+		text: 'Any drink with that?',
+	},
+	{
+		avatar: '',
+		audio: '',
+		style: { backgroundColor: '#ccf3ff', color: '#272ffb' },
+		text: 'A bottle of water, please.',
+	},
+	{
+		avatar: '',
+		audio: '',
+		style: { backgroundColor: '#a7fbec', color: '#03b998' },
+		text: 'Let me repeat your order: a chicken sandwich and a bottle of water.',
+	},
+	{
+		avatar: '',
+		audio: '',
+		style: { backgroundColor: '#ffd9d9', color: '#d17272' },
+		text: "Yes, that's right",
+	},
+];
+
 const tabButtons = [
 	{ title: 'Speech record', className: 'speech-record' },
 	{ title: 'Import audio file', className: 'file-import' },
@@ -47,8 +86,18 @@ const Home = () => {
 			<section className={styles.stt}>
 				<div className="container">
 					<div className="section-wrapper-flex">
-						<div className="voices"></div>
-						<div className="description">
+						<div className={styles.voices}>
+							{voices.map(({ avatar, audio, text, style }, index) => (
+								<button key={index} className={styles.voice} style={style}>
+									<svg width="36" height="36" viewBox="0 0 24 24">
+										<path d="M16 21c3.527-1.547 5.999-4.909 5.999-9S19.527 4.547 16 3v2c2.387 1.386 3.999 4.047 3.999 7S18.387 17.614 16 19v2z" />
+										<path d="M16 7v10c1.225-1.1 2-3.229 2-5s-.775-3.9-2-5zM4 17h2.697L14 21.868V2.132L6.697 7H4c-1.103 0-2 .897-2 2v6c0 1.103.897 2 2 2z" />
+									</svg>
+									{text}
+								</button>
+							))}
+						</div>
+						<div className={styles.description}>
 							<h2>Speech to text</h2>
 							<p>
 								There are many challenges with using automatic speech recognition within real-world applications including noisy
@@ -71,8 +120,8 @@ const Home = () => {
 			<section className={styles['speech-identification']}>
 				<div className="container">
 					<div className="section-wrapper-flex">
-						<Image src={speechIdentification} alt="Speech Identification" width={536} />
-						<div className="description">
+						<Image className="" src={speechIdentification} alt="Speech Identification" width={536} />
+						<div className={styles.description}>
 							<h2>
 								Speech
 								<br />

@@ -50,7 +50,7 @@ h2 {
 
 p {
 	font-size: 26px;
-	line-height: 1.2;
+	line-height: 1.4;
 	letter-spacing: 0.4px;
 }
 
@@ -80,18 +80,16 @@ p {
 	text-align: center;
 }
 
-/*  */
-
 .motto {
-	margin-bottom: 70px;
-	margin-top: 50px;
+	margin-bottom: 130px;
+	margin-top: 100px;
 }
 
 .motto h2 {
 	margin-bottom: unset;
 }
 
-/*  */
+/* TODO: Move theses out of global.css file */
 
 .upload-container {
 	background-color: #ffffff;
@@ -109,6 +107,7 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 10px;
 	flex-grow: 1;
 	padding: 20px 100px;
 	background-color: #f9f9f9;
@@ -118,7 +117,6 @@ p {
 	font-weight: 400;
 	line-height: 23px;
 	cursor: pointer;
-	gap: 10px;
 }
 
 .tab-buttons button.active {
@@ -133,8 +131,8 @@ p {
 	width: 30px;
 	height: 30px;
 	background-position: center;
-	background-size: cover;
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .tab-buttons button.speech-record {
