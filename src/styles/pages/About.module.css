@@ -1,25 +1,3 @@
-.intro {
-	text-align: center;
-}
-.intro h1 {
-	font-weight: 400;
-	font-size: 84px;
-	line-height: 0.9;
-	letter-spacing: -3.5px;
-	color: #272ffb;
-	background-color: white;
-	padding-top: 100px;
-	margin: 0px;
-}
-.intro p,
-.about-percentage p {
-	font-weight: 300;
-	font-size: 27px;
-	line-height: 150%;
-	letter-spacing: 1px;
-	color: #000;
-}
-
 .about-percentage {
 	max-width: 730px;
 	margin-right: auto;
@@ -55,9 +33,6 @@
 	bottom: 0;
 	right: 0;
 	width: 600px;
-}
-
-.waves {
 }
 
 .product {

@@ -6,10 +6,12 @@
     "dev": "next dev -p 7777",
     "build": "next build",
     "start": "next start -p 7777",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf .next"
   },
   "dependencies": {
     "@next/font": "13.0.4",
+    "classnames": "^2.3.2",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "next": "13.0.4",

@@ -10,7 +10,7 @@ import styles from '@styles/pages/Home.module.css';
 const Home = () => {
 	return (
 		<Layout className="home" title="Speech recognition system">
-			<section className={styles.intro}>
+			<section className="intro">
 				<div className="container">
 					<h1>
 						Understanding every voice,

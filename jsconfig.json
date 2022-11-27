@@ -2,10 +2,10 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@components/*": ["components/*"],
-			"@styles/*": ["styles/*"],
-			"@libs/*": ["libs/*"],
-			"@images/*": ["assets/images/*"]
+			"@components/*": ["src/components/*"],
+			"@styles/*": ["src/styles/*"],
+			"@libs/*": ["src/libs/*"],
+			"@images/*": ["src/assets/images/*"]
 		}
 	},
 	"exclude": ["node_modules"]
