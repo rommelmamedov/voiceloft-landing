@@ -49,3 +49,20 @@
 	gap: 30px;
 	margin-top: 30px;
 }
+@media only screen and (max-width: 768px) {
+	.footer .section-wrapper-flex {
+		flex-direction: column-reverse;
+	}
+	.footer .list {
+		grid-template-rows: repeat(1, 1fr);
+		grid-template-columns: repeat(1, 1fr);
+		grid-row-gap: 28px;
+	}
+
+	.footer small {
+		max-width: 240px;
+		font-size: 14px;
+		line-height: 1.17;
+		margin-bottom: 28px;
+	}
+}
