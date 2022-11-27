@@ -11,7 +11,8 @@
 	padding-top: 100px;
 	margin: 0px;
 }
-.intro p {
+.intro p,
+.about-percentage p {
 	font-weight: 300;
 	font-size: 27px;
 	line-height: 150%;
@@ -19,14 +20,18 @@
 	color: #000;
 }
 
-.about-percentage p {
+.about-percentage {
 	max-width: 730px;
-	padding-top: 60px;
 	margin-right: auto;
 	margin-left: auto;
+	margin-bottom: 105px;
 }
 
- .re {
+.about-percentage p {
+	padding-top: 60px;
+}
+
+.about-percentage h3 {
 	padding-top: 42px;
 	font-weight: 300;
 	font-size: 17px;
@@ -35,4 +40,36 @@
 	color: #000;
 	opacity: 0.9;
 	width: 40%;
+}
+
+.about-info {
+	background: #272ffb;
+	position: relative;
+	height: 1013px;
+	overflow: hidden;
+	display: flex;
+}
+
+.human {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 600px;
+}
+
+.waves {
+}
+
+.product {
+	margin-top: 190px;
+	margin-bottom: 150px;
+	gap: 60px;
+}
+
+.product > div {
+	display: flex;
+	font-weight: 300;
+	font-size: 26px;
+	line-height: 131.1%;
+	letter-spacing: 1px;
 }

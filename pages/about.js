@@ -1,4 +1,9 @@
+import Image from 'next/image';
+
 import { Layout } from '@components/Layout';
+
+import human from '@images/about-human.png';
+import wave from '@images/wave.svg';
 
 import styles from '@styles/pages/About.module.css';
 
@@ -31,7 +36,28 @@ const Contact = () => {
 						real-world. Our models are developed and iterated throughout this process, along with our expertise within the ASR market. These
 						tests help to highlight where we can improve and how we compare against our global competitors.
 					</p>
-					<small className='re'>*All benchmarking data collected by Voiceloft as part of benchmarking activities.</small>
+					{/* Asaqida small tagini yazirdim css edit ede bilmjirdi, daje className={styles[`small-text`]} da yaanda eleye bilmirdi */}
+					<h3> *All benchmarking data collected by Voiceloft as part of benchmarking activities.</h3>
+				</div>
+			</section>
+			<section className={styles[`about-info`]}>
+				<Image className={styles.human} src={human} alt="human" width={600} />
+
+				<div className={styles.waves}>
+					<Image src={wave} alt="wave" />
+				</div>
+			</section>
+
+			<section className={styles.product}>
+				<div className="container">
+					<p>
+						We are continually innovating to ensure our language offering is both relevant and far-reaching by collecting high quality and
+						high volume datasets. We have several languages in research and are collecting data to further train these models.{' '}
+					</p>
+					<p>
+						We provide high-quality training data with our leading technology platform, managed services, and our global crowd to power AI
+						globally.
+					</p>
 				</div>
 			</section>
 			<div className="line">
