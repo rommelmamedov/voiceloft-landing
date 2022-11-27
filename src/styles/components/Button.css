@@ -1,6 +1,7 @@
 button.button {
 	cursor: pointer;
 	display: flex;
+	gap: 20px;
 	align-items: center;
 	padding: 14px 24px;
 	background-color: var(--blue);

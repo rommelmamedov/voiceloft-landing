@@ -1,7 +1,8 @@
-export const Button = ({ content, ...otherProps }) => {
+export const Button = ({ children, content, icon, ...otherProps }) => {
 	return (
 		<button className="button" {...otherProps}>
-			{content}
+			{icon}
+			{children ?? content}
 		</button>
 	);
 };

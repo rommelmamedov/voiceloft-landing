@@ -153,3 +153,41 @@ p {
 .tab-buttons button.you-tube::before {
 	background-image: url('../assets/icons/you-tube.svg');
 }
+
+.tab-content {
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	padding: 100px;
+	border: 1px solid #dcdcdc;
+	border-top: 0;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	text-align: center;
+}
+
+.tab-content.active {
+	display: flex;
+}
+
+.tab-content img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.tab-content h2 {
+	margin-bottom: 30px;
+	margin-top: 30px;
+	font-size: 48px;
+}
+
+.tab-content p {
+	max-width: 500px;
+}
+
+.tab-content button {
+	margin-top: 30px;
+	min-width: 300px;
+	justify-content: center;
+}
