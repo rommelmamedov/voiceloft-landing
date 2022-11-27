@@ -1,0 +1,38 @@
+.intro {
+	text-align: center;
+}
+.intro h1 {
+	font-weight: 400;
+	font-size: 84px;
+	line-height: 0.9;
+	letter-spacing: -3.5px;
+	color: #272ffb;
+	background-color: white;
+	padding-top: 100px;
+	margin: 0px;
+}
+.intro p {
+	font-weight: 300;
+	font-size: 27px;
+	line-height: 150%;
+	letter-spacing: 1px;
+	color: #000;
+}
+
+.about-percentage p {
+	max-width: 730px;
+	padding-top: 60px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+ .re {
+	padding-top: 42px;
+	font-weight: 300;
+	font-size: 17px;
+	line-height: 130%;
+	letter-spacing: 0.6px;
+	color: #000;
+	opacity: 0.9;
+	width: 40%;
+}
