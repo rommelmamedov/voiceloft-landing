@@ -299,3 +299,33 @@ p {
 		transform: translate(24px, 0);
 	}
 }
+
+/*  */
+
+.progress {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	z-index: 5;
+	background-color: rgba(0, 0, 0, 0.533);
+}
+
+.progress.active {
+	animation-name: progress;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+/* (100 * 3) / 20 */
+@keyframes progress {
+	from {
+		width: 7%;
+	}
+	to {
+		width: 100%;
+	}
+}

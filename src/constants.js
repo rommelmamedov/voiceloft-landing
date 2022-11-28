@@ -1,10 +1,10 @@
-import gozle from '@sounds/ovcu.mp3';
+import ovcu from '@sounds/ovcu.mp3';
 
 export const voices = [
 	{
 		id: '1',
 		avatar: '',
-		audio: gozle,
+		audio: ovcu,
 		style: { backgroundColor: '#a7fbec', color: '#03b998' },
 		text: 'Welcome, can I get your order?',
 	},
