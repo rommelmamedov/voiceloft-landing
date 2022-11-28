@@ -50,7 +50,6 @@
 .product {
 	margin-top: 190px;
 	margin-bottom: 150px;
-	gap: 60px;
 }
 
 .product > div {
@@ -59,4 +58,9 @@
 	font-size: 26px;
 	line-height: 131.1%;
 	letter-spacing: 1px;
+	gap: 60px;
+}
+
+.product p {
+	max-width: 670px;
 }

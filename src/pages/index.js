@@ -84,6 +84,7 @@ const Home = () => {
 	const handleClick = useCallback(event => {
 		// NOTE: Order of the class names matters.
 		setActiveTab(event.target.classList[0]);
+
 	}, []);
 
 	return (

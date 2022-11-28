@@ -93,8 +93,9 @@ p {
 
 .upload-container {
 	background-color: #ffffff;
-	/* border: 1px solid #dcdcdc; */
-	/* border-radius: 10px; */
+
+	border: 1px solid #dcdcdc;
+	border-radius: 10px;
 	box-shadow: 0px 22px 29px rgba(0, 0, 0, 0.01);
 }
 
@@ -104,6 +105,7 @@ p {
 }
 
 .tab-buttons button {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -111,16 +113,39 @@ p {
 	flex-grow: 1;
 	padding: 20px 100px;
 	background-color: #f9f9f9;
-	border: 1px solid #dcdcdc;
+	border: none;
+	border-bottom: 1px solid #dcdcdc;
 	color: #565656;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 23px;
 	cursor: pointer;
+	transition: all 0.25s;
+}
+
+.tab-buttons button:nth-child(2) {
+	border-left: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+}
+
+/* ??not sure? */
+.previousSibling {
+	border-bottom-right-radius: 10px;
 }
 
 .tab-buttons button.active {
 	background-color: #fff;
+	top: -10px;
+	transition: top 0.25s;
+	border-bottom: none;
+	border-top: 1px solid #dcdcdc;
+	border-left: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+	border-bottom-right-radius: 0px;
+}
+
+.tab-buttons button.active + button {
+	border-bottom-left-radius: 10px;
 }
 
 .tab-buttons button::before {
