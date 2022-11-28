@@ -13,6 +13,7 @@
 		"@components/(.*)$",
 		"@images/(.*)$",
 		"@icons/(.*)$",
+		"@sounds/(.*)$",
 		"@styles/(.*)$",
 		"^utils/(.*)$",
 		"^constants/(.*)$",

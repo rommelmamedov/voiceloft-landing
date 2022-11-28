@@ -25,33 +25,6 @@
 	flex-grow: 0;
 }
 
-.voice {
-	position: relative;
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	padding: 20px 24px;
-	background-color: var(--theme-color);
-	border: 0;
-	border-radius: 80px 50px 50px 0;
-	color: #fff;
-	font-size: 20px;
-	font-weight: 500;
-	text-align-last: left;
-	cursor: pointer;
-}
-
-.voice::before {
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.845.265h22.403l-2.425 1.043A45.894 45.894 0 00.845 17.901V.265z' fill='%23F1F4FF'/%3E%3C/svg%3E");
-}
-
-.voice svg {
-	flex-shrink: 0;
-	padding: 6px;
-	background-color: #fff;
-	border-radius: 100%;
-}
-
 .description {
 	flex-basis: 50%;
 	flex-grow: 0;

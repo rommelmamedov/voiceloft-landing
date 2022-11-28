@@ -6,6 +6,7 @@
 			"@components/*": ["src/components/*"],
 			"@images/*": ["src/assets/images/*"],
 			"@icons/*": ["src/assets/icons/*"],
+			"@sounds/*": ["src/assets/sounds/*"],
 			"@styles/*": ["src/styles/*"]
 		}
 	},
