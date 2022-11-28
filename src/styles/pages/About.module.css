@@ -38,6 +38,24 @@
 	display: flex;
 }
 
+.info p {
+	font-size: 40px;
+	color: #fff;
+	padding-top: 160px;
+	position: relative;
+}
+
+.info h1 {
+	padding-top: 145px;
+	padding-bottom: 120px;
+	font-weight: 700;
+	font-size: 207px;
+	line-height: 80%;
+	letter-spacing: -9px;
+	color: #fafafa;
+	position: relative;
+}
+
 .human {
 	position: absolute;
 	bottom: 0;
