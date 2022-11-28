@@ -51,6 +51,9 @@ const About = () => {
 				<div className={styles.waves}>
 					<Image src={wave} alt="wave" />
 				</div>
+				<div className="container">
+          <p className={styles.infoP}>You shouldn’t have to adjust the way you speak so that speech recognition systems can understand you, let us worry about that. </p>
+          </div>
 			</section>
 			<section className={styles.product}>
 				<div className="container">

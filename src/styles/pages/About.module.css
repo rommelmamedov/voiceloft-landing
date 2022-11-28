@@ -45,6 +45,14 @@
 	width: 600px;
 }
 
+.waves {
+	position: absolute;
+	bottom: -930px;
+	right: 350px;
+	width: 3306px;
+	height: 2956px;
+}
+
 /*  */
 
 .product {
@@ -66,7 +74,3 @@
 }
 
 /*  */
-
-.data {
-	background-color: #fff8f8;
-}
