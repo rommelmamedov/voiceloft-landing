@@ -51,6 +51,9 @@ const About = () => {
 				<div className={styles.waves}>
 					<Image src={wave} alt="wave" />
 				</div>
+				<div className="container">
+          <p className={styles.infoP}>You shouldn’t have to adjust the way you speak so that speech recognition systems can understand you, let us worry about that. </p>
+          </div>
 			</section>
 			<section className={styles.product}>
 				<div className="container">
@@ -64,7 +67,51 @@ const About = () => {
 					</p>
 				</div>
 			</section>
-			<svg viewBox="0 0 1440 259" fill="none">
+
+			{/* <section className={styles.data}>
+				<svg viewBox="0 0 1440 186" fill="none">
+					<g clip-path="url(#clip0)">
+						<rect width="1440" height="186" fill="white"></rect>
+						<path
+							d="M0 101.074C333 101.074 459 50.5746 797 33.0746C1135 15.5746 991.001 219.074 1441 116.074C1441 524.574 1442 1233.35 1442 1472.85C1102.5 1558.85 1171.5 1336.85 778 1359.85C384.5 1382.85 1 1290.35 1 1290.35C1 1290.35 0 410.074 0 101.074Z"
+							fill="#FFF8F8"
+						></path>
+						<path
+							d="M-350.06 109.481C-206.357 104.396 -62.5852 107.584 81.1463 104.773C157.979 103.271 234.33 101.063 310.732 90.84C399.395 78.9717 487.538 62.3423 575.879 47.7381C654.13 34.7934 733.037 21.6077 812.173 19.461C868.172 17.9439 919.855 18.6998 972.995 42.7816C1017.51 62.9565 1058.14 93.1392 1102.07 114.911C1157.71 142.482 1210.36 144.486 1269.68 145.052C1449.16 146.742 1610.67 22.8796 1791.11 30.5448"
+							stroke="#272FFB"
+							strokeWidth="0.26123"
+							strokeMiterlimit="10"
+						></path>
+						<path
+							d="M-597.975 111.587C-441.273 106.042 -284.496 109.519 -127.763 106.453C-43.9798 104.815 39.2774 102.408 122.59 91.26C219.274 78.318 315.39 60.1845 411.722 44.2592C497.051 30.1435 583.095 15.7651 669.39 13.4242C730.455 11.7699 786.813 12.5942 844.76 38.8544C893.304 60.8542 937.611 93.7671 985.509 117.508C1046.19 147.573 1103.6 149.759 1168.28 150.375C1364 152.219 1540.12 17.152 1736.87 25.5106"
+							stroke="#272FFB"
+							strokeWidth="0.26123"
+							strokeWiterlimit="10"
+						></path>
+					</g>
+					<defs>
+						<clipPath id="clip0">
+							<rect width="1440" height="186"></rect>
+						</clipPath>
+					</defs>
+				</svg>
+				<h1>Datasets that we have</h1>
+
+				<button>Speech to text</button>
+				<div className="container">
+					<div className="flex-box">
+						<div className="flex-item">
+							<div className="speech"></div>
+							<p>Speech (hours)</p>
+						</div>
+					</div>
+					<p>
+						When your goal is to launch world-class AI, our reliable training data gives you the confidence to deploy. You choose the level
+						of service and security you want for data collection and annotation, from white-glove managed service to flexible self-service
+					</p>
+				</div>
+			</section> */}
+			{/* <svg viewBox="0 0 1440 259" fill="none">
 				<g clipPath="url(#clip111)">
 					<rect width="1440" height="259" fill="white"></rect>
 					<path
@@ -83,7 +130,7 @@ const About = () => {
 						<rect width="1440" height="259" fill="white"></rect>
 					</clipPath>
 				</defs>
-			</svg>
+			</svg> */}
 		</Layout>
 	);
 };
