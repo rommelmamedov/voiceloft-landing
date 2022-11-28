@@ -89,6 +89,22 @@ p {
 	margin-bottom: unset;
 }
 
+@media only screen and (max-width: 768px) {
+	.intro h1 {
+		font-size: 52px;
+	}
+
+	.motto {
+		margin-bottom: 130px;
+		margin-top: 100px;
+	}
+
+	.motto h2 {
+		margin-bottom: unset;
+		font-size: 52px;
+	}
+}
+
 /* TODO: Move theses out of global.css file */
 
 .upload-container {
