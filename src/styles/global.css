@@ -114,6 +114,10 @@ p {
 		margin-bottom: unset;
 		font-size: 46px;
 	}
+
+	.section-wrapper-flex {
+		flex-direction: column-reverse;
+	}
 }
 
 /* TODO: Move theses out of global.css file */
@@ -242,4 +246,11 @@ p {
 	margin-top: 30px;
 	min-width: 300px;
 	justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.separator-svg {
+		margin-bottom: 50px;
+		margin-top: 50px;
+	}
 }
