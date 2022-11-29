@@ -7,7 +7,6 @@
 }
 
 /* Mobile */
-
 @media (min-width: 576px) {
 	.container {
 		max-width: 540px;
@@ -15,7 +14,6 @@
 }
 
 /* Large Screen Mobile */
-
 @media (max-width: 768px) {
 	.container {
 		max-width: 720px;
@@ -23,7 +21,6 @@
 }
 
 /* Tablet */
-
 @media (max-width: 992px) {
 	.container {
 		max-width: 960px;
@@ -31,7 +28,6 @@
 }
 
 /* Desktop */
-
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1140px;

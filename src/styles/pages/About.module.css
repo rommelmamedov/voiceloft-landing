@@ -5,16 +5,12 @@
 	margin-bottom: 105px;
 }
 
-/*  */
-
 .percentage svg {
 	width: 80%;
 	stroke-width: 0.5px;
 	font-size: 170px;
 	font-weight: 500;
 }
-
-/*  */
 
 .percentage p {
 	margin-top: 40px;
@@ -32,15 +28,15 @@
 	.aboutSvg {
 		height: auto;
 	}
+
 	.percentage small {
 		font-size: 15px;
 	}
+
 	.percentage {
 		margin-bottom: 50px;
 	}
 }
-
-/*  */
 
 .info {
 	background-color: var(--blue);
@@ -117,13 +113,10 @@
 }
 
 @media only screen and (max-width: 370px) {
-
 	.info h1 {
 		font-size: 38px;
-
-	}}
-
-/*  */
+	}
+}
 
 .product {
 	margin-top: 190px;
@@ -143,17 +136,14 @@
 	max-width: 670px;
 }
 
-@media only screen and (max-width: 768px){
-  .product {
-	margin-top: 70px;
-	margin-bottom: 40px;
-}
+@media only screen and (max-width: 768px) {
+	.product {
+		margin-top: 70px;
+		margin-bottom: 40px;
+	}
 
-.product > div {
-  flex-direction: column;
-	gap: 30px;
+	.product > div {
+		flex-direction: column;
+		gap: 30px;
+	}
 }
-
-}
-
-/*  */

@@ -40,9 +40,10 @@
 	position: relative;
 	z-index: 6;
 	flex-shrink: 0;
-	padding: 6px;
+	padding: 9px;
 	background-color: #fff;
 	border-radius: 100%;
+	transition: 0.3s all ease;
 }
 
 .text {

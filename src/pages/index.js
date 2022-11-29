@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { Ellipsis } from '@components/Ellipsis';
+import { Intro } from '@components/Intro';
 import { Layout } from '@components/Layout';
 import { SeparatorSVG } from '@components/SeparatorSVG';
 import { VoiceButton } from '@components/VoiceButton';
@@ -22,19 +24,16 @@ const competitors = [
 const Home = () => {
 	return (
 		<Layout className="home" title="Speech recognition system">
-			<section className="intro">
-				<div className="container">
-					<h1>
+			<Intro
+				title={
+					<>
 						Understanding every voice,
 						<br />
 						language, dialect and accent is real
-					</h1>
-					<p>
-						Our technology understands the most people across the world. The most accessible engine that can help businesses better
-						understand and connect with their customers, regardless of demographic, pitch, dialect, modes of speech, or semantics.
-					</p>
-				</div>
-			</section>
+					</>
+				}
+				description="Our technology understands the most people across the world. The most accessible engine that can help businesses better understand and connect with their customers, regardless of demographic, pitch, dialect, modes of speech, or semantics."
+			/>
 			<section className={styles.stt}>
 				<div className="container">
 					<div className="section-wrapper-flex">
@@ -45,16 +44,16 @@ const Home = () => {
 									<VoiceButton {...voiceProps} />
 								</div>
 							))}
-							<div className={voice} style={{ backgroundColor: '#e8f0be', cursor: 'default' }}>
-								<div className="ellipsis">
-									<div></div>
-									<div></div>
-									<div></div>
-									<div></div>
+							<div className={styles['voice-wrapper']}>
+								<Image src="/imgs/persons/1.webp" alt="Ellipsis" width={64} height={64} />
+								<div className={voice} style={{ backgroundColor: '#f1f7d1', cursor: 'default' }}>
+									<div>
+										<Ellipsis />
+									</div>
+									<svg className={triangle} width={24} height={18} viewBox="0 0 24 18">
+										<path d="M.845.265h22.403l-2.425 1.043A45.894 45.894 0 0 0 .845 17.901V.265z" fill="#e8f0be" />
+									</svg>
 								</div>
-								<svg className={triangle} width={24} height={18} viewBox="0 0 24 18">
-									<path d="M.845.265h22.403l-2.425 1.043A45.894 45.894 0 0 0 .845 17.901V.265z" fill="#e8f0be" />
-								</svg>
 							</div>
 						</div>
 						<div className={styles.description}>
@@ -69,6 +68,7 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
+			<SeparatorSVG />
 			<section className="supported-languages">
 				<div className="container">
 					<h2>Supported languages</h2>
@@ -84,6 +84,7 @@ const Home = () => {
 				<div className="container">
 					<h2>The most accurate and inclusive speech-to-text on the market</h2>
 					<p>NASA: First All-Female Space Walk audio</p>
+					<div></div>
 				</div>
 			</section>
 			<SeparatorSVG />

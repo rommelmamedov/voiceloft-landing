@@ -1,7 +1,8 @@
-import classNames from 'classnames';
 import { useCallback, useEffect, useState } from 'react';
 
 import styles from '@styles/components/VoiceButton.module.css';
+
+import { getProgressStyle } from '../utils';
 
 export const VoiceButton = ({ style, text, audio: audioProp }) => {
 	const [audio, setAudio] = useState(null);
@@ -15,7 +16,7 @@ export const VoiceButton = ({ style, text, audio: audioProp }) => {
 
 	useEffect(() => {
 		if (audio) {
-			audio.onended = function () {
+			audio.onended = () => {
 				audio.currentTime = 0;
 				setIsAudioPlaying(false);
 			};
@@ -27,34 +28,24 @@ export const VoiceButton = ({ style, text, audio: audioProp }) => {
 			audio.play();
 			setIsAudioPlaying(true);
 		}
-		//  else {
-		// audio.pause();
-		// audio.currentTime = 0;
-		// }
 	}, [audio, isAudioPlaying]);
 
 	return (
 		<button className={styles.voice} onClick={handleOnPlayClick}>
 			<div style={style}>
-				<svg className={styles.soundButton} width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+				<svg
+					className={styles.soundButton}
+					width="36"
+					height="36"
+					viewBox="0 0 24 24"
+					fill={isAudioPlaying ? '#fff' : 'currentColor'}
+					style={{ backgroundColor: isAudioPlaying ? style.color : '#fff' }}
+				>
 					<path d="M16 21c3.527-1.547 5.999-4.909 5.999-9S19.527 4.547 16 3v2c2.387 1.386 3.999 4.047 3.999 7S18.387 17.614 16 19v2z" />
 					<path d="M16 7v10c1.225-1.1 2-3.229 2-5s-.775-3.9-2-5zM4 17h2.697L14 21.868V2.132L6.697 7H4c-1.103 0-2 .897-2 2v6c0 1.103.897 2 2 2z" />
 				</svg>
 				<span className={styles.text}>{text}</span>
-				<span
-					className={classNames(styles.progress, { active: isAudioPlaying })}
-					style={
-						isAudioPlaying
-							? {
-									animationDuration: `${audio?.duration}s`,
-									backgroundColor: style.progressColor,
-									animationName: 'progress',
-									animationFillMode: 'forwards',
-									animationTimingFunction: 'linear',
-							  }
-							: undefined
-					}
-				/>
+				<span className={styles.progress} style={getProgressStyle({ isAudioPlaying, audio, style })} />
 			</div>
 			<svg className={styles.triangle} width={24} height={18} viewBox="0 0 24 18">
 				<path

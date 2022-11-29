@@ -1,0 +1,124 @@
+.upload-container {
+	background-color: #ffffff;
+	border: 1px solid #dcdcdc;
+	border-radius: 10px;
+	box-shadow: 0px 22px 29px rgba(0, 0, 0, 0.01);
+}
+
+.tab-buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tab-buttons button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	flex-grow: 1;
+	padding: 20px 100px;
+	background-color: #f9f9f9;
+	border: none;
+	border-bottom: 1px solid #dcdcdc;
+	color: #565656;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 23px;
+	cursor: pointer;
+	transition: all 0.25s;
+}
+
+.tab-buttons button:nth-child(2) {
+	border-left: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+}
+
+/* ??not sure? */
+.previousSibling {
+	border-bottom-right-radius: 10px;
+}
+
+.tab-buttons button.active {
+	background-color: #fff;
+	top: -10px;
+	transition: top 0.25s;
+	border-bottom: none;
+	border-top: 1px solid #dcdcdc;
+	border-left: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+	border-bottom-right-radius: 0px;
+}
+
+.tab-buttons button.active + button {
+	border-bottom-left-radius: 10px;
+}
+
+.tab-buttons button::before {
+	content: '';
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.tab-buttons button.speech-record {
+	border-top-left-radius: 10px;
+}
+.tab-buttons button.you-tube {
+	border-top-right-radius: 10px;
+}
+
+.tab-buttons button.speech-record::before {
+	background-image: url('../../assets/imgs/vectors/icons/speech-record.svg');
+}
+
+.tab-buttons button.file-import::before {
+	background-image: url('../../assets/imgs/vectors/icons/file-import.svg');
+}
+
+.tab-buttons button.you-tube::before {
+	background-image: url('../../assets/imgs/vectors/icons/you-tube.svg');
+}
+
+.tab-content {
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	padding: 100px;
+	border: 1px solid #dcdcdc;
+	border-top: 0;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	text-align: center;
+}
+
+.tab-content.active {
+	display: flex;
+}
+
+.tab-content img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.tab-content h2 {
+	margin-bottom: 30px;
+	margin-top: 30px;
+	font-size: 48px;
+}
+
+.tab-content p {
+	max-width: 500px;
+}
+
+.tab-content button {
+	margin-top: 30px;
+	min-width: 300px;
+	justify-content: center;
+}

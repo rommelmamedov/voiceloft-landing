@@ -19,10 +19,8 @@ button.button:hover {
 
 @media only screen and (max-width: 768px) {
 	button.button {
-	padding: 12px 12px;
-	font-size: 12px;
-	font-weight: 400;
-
-}
-
+		padding: 12px 12px;
+		font-size: 12px;
+		font-weight: 400;
+	}
 }

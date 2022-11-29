@@ -6,3 +6,7 @@
 @import url('src/styles/components/Header.css');
 @import url('src/styles/components/Footer.css');
 @import url('src/styles/components/Button.css');
+@import url('src/styles/components/Intro.css');
+@import url('src/styles/components/Motto.css');
+/* TODO: Make it into module possibly */
+@import url('src/styles/components/VoiceUploader.css');

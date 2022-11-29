@@ -19,7 +19,7 @@
 .voices {
 	display: flex;
 	align-items: flex-start;
-	gap: 20px;
+	gap: 22px;
 	flex-basis: 50%;
 	flex-direction: column;
 	flex-grow: 0;
