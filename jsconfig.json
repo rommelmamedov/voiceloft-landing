@@ -4,8 +4,8 @@
 		"paths": {
 			"@libs/*": ["src/libs/*"],
 			"@components/*": ["src/components/*"],
-			"@imgs/*": ["src/assets/imgs/*"],
-			"@icons/*": ["src/assets/icons/*"],
+			"@imgs/*": ["src/assets/imgs/rasters/*"],
+			"@icons/*": ["src/assets/imgs/vectors/icons/*"],
 			"@sounds/*": ["src/assets/sounds/*"],
 			"@styles/*": ["src/styles/*"]
 		}

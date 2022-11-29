@@ -70,11 +70,12 @@ const tabs = [
 	},
 ];
 
-const VoiceUploader = () => {
+export const VoiceUploader = () => {
 	const [activeTab, setActiveTab] = useState('file-import');
 
 	const handleClick = useCallback(event => {
 		// NOTE: Order of the class names matters.
+		// event.target.previousElementSibling?.classList.add('previous-sibling');
 		setActiveTab(event.target.classList[0]);
 	}, []);
 
@@ -104,5 +105,3 @@ const VoiceUploader = () => {
 		</section>
 	);
 };
-
-export default VoiceUploader;

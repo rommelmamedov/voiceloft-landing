@@ -6,8 +6,8 @@ import { Layout } from '@components/Layout';
 import { SeparatorSVG } from '@components/SeparatorSVG';
 import { VoiceButton } from '@components/VoiceButton';
 
-// import VoiceUploader from '@components/VoiceUploader';
-import speechIdentification from '@imgs/rasters/speech-identification.webp';
+// import { VoiceUploader } from '@components/VoiceUploader';
+import speechIdentification from '@imgs/speech-identification.webp';
 
 import { triangle, voice } from '@styles/components/VoiceButton.module.css';
 import styles from '@styles/pages/Home.module.css';
