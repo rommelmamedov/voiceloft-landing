@@ -23,8 +23,8 @@ const NotFound404 = () => {
 				content="Return to home page"
 				icon={
 					<svg
-						width="56"
-						height="56"
+						width="36"
+						height="36"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
