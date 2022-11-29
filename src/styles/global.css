@@ -22,7 +22,7 @@ body {
 }
 
 body {
-	background-image: url('../assets/images/background.svg');
+	background-image: url('../assets/imgs/vectors/background.svg');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	font-size: 16px;
@@ -199,15 +199,15 @@ p {
 }
 
 .tab-buttons button.speech-record::before {
-	background-image: url('../assets/icons/speech-record.svg');
+	background-image: url('../assets/imgs/vectors/icons/speech-record.svg');
 }
 
 .tab-buttons button.file-import::before {
-	background-image: url('../assets/icons/file-import.svg');
+	background-image: url('../assets/imgs/vectors/icons/file-import.svg');
 }
 
 .tab-buttons button.you-tube::before {
-	background-image: url('../assets/icons/you-tube.svg');
+	background-image: url('../assets/imgs/vectors/icons/you-tube.svg');
 }
 
 .tab-content {
@@ -252,5 +252,118 @@ p {
 	.separator-svg {
 		margin-bottom: 50px;
 		margin-top: 50px;
+}
+}
+
+/*  */
+
+.ellipsis {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 31px;
+}
+/*
+.ellipsis > div {
+	background-color: #fff;
+	position: absolute;
+	top: 10px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	text-align: center;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+ */
+
+.ellipsis {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 31px;
+}
+
+.ellipsis div {
+	position: absolute;
+	top: 10px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background-color: #fff;
+	text-align: center;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.ellipsis div:nth-child(1) {
+	left: 8px;
+	animation: ellipsis1 0.6s infinite;
+}
+.ellipsis div:nth-child(2) {
+	left: 8px;
+	animation: ellipsis2 0.6s infinite;
+}
+.ellipsis div:nth-child(3) {
+	left: 32px;
+	animation: ellipsis2 0.6s infinite;
+}
+.ellipsis div:nth-child(4) {
+	left: 56px;
+	animation: ellipsis3 0.6s infinite;
+}
+
+@keyframes ellipsis1 {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes ellipsis3 {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+@keyframes ellipsis2 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(24px, 0);
+	}
+}
+
+/*  */
+
+.progress {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	z-index: 5;
+	background-color: rgba(0, 0, 0, 0.533);
+}
+
+.progress.active {
+	animation-name: progress;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+/* (100 * 3) / 20 */
+@keyframes progress {
+	from {
+		width: 7%;
+	}
+	to {
+		width: 100%;
 	}
 }

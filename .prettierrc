@@ -11,8 +11,9 @@
 	"importOrder": [
 		"@libs/(.*)$",
 		"@components/(.*)$",
-		"@images/(.*)$",
+		"@imgs/(.*)$",
 		"@icons/(.*)$",
+		"@sounds/(.*)$",
 		"@styles/(.*)$",
 		"^utils/(.*)$",
 		"^constants/(.*)$",

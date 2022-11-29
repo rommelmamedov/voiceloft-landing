@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { Button } from '@components/Button';
 
-import logo from '@images/logo.svg';
+import logo from '@imgs/vectors/logo.svg';
 
 export const Header = () => {
 	return (

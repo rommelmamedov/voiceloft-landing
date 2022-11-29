@@ -3,8 +3,8 @@ import { useCountUp } from 'react-countup';
 
 import { Layout } from '@components/Layout';
 
-import human from '@images/about-human.webp';
-import wave from '@images/wave.svg';
+import human from '@imgs/rasters/about-human.webp';
+import wave from '@imgs/vectors/wave.svg';
 
 import styles from '@styles/pages/About.module.css';
 
