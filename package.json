@@ -21,8 +21,6 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "3.4.0",
-    "file-loader": "6.2.0",
-    "prettier": "2.7.1",
-    "url-loader": "4.1.1"
+    "prettier": "2.7.1"
   }
 }

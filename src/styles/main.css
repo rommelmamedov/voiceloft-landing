@@ -8,5 +8,5 @@
 @import url('src/styles/components/Button.css');
 @import url('src/styles/components/Intro.css');
 @import url('src/styles/components/Motto.css');
-/* TODO: Make it into module possibly */
+/* TODO: Make it into module, because it will not be on all the pages. */
 @import url('src/styles/components/VoiceUploader.css');

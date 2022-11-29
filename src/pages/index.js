@@ -84,7 +84,13 @@ const Home = () => {
 				<div className="container">
 					<h2>The most accurate and inclusive speech-to-text on the market</h2>
 					<p>NASA: First All-Female Space Walk audio</p>
-					<div></div>
+					<ul className="">
+						{competitors.map(({ name, accuracy }) => (
+							<li key={name}>
+								{name} - {accuracy}
+							</li>
+						))}
+					</ul>
 				</div>
 			</section>
 			<SeparatorSVG />
