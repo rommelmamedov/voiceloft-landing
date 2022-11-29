@@ -5,12 +5,19 @@ import { SeparatorSVG } from '@components/SeparatorSVG';
 import { VoiceButton } from '@components/VoiceButton';
 
 // import VoiceUploader from '@components/VoiceUploader';
-import speechIdentification from '@images/persons.webp';
+import speechIdentification from '@imgs/rasters/persons.webp';
 
 import { triangle, voice } from '@styles/components/VoiceButton.module.css';
 import styles from '@styles/pages/Home.module.css';
 
 import { voices } from '../constants';
+
+const competitors = [
+	{ name: 'Rev', logo: '', accuracy: '65%' },
+	{ name: 'Verbit', logo: '', accuracy: '65%' },
+	{ name: 'Speechmatics', logo: '', accuracy: '65%' },
+	{ name: 'Deepgram', logo: '', accuracy: '65%' },
+];
 
 const Home = () => {
 	return (
@@ -59,7 +66,6 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
-			<SeparatorSVG />
 			<section className="supported-languages">
 				<div className="container">
 					<h2>Supported languages</h2>
@@ -68,6 +74,13 @@ const Home = () => {
 						Our Global Voice Recognition is now available in more than 100 languages. It’s everything you know and love about our
 						asynchronous Automated Speech Recognition (ASR) engine, now with even more languages at your disposal.
 					</p>
+				</div>
+			</section>
+			<SeparatorSVG />
+			<section className="competitors">
+				<div className="container">
+					<h2>The most accurate and inclusive speech-to-text on the market</h2>
+					<p>NASA: First All-Female Space Walk audio</p>
 				</div>
 			</section>
 			<SeparatorSVG />

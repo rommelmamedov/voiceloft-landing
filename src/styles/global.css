@@ -22,7 +22,7 @@ body {
 }
 
 body {
-	background-image: url('../assets/images/background.svg');
+	background-image: url('../assets/imgs/vectors/background.svg');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	font-size: 16px;
@@ -168,15 +168,15 @@ p {
 }
 
 .tab-buttons button.speech-record::before {
-	background-image: url('../assets/icons/speech-record.svg');
+	background-image: url('../assets/imgs/vectors/icons/speech-record.svg');
 }
 
 .tab-buttons button.file-import::before {
-	background-image: url('../assets/icons/file-import.svg');
+	background-image: url('../assets/imgs/vectors/icons/file-import.svg');
 }
 
 .tab-buttons button.you-tube::before {
-	background-image: url('../assets/icons/you-tube.svg');
+	background-image: url('../assets/imgs/vectors/icons/you-tube.svg');
 }
 
 .tab-content {
