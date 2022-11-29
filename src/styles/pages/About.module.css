@@ -28,6 +28,18 @@
 	width: 40%;
 }
 
+@media only screen and (max-width: 768px) {
+	.aboutSvg {
+		height: auto;
+	}
+	.percentage small {
+		font-size: 15px;
+	}
+	.percentage {
+		margin-bottom: 50px;
+	}
+}
+
 /*  */
 
 .info {
@@ -71,6 +83,46 @@
 	height: 2956px;
 }
 
+@media only screen and (max-width: 768px) {
+	.info {
+		background-color: var(--blue);
+		position: relative;
+		height: 570px;
+		overflow: hidden;
+		display: flex;
+	}
+
+	.info p {
+		font-size: 26px;
+		color: #fff;
+		padding-top: 50px;
+		position: relative;
+	}
+	.info h1 {
+		padding-top: 60px;
+		padding-bottom: 0px;
+		font-size: 52px;
+		line-height: 90%;
+		letter-spacing: -1px;
+		position: relative;
+	}
+	.human {
+		width: 280px;
+		height: auto;
+	}
+
+	.waves {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+
+	.info h1 {
+		font-size: 38px;
+
+	}}
+
 /*  */
 
 .product {
@@ -89,6 +141,19 @@
 
 .product p {
 	max-width: 670px;
+}
+
+@media only screen and (max-width: 768px){
+  .product {
+	margin-top: 70px;
+	margin-bottom: 40px;
+}
+
+.product > div {
+  flex-direction: column;
+	gap: 30px;
+}
+
 }
 
 /*  */
