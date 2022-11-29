@@ -30,6 +30,12 @@
 	flex-grow: 0;
 }
 
+@media only screen and (max-width: 768px) {
+	.stt > div > div {
+		gap: 50px;
+	}
+}
+
 /* NOTE: .section-wrapper-flex */
 .speech-identification > div > div {
 	display: grid;
@@ -41,4 +47,14 @@
 .speech-identification img {
 	flex-basis: 50%;
 	flex-grow: 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.speech-identification > div > div {
+		display: flex;
+		gap: 50px;
+	}
+	.speech-identification img {
+		width: auto;
+	}
 }

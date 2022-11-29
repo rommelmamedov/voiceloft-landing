@@ -24,7 +24,7 @@ const About = () => {
 					</p>
 				</div>
 			</section>
-			<svg width="100%" height="559" viewBox="0 0 1440 559" fill="none" preserveAspectRatio="none">
+			<svg className={styles.aboutSvg} width="100%" height="559" viewBox="0 0 1440 559" fill="none" preserveAspectRatio="none">
 				<path
 					d="M-3.98499 0.233165C101.646 38.6966 174.222 146.381 270.688 204.718C373.68 267.013 507.206 232.762 634.594 216.327C730.811 203.916 856.089 177.256 893.221 303.016C907.01 349.699 910.758 406.853 922.945 455.24C937.363 512.48 964.647 545.375 1006.45 555.137C1141.05 586.529 1325.15 382.298 1457.54 424.842"
 					stroke="var(--blue)"

@@ -89,6 +89,37 @@ p {
 	margin-bottom: unset;
 }
 
+@media only screen and (max-width: 768px) {
+	.intro {
+		margin-top: 70px;
+		margin-bottom: 50px;
+	}
+
+	.intro h1 {
+		font-size: 52px;
+	}
+
+	p {
+		font-size: 20px;
+		line-height: 1.4;
+		letter-spacing: 0.4px;
+	}
+
+	.motto {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+	.motto h2 {
+		margin-bottom: unset;
+		font-size: 46px;
+	}
+
+	.section-wrapper-flex {
+		flex-direction: column-reverse;
+	}
+}
+
 /* TODO: Move theses out of global.css file */
 
 .upload-container {
@@ -215,6 +246,13 @@ p {
 	margin-top: 30px;
 	min-width: 300px;
 	justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.separator-svg {
+		margin-bottom: 50px;
+		margin-top: 50px;
+}
 }
 
 /*  */
