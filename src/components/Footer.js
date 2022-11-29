@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const navigationItems = [
 	{ title: 'About', href: '/about' },
-	{ title: 'API Docs', href: '/' },
+	{ title: 'API Docs', href: 'https://docs.voiceloft.com', props: { target: '_blank', rel: 'noopener noreferrer' } },
 	{ title: 'Contact', href: '/contact' },
-	{ title: 'Supported languages', href: '/' },
+	{ title: 'Supported languages', href: 'https://docs.voiceloft.com/languages/', props: { target: '_blank', rel: 'noopener noreferrer' } },
 ];
 
 const socialMedias = [
@@ -65,9 +65,9 @@ export const Footer = () => {
 					</div>
 					<nav>
 						<ul className="list">
-							{navigationItems.map(({ title, href }, index) => (
+							{navigationItems.map(({ title, href, props }, index) => (
 								<li key={index}>
-									<Link className="link" href={href} title={title}>
+									<Link className="link" href={href} title={title} {...props}>
 										{title}
 									</Link>
 								</li>

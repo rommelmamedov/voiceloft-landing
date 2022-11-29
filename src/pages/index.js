@@ -40,12 +40,12 @@ const Home = () => {
 						<div className={styles.voices}>
 							{voices.map((voiceProps, index) => (
 								<div className={styles['voice-wrapper']} key={index}>
-									<Image src={voiceProps.avatar} alt={voiceProps.text} width={64} height={64} />
-									<VoiceButton {...voiceProps} />
+									<Image src={`/imgs/persons/${index + 1}.webp`} alt={voiceProps.text} width={64} height={64} />
+									<VoiceButton {...voiceProps} audio={`/sounds/${index + 1}.mp3`} />
 								</div>
 							))}
 							<div className={styles['voice-wrapper']}>
-								<Image src="/imgs/persons/1.webp" alt="Ellipsis" width={64} height={64} />
+								<Image src="/imgs/persons/7.webp" alt="Ellipsis" width={64} height={64} />
 								<div className={voice} style={{ backgroundColor: '#f1f7d1', cursor: 'default' }}>
 									<div>
 										<Ellipsis />

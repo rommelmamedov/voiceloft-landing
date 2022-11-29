@@ -10,8 +10,8 @@ export const Header = () => {
 		<header className="header">
 			<div className="container">
 				<nav>
-					<Link href="/">
-						<Image className='voiceloft' src={logo} alt="Voiceloft Logo" width={200} height={60} priority />
+					<Link href="https://calendly.com/voiceloft/" target="_blank" rel="noopener noreferrer">
+						<Image className="voiceloft" src={logo} alt="Voiceloft Logo" width={200} height={60} priority />
 					</Link>
 					<Button content="Schedule a call" />
 				</nav>
