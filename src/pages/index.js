@@ -5,7 +5,7 @@ import { SeparatorSVG } from '@components/SeparatorSVG';
 import { VoiceButton } from '@components/VoiceButton';
 
 // import VoiceUploader from '@components/VoiceUploader';
-import speechIdentification from '@imgs/rasters/persons.webp';
+import speechIdentification from '@imgs/rasters/speech-identification.webp';
 
 import { triangle, voice } from '@styles/components/VoiceButton.module.css';
 import styles from '@styles/pages/Home.module.css';
@@ -39,8 +39,11 @@ const Home = () => {
 				<div className="container">
 					<div className="section-wrapper-flex">
 						<div className={styles.voices}>
-							{voices.map(voiceProps => (
-								<VoiceButton key={voiceProps.id} {...voiceProps} />
+							{voices.map((voiceProps, index) => (
+								<div className={styles['voice-wrapper']} key={index}>
+									<Image src={voiceProps.avatar} alt={voiceProps.text} width={64} height={64} />
+									<VoiceButton {...voiceProps} />
+								</div>
 							))}
 							<div className={voice} style={{ backgroundColor: '#e8f0be', cursor: 'default' }}>
 								<div className="ellipsis">

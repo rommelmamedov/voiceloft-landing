@@ -25,6 +25,19 @@
 	flex-grow: 0;
 }
 
+.voice-wrapper {
+	display: flex;
+	align-items: flex-end;
+	gap: 20px;
+}
+
+.voices img {
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	object-fit: cover;
+}
+
 .description {
 	flex-basis: 50%;
 	flex-grow: 0;
