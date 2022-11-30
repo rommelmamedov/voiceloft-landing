@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CountUp from 'react-countup';
 
 import { Ellipsis } from '@components/Ellipsis';
 import { Intro } from '@components/Intro';
@@ -15,13 +16,17 @@ import styles from '@styles/pages/Home.module.css';
 import { voices } from '../constants';
 
 const competitors = [
-	{ name: 'Rev', logo: '', accuracy: '65%' },
-	{ name: 'Verbit', logo: '', accuracy: '65%' },
-	{ name: 'Speechmatics', logo: '', accuracy: '65%' },
-	{ name: 'Deepgram', logo: '', accuracy: '65%' },
+	{ name: 'Rev', accuracy: 65 },
+	{ name: 'Verbit', accuracy: 65 },
+	{ name: 'Speechmatics', accuracy: 65 },
+	{ name: 'Deepgram', accuracy: 65 },
+	{ name: 'Voiceloft', accuracy: 95 },
 ];
 
 const Home = () => {
+	// useCountUp({ ref: 'competitors', end: 65, duration: 5, suffix: ' %' });
+	// useCountUp({ ref: 'voiceloft', end: 95, duration: 5, suffix: ' %' });
+
 	return (
 		<Layout className="home" title="Speech recognition system">
 			<Intro
@@ -80,14 +85,20 @@ const Home = () => {
 				</div>
 			</section>
 			<SeparatorSVG />
-			<section className="competitors">
+			<section className={styles.competitors}>
 				<div className="container">
 					<h2>The most accurate and inclusive speech-to-text on the market</h2>
 					<p>NASA: First All-Female Space Walk audio</p>
-					<ul className="">
-						{competitors.map(({ name, accuracy }) => (
+					<ul>
+						{competitors.map(({ name, accuracy }, index) => (
 							<li key={name}>
-								{name} - {accuracy}
+								<div className="image-wrapper">
+									<Image src={`/imgs/competitor-logos/${name.toLowerCase()}.svg`} alt={name} width={110} height={110} />
+								</div>
+								<em>{name}</em>
+								<strong id={index < competitors.length ? 'competitors' : 'voiceloft'}>
+									<CountUp end={accuracy} duration={3} suffix=" %" />
+								</strong>
 							</li>
 						))}
 					</ul>
@@ -97,7 +108,7 @@ const Home = () => {
 			<section className={styles['speech-identification']}>
 				<div className="container">
 					<div className="section-wrapper-flex">
-						<Image className="" src={speechIdentification} alt="Speech Identification" width={536} />
+						<Image src={speechIdentification} alt="Speech Identification" width={536} />
 						<div className={styles.description}>
 							<h2>
 								Speech
