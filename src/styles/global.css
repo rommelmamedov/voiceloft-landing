@@ -1,5 +1,5 @@
 :root {
-	--white: #fff;
+	--white: #ffffff;
 	--black: #000;
 	--blue: #272ffb;
 	--blue-hover: #040deb;
@@ -24,10 +24,16 @@ body {
 body {
 	background-image: url('../assets/imgs/vectors/background.svg');
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: contain;
 	font-size: 16px;
 	font-weight: 300;
 	background-position-y: -50px;
+}
+
+@media (max-width: 992px) {
+	body {
+		background-position: 0 100px;
+	}
 }
 
 a {
@@ -64,13 +70,14 @@ p {
 	overflow: hidden;
 }
 
-@media only screen and (max-width: 768px) {
-	p {
-		font-size: 20px;
-		line-height: 1.4;
-		letter-spacing: 0.4px;
+@media (max-width: 992px) {
+	.separator-svg {
+		margin-bottom: 80px;
+		margin-top: 80px;
 	}
+}
 
+@media (max-width: 780px) {
 	.section-wrapper-flex {
 		flex-direction: column-reverse;
 	}
@@ -78,6 +85,43 @@ p {
 	.separator-svg {
 		margin-bottom: 50px;
 		margin-top: 50px;
+	}
+
+	h2 {
+		font-size: 56px;
+	}
+}
+
+@media (max-width: 580px) {
+	p {
+		font-size: 20px;
+		line-height: 1.4;
+		letter-spacing: 0.4px;
+	}
+
+	h1,
+	h2 {
+		margin-bottom: 30px;
+	}
+
+	h2 {
+		font-size: 40px;
+	}
+
+	.separator-svg {
+		height: 80px;
+		margin-bottom: 40px;
+		margin-top: 40px;
+	}
+}
+
+@media (max-width: 420px) {
+	h2 {
+		font-size: 38px;
+	}
+
+	p {
+		font-size: 18px;
 	}
 }
 

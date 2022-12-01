@@ -10,8 +10,17 @@
 	justify-content: space-between;
 }
 
-@media only screen and (max-width: 768px) {
-	.voiceloft {
-		width: 120px;
+@media (max-width: 580px) {
+	.header {
+		margin-top: 20px;
+	}
+	img.voiceloft {
+		max-width: 160px;
+	}
+}
+
+@media (max-width: 420px) {
+	img.voiceloft {
+		max-width: 120px;
 	}
 }

@@ -1,37 +1,36 @@
 .voice {
 	position: relative;
+	padding: 0;
 	background-color: transparent;
 	border: 0;
 	border-radius: 80px 50px 50px 0;
 	font-size: 20px;
 	font-weight: 600;
-	cursor: pointer;
 	transition: all 0.3s ease;
-	padding: 0;
+	cursor: pointer;
 	text-align: left;
 }
 
 .voice > div {
-	width: 100%;
-	height: 100%;
-	border-radius: 80px 50px 50px 0;
-	padding: 20px 24px;
 	position: relative;
 	display: inline-flex;
 	align-items: center;
 	gap: 12px;
+	width: 100%;
+	height: 100%;
+	padding: 20px 24px;
+	border-radius: 80px 50px 50px 0;
 	overflow: hidden;
 }
 
 .voice:focus {
 	outline: none;
-	/* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); */
 }
 
 .triangle {
 	position: absolute;
-	bottom: -15px;
 	left: -1px;
+	bottom: -15px;
 	width: 23px;
 	height: 17px;
 }
@@ -41,7 +40,7 @@
 	z-index: 6;
 	flex-shrink: 0;
 	padding: 9px;
-	background-color: #fff;
+	background-color: #ffffff;
 	border-radius: 100%;
 	transition: 0.3s all ease;
 }
@@ -53,12 +52,35 @@
 
 .progress {
 	content: '';
-	display: inline-block;
 	position: absolute;
-	left: 0;
 	top: 0;
+	left: 0;
+	z-index: 5;
+	display: inline-block;
 	width: 0;
 	height: 100%;
-	z-index: 5;
 	background-color: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 780px) {
+	.voice {
+		font-size: 18px;
+	}
+
+	.voice > div {
+		gap: 10px;
+		padding: 18px 20px;
+	}
+}
+
+@media (max-width: 580px) {
+	.voice {
+		font-size: 16px;
+	}
+
+	.voice > div {
+		gap: 10px;
+		padding: 16px 18px;
+		line-height: 1.2;
+	}
 }

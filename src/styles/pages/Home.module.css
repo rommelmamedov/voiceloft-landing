@@ -4,7 +4,8 @@
 }
 
 /* Speech to text */
-.stt a {
+/* TODO: Read more link */
+/* .stt a {
 	display: inline-block;
 	margin-top: 40px;
 	color: var(--blue);
@@ -12,7 +13,7 @@
 	font-weight: 400;
 	line-height: 1.2;
 	letter-spacing: 1px;
-}
+} */
 
 /* NOTE: .section-wrapper-flex */
 .stt > div > div {
@@ -57,19 +58,19 @@
 
 .competitors {
 	position: relative;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
 	text-align: center;
 }
 
 .competitors ul {
 	display: flex;
 	justify-content: space-evenly;
-	column-gap: 30px;
 	row-gap: 40px;
-	margin-top: 80px;
+	column-gap: 30px;
 	flex-wrap: wrap;
+	margin-top: 80px;
 }
 
 .competitors ul li {
@@ -84,16 +85,16 @@
 
 .competitors ul li em {
 	display: block;
-	margin-top: 20px;
 	margin-bottom: 20px;
+	margin-top: 20px;
 	font-size: 24px;
 	letter-spacing: 1px;
 }
 .competitors ul li strong {
-	font-weight: 600;
 	font-size: 38px;
-	letter-spacing: -2px;
+	font-weight: 600;
 	text-shadow: 0px 37px 14px rgba(0, 0, 0, 0.01);
+	letter-spacing: -2px;
 }
 
 /* image-wrapper */
@@ -117,7 +118,7 @@
 	background: linear-gradient(90deg, #f1f7d1 0.3%, #e8f0be 125%);
 }
 .competitors ul li:last-child div {
-	background: linear-gradient(90deg, #231f209c 0.3%, #fff 125%);
+	background: linear-gradient(90deg, #231f209c 0.3%, #ffffff 125%);
 }
 
 .competitors ul div::after {
@@ -128,7 +129,7 @@
 	display: inline-block;
 	width: 140px;
 	height: 140px;
-	background-color: #fff;
+	background-color: #ffffff;
 	border-radius: 100%;
 	transform: translate(-50%, -50%);
 }
@@ -143,10 +144,15 @@
 	transform: translate(-50%, -50%);
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 992px) {
 	.stt > div > div {
 		gap: 60px;
 		flex-direction: column;
+	}
+
+	.voices {
+		gap: 30px;
+		flex-basis: unset;
 	}
 
 	.speech-identification > div > div {
@@ -157,5 +163,23 @@
 
 	.speech-identification img {
 		width: auto;
+	}
+}
+
+@media (max-width: 780px) {
+	.voices img {
+		width: 56px;
+		height: 56px;
+	}
+}
+
+@media (max-width: 580px) {
+	.voices img {
+		width: 50px;
+		height: 50px;
+	}
+
+	.voice-wrapper {
+		gap: 16px;
 	}
 }

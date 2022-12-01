@@ -7,14 +7,32 @@
 	margin-bottom: unset;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 780px) {
 	.motto {
-		margin-top: 50px;
+		margin-top: 65px;
 		margin-bottom: 50px;
 	}
 
 	.motto h2 {
 		margin-bottom: unset;
 		font-size: 46px;
+	}
+}
+
+@media (max-width: 580px) {
+	.motto h2 {
+		margin-bottom: unset;
+		font-size: 40px;
+	}
+
+	.motto h2 br {
+		display: none;
+	}
+}
+
+@media (max-width: 420px) {
+	.motto h2 {
+		margin-bottom: unset;
+		font-size: 36px;
 	}
 }

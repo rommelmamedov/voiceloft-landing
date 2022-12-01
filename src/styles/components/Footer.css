@@ -52,7 +52,7 @@
 	margin-top: 30px;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 992px) {
 	.footer .section-wrapper-flex {
 		flex-direction: column-reverse;
 	}
@@ -64,9 +64,28 @@
 	}
 
 	.footer small {
-		max-width: 240px;
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 780px) {
+	.footer .link {
+		font-size: 20px;
+	}
+
+	.footer small {
 		margin-bottom: 30px;
 		font-size: 16px;
-		line-height: 1.5;
+	}
+
+	.footer small + a {
+		max-width: 100px;
+	}
+}
+
+@media (max-width: 580px) {
+	.footer {
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 }

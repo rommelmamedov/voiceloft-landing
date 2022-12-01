@@ -12,13 +12,36 @@
 	text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 1200px) {
+	.intro h1 br {
+		display: none;
+	}
+}
+
+@media (max-width: 780px) {
 	.intro {
-		margin-top: 70px;
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
+
+	.intro h1 {
+		font-size: 60px;
+	}
+}
+
+@media (max-width: 580px) {
+	.intro {
+		margin-top: 50px;
 		margin-bottom: 50px;
 	}
 
 	.intro h1 {
-		font-size: 52px;
+		font-size: 44px;
+	}
+}
+
+@media (max-width: 420px) {
+	.intro h1 {
+		font-size: 40px;
 	}
 }

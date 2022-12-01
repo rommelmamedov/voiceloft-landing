@@ -40,7 +40,7 @@
 }
 
 .tab-buttons button.active {
-	background-color: #fff;
+	background-color: #ffffff;
 	top: -10px;
 	transition: top 0.25s;
 	border-bottom: none;

@@ -24,7 +24,7 @@
 	width: 40%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 780px) {
 	.aboutSvg {
 		height: auto;
 	}
@@ -48,7 +48,7 @@
 
 .info p {
 	font-size: 40px;
-	color: #fff;
+	color: #ffffff;
 	padding-top: 160px;
 	position: relative;
 }
@@ -79,7 +79,7 @@
 	height: 2956px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 780px) {
 	.info {
 		background-color: var(--blue);
 		position: relative;
@@ -90,7 +90,7 @@
 
 	.info p {
 		font-size: 26px;
-		color: #fff;
+		color: #ffffff;
 		padding-top: 50px;
 		position: relative;
 	}
@@ -136,7 +136,7 @@
 	max-width: 670px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 780px) {
 	.product {
 		margin-top: 70px;
 		margin-bottom: 40px;
