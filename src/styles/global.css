@@ -70,7 +70,7 @@ p {
 	overflow: hidden;
 }
 
-a.link {
+a.read-more {
 	display: inline-block;
 	margin-top: 40px;
 	color: var(--blue);

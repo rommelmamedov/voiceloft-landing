@@ -10,10 +10,10 @@ const Contact = () => {
 				title="Have a Question?"
 				description="Whether you want to ask us about Voiceloft services or anything else, we will do our best to answer you. Feel free to contact us at any time. We will respond to you as soon as possible."
 			/>
-			<svg width="100%" height="300" viewBox="0 0 1440 160" fill="none" preserveAspectRatio="none">
+			<svg className={styles.contactSvg} width="100%" height="300" viewBox="0 0 1440 160" fill="none" preserveAspectRatio="none">
 				<path
 					d="M-50.3836 103.331C93.3197 98.2453 237.091 101.434 380.823 98.6222C457.656 97.1206 534.006 94.9125 610.408 84.6896C699.072 72.8213 787.214 56.1919 875.555 41.5877C953.806 28.643 1032.71 15.4573 1111.85 13.3106C1167.85 11.7935 1219.53 12.5494 1272.67 36.6312C1317.19 56.8061 1357.82 86.9888 1401.75 108.76C1457.39 136.332 1510.04 138.336 1569.35 138.901C1748.83 140.591 1910.35 16.7292 2090.78 24.3944"
-					stroke="#272FFB"
+					stroke="var(--blue)"
 					strokeWidth="0.26123"
 					strokeMiterlimit="10"
 				/>
@@ -33,9 +33,8 @@ const Contact = () => {
 						<div className="contact-info">
 							<h2>Telephone</h2>
 							<p>
-								Tel:
 								<a href="tel:+19514303337" title="Telephone">
-									&nbsp;+1 951 430 337
+									+1 951 430 337
 								</a>
 							</p>
 						</div>
@@ -46,23 +45,23 @@ const Contact = () => {
 								<circle cx="40" cy="40" r="40" fill="#CCF3FF" />
 								<path
 									d="M25.4632 32.2859L40.3003 41.5591L55.1374 32.2859L40.3003 23.0127L25.4632 32.2859ZM58.8466 32.2859V50.8322C58.8466 51.816 58.4558 52.7595 57.7602 53.4551C57.0646 54.1507 56.1211 54.5415 55.1374 54.5415H25.4632C24.4794 54.5415 23.536 54.1507 22.8403 53.4551C22.1447 52.7595 21.7539 51.816 21.7539 50.8322V32.2859C21.7539 30.932 22.4772 29.7636 23.5529 29.1144L40.3003 18.6357L57.0476 29.1144C58.1233 29.7636 58.8466 30.932 58.8466 32.2859Z"
-									fill="#272FFB"
+									fill="var(--blue)"
 								/>
 							</svg>
 						</div>
 						<div className="contact-info">
 							<h2>Email</h2>
 							<p>
-								Email: <a href="mailto:mail@voiceloft.com">mail@voiceloft.com</a>
+								<a href="mailto:mail@voiceloft.com">mail@voiceloft.com</a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</section>
-			<svg width="100%" height="300" viewBox="0 0 1440 300" fill="none" preserveAspectRatio="none">
+			<svg className={styles.contactSvg} width="100%" height="300" viewBox="0 0 1440 300" fill="none" preserveAspectRatio="none">
 				<path
 					d="M1439.8 203.995C1265.68 208.316 1092.52 227.924 918.646 236.447C710.58 246.652 649 252.353 384 207.054C165.5 169.704 111.306 81.9139 15.5004 85.5006C-52.2944 88.0424 -104.695 157.503 -165.816 207.054C-217.02 248.566 -262.274 308.191 -312.561 352.595C-376.267 408.831 -439.57 417.557 -511.11 424.261C-727.571 444.51 -938.141 231.146 -1155 262.521"
-					stroke="#272FFB"
+					stroke="var(--blue)"
 					strokeWidth="0.26123"
 					strokeMiterlimit="10"
 				/>
