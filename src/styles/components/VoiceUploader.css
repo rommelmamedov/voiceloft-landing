@@ -1,5 +1,5 @@
 .upload-container {
-	background-color: #ffffff;
+	background-color: var(--white);
 	border: 1px solid #dcdcdc;
 	border-radius: 10px;
 	box-shadow: 0px 22px 29px rgba(0, 0, 0, 0.01);
@@ -40,7 +40,7 @@
 }
 
 .tab-buttons button.active {
-	background-color: #ffffff;
+	background-color: var(--white);
 	top: -10px;
 	transition: top 0.25s;
 	border-bottom: none;

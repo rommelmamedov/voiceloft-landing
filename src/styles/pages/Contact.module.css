@@ -15,7 +15,7 @@
 	font-size: 20px;
 	line-height: 1.4;
 	letter-spacing: 1px;
-	color: #000;
+	color: var(--black);
 	opacity: 0.3;
 	margin: 0px;
 }

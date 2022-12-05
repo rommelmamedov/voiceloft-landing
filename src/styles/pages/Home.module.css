@@ -76,7 +76,7 @@
 	align-items: center;
 	flex-direction: column;
 	padding: 40px;
-	background-color: #ffffff;
+	background-color: var(--white);
 	border-radius: 10px;
 	box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.08);
 }
@@ -116,7 +116,7 @@
 	background: linear-gradient(90deg, #f1f7d1 0.3%, #e8f0be 125%);
 }
 .competitors ul li:last-child div {
-	background: linear-gradient(90deg, #231f209c 0.3%, #ffffff 125%);
+	background: linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%);
 }
 
 .competitors ul div::after {
@@ -127,7 +127,7 @@
 	display: inline-block;
 	width: 156px;
 	height: 156px;
-	background-color: #ffffff;
+	background-color: var(--white);
 	border-radius: 100%;
 	transform: translate(-50%, -50%);
 }

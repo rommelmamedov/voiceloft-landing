@@ -34,7 +34,7 @@
 
 .info p {
 	font-size: 40px;
-	color: #ffffff;
+	color: var(--white);
 	padding-top: 160px;
 	position: relative;
 }
