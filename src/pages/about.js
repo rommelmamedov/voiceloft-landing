@@ -10,8 +10,8 @@ import wave from '@imgs/vectors/wave.svg';
 import styles from '@styles/pages/About.module.css';
 
 const About = () => {
-	useCountUp({ ref: 'counter-1', end: 95, duration: 5, suffix: '%' });
-	useCountUp({ ref: 'counter-2', end: 95, duration: 5, suffix: '%' });
+	useCountUp({ ref: 'counter-1', end: 96, duration: 5, suffix: '%' });
+	useCountUp({ ref: 'counter-2', end: 96, duration: 5, suffix: '%' });
 
 	return (
 		<Layout className="about" title="About">

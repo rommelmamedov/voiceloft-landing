@@ -20,21 +20,17 @@ const competitors = [
 	{ name: 'Verbit', accuracy: 65 },
 	{ name: 'Speechmatics', accuracy: 65 },
 	{ name: 'Deepgram', accuracy: 65 },
-	{ name: 'Voiceloft', accuracy: 95 },
+	{ name: 'Voiceloft', accuracy: 96 },
 ];
 
 const Home = () => {
-	// useCountUp({ ref: 'competitors', end: 65, duration: 5, suffix: ' %' });
-	// useCountUp({ ref: 'voiceloft', end: 95, duration: 5, suffix: ' %' });
-
 	return (
 		<Layout className="home" title="Speech recognition system">
 			<Intro
 				title={
 					<>
 						Understanding every voice,
-						<br />
-						language, dialect and accent is real
+						<br /> language, dialect and accent is real
 					</>
 				}
 				description="Our technology understands the most people across the world. The most accessible engine that can help businesses better understand and connect with their customers, regardless of demographic, pitch, dialect, modes of speech, or semantics."
@@ -68,7 +64,6 @@ const Home = () => {
 								environments, different dialects, accents and context specifics. So, we are using our expertise to provide solutions,
 								enabling ASR to be used effectively within use cases regardless of the environmental conditions.
 							</p>
-							{/* <Link href="/speech-to-text">Read more</Link> */}
 						</div>
 					</div>
 				</div>
@@ -104,6 +99,7 @@ const Home = () => {
 					</ul>
 				</div>
 			</section>
+			{/*
 			<SeparatorSVG />
 			<section className={styles['speech-identification']}>
 				<div className="container">
@@ -123,6 +119,7 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
+			<SeparatorSVG />
 			{/* <VoiceUploader /> */}
 		</Layout>
 	);
