@@ -44,6 +44,15 @@
 }
 
 /* NOTE: .section-wrapper-flex */
+.speech-identification {
+	margin-bottom: 100px;
+}
+
+/* NOTE: SeparatorSVG */
+.speech-identification + svg {
+	margin: 0;
+}
+
 .speech-identification > div > div {
 	display: grid;
 	gap: 120px;
@@ -54,6 +63,7 @@
 .speech-identification img {
 	flex-basis: 50%;
 	flex-grow: 0;
+	object-fit: contain;
 }
 
 .competitors {
@@ -171,9 +181,30 @@
 		width: 56px;
 		height: 56px;
 	}
+
+	.competitors ul {
+		row-gap: 30px;
+		margin-top: 50px;
+	}
+
+	.competitors ul li {
+		padding: 30px;
+	}
+
+	.competitors ul li em {
+		font-size: 22px;
+	}
+	.competitors ul li strong {
+		font-size: 34px;
+		letter-spacing: -1px;
+	}
 }
 
 @media (max-width: 580px) {
+	.speech-identification > div > div {
+		gap: 40px;
+	}
+
 	.voices img {
 		width: 50px;
 		height: 50px;

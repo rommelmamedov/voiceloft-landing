@@ -4,8 +4,9 @@ import { useCountUp } from 'react-countup';
 import { Intro } from '@components/Intro';
 import { Layout } from '@components/Layout';
 
-import human from '@imgs/rasters/about-human.webp';
-import wave from '@imgs/vectors/wave.svg';
+import human from '@imgs/about-human.webp';
+
+import wave from '@vectors/wave.svg';
 
 import styles from '@styles/pages/About.module.css';
 

@@ -12,6 +12,7 @@
 		"@libs/(.*)$",
 		"@components/(.*)$",
 		"@imgs/(.*)$",
+		"@vectors/(.*)$",
 		"@icons/(.*)$",
 		"@sounds/(.*)$",
 		"@styles/(.*)$",

@@ -99,7 +99,6 @@ const Home = () => {
 					</ul>
 				</div>
 			</section>
-			{/*
 			<SeparatorSVG />
 			<section className={styles['speech-identification']}>
 				<div className="container">

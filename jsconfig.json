@@ -5,6 +5,7 @@
 			"@libs/*": ["src/libs/*"],
 			"@components/*": ["src/components/*"],
 			"@imgs/*": ["src/assets/imgs/rasters/*"],
+			"@vectors/*": ["src/assets/imgs/vectors/*"],
 			"@icons/*": ["src/assets/imgs/vectors/icons/*"],
 			"@sounds/*": ["src/assets/sounds/*"],
 			"@styles/*": ["src/styles/*"]
