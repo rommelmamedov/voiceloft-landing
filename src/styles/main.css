@@ -2,6 +2,9 @@
 @import url('src/styles/global.css');
 @import url('src/styles/grid.css');
 
+/* Libs */
+@import url('src/styles/libs/swiper.min.css');
+@import url('src/styles/libs/react-h5-audio-player.css');
 /* Components */
 @import url('src/styles/components/Header.css');
 @import url('src/styles/components/Footer.css');

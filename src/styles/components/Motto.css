@@ -4,7 +4,7 @@
 }
 
 .motto h2 {
-	margin-bottom: unset;
+	margin-bottom: 40px;
 }
 
 @media (max-width: 780px) {
@@ -14,14 +14,12 @@
 	}
 
 	.motto h2 {
-		margin-bottom: unset;
 		font-size: 46px;
 	}
 }
 
 @media (max-width: 580px) {
 	.motto h2 {
-		margin-bottom: unset;
 		font-size: 40px;
 	}
 
@@ -32,7 +30,6 @@
 
 @media (max-width: 420px) {
 	.motto h2 {
-		margin-bottom: unset;
 		font-size: 36px;
 	}
 }

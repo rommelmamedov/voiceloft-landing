@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useCallback } from 'react';
 
 import { Button } from '@components/Button';
 
-export const Header = () => {
-	const handleClick = useCallback(() => window.open('https://calendly.com/voiceloft/', '_blank'), []);
+const handleClick = () => window.open('https://calendly.com/voiceloft/', '_blank');
 
+export const Header = () => {
 	return (
 		<header className="header">
 			<div className="container">
