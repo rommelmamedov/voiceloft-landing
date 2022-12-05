@@ -26,6 +26,10 @@
 	line-height: 1.4;
 }
 
+.contactSvg {
+	height: 200px;
+}
+
 @media (max-width: 780px) {
 	.contactSvg {
 		height: 150px;
