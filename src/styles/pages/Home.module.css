@@ -3,18 +3,6 @@
 	flex-grow: 0;
 }
 
-/* Speech to text */
-/* TODO: Read more link */
-/* .stt a {
-	display: inline-block;
-	margin-top: 40px;
-	color: var(--blue);
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 1.2;
-	letter-spacing: 1px;
-} */
-
 /* NOTE: .section-wrapper-flex */
 .stt > div > div {
 	align-items: flex-start;

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import CountUp from 'react-countup';
 
 import { Ellipsis } from '@components/Ellipsis';
@@ -13,7 +14,7 @@ import speechIdentification from '@imgs/speech-identification.webp';
 import { triangle, voice } from '@styles/components/VoiceButton.module.css';
 import styles from '@styles/pages/Home.module.css';
 
-import { voices } from '../constants';
+import { compareResultVoices, sttVoices } from '../constants';
 
 const competitors = [
 	{ name: 'Rev', accuracy: 65 },
@@ -39,7 +40,7 @@ const Home = () => {
 				<div className="container">
 					<div className="section-wrapper-flex">
 						<div className={styles.voices}>
-							{voices.map((voiceProps, index) => (
+							{sttVoices.map((voiceProps, index) => (
 								<div className={styles['voice-wrapper']} key={index}>
 									<Image src={`/imgs/persons/${index + 1}.webp`} alt={voiceProps.text} width={64} height={64} />
 									<VoiceButton {...voiceProps} audio={`/sounds/${index + 1}.mp3`} />
@@ -77,6 +78,9 @@ const Home = () => {
 						Our Global Voice Recognition is now available in more than 100 languages. It’s everything you know and love about our
 						asynchronous Automated Speech Recognition (ASR) engine, now with even more languages at your disposal.
 					</p>
+					<a className="link" href="https://docs.voiceloft.com/languages/" target="_blank" rel="noopener noreferrer">
+						Read More
+					</a>
 				</div>
 			</section>
 			<SeparatorSVG />
