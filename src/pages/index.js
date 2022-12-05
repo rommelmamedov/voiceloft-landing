@@ -15,7 +15,7 @@ import speechIdentification from '@imgs/speech-identification.webp';
 import { triangle, voice } from '@styles/components/VoiceButton.module.css';
 import styles from '@styles/pages/Home.module.css';
 
-import { compareResultVoices, competitors, sttVoices } from '../constants';
+import { compareResultVoices, competitors, competitorsAudioContent, sttVoices } from '../constants';
 
 const swiperBreakpoints = {
 	780: { slidesPerView: 2 },
@@ -88,6 +88,8 @@ const Home = () => {
 							</SwiperSlide>
 						))}
 					</Swiper>
+					{/* {console.log(competitorsAudioContent.split('\n'), 'competitorsAudioContent')} */}
+					<pre id="competitors-audio">{competitorsAudioContent}</pre>
 					<AudioPlayer
 						autoPlay
 						timeFormat="mm:ss"
@@ -96,7 +98,6 @@ const Home = () => {
 						defaultCurrentTime={<>00:00</>}
 						customControlsSection={['MAIN_CONTROLS']}
 					/>
-					<pre></pre>
 				</div>
 			</section>
 			<SeparatorSVG />

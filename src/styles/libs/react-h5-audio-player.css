@@ -4,7 +4,8 @@
 	flex-direction: column;
 	line-height: 1;
 	font-family: inherit;
-	width: 100%;
+	width: 50%;
+	margin: 0 auto;
 	/* padding: 10px 15px; */
 	padding: 20px 40px;
 	background-color: #fff;
@@ -274,6 +275,7 @@
 
 @media (max-width: 780px) {
 	.rhap_container {
+		width: 100%;
 		padding: 10px;
 	}
 
