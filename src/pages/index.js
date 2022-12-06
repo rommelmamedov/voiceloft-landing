@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useCallback } from 'react';
 import CountUp from 'react-countup';
 import AudioPlayer from 'react-h5-audio-player';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,7 +16,13 @@ import speechIdentification from '@imgs/speech-identification.webp';
 import { triangle, voice } from '@styles/components/VoiceButton.module.css';
 import styles from '@styles/pages/Home.module.css';
 
-import { compareResultVoices, competitors, competitorsAudioContent, sttVoices } from '../constants';
+import {
+	// compareResultVoices,
+	competitors, // competitorsAudioContent,
+	competitorsAudioTranscript,
+	sttVoices,
+} from '../constants';
+import { getCurrentTimeInSeconds, getElementsCoordinates } from '../utils';
 
 const swiperBreakpoints = {
 	780: { slidesPerView: 2 },
@@ -24,6 +31,19 @@ const swiperBreakpoints = {
 };
 
 const Home = () => {
+	const handleListen = useCallback(event => {
+		const element = document.getElementById(getCurrentTimeInSeconds(event.srcElement.currentTime));
+
+		if (element) {
+			element.style.color = 'var(--blue)';
+			document.getElementById('competitors-audio-transcript').scroll({
+				top: element.offsetTop - 700,
+				left: 0,
+				behavior: 'smooth',
+			});
+		}
+	}, []);
+
 	return (
 		<Layout className="home" title="Speech recognition system">
 			<Intro
@@ -88,11 +108,21 @@ const Home = () => {
 							</SwiperSlide>
 						))}
 					</Swiper>
-					{/* {console.log(competitorsAudioContent.split('\n'), 'competitorsAudioContent')} */}
-					<pre id="competitors-audio">{competitorsAudioContent}</pre>
+					{/* <pre id="competitors-audio">{competitorsAudioContent}</pre> */}
+					<div className={styles.transcript} id="competitors-audio-transcript">
+						{competitorsAudioTranscript.map((item, index) => (
+							<div key={index} id={item.split(' - ')[0]}>
+								{/* <span>{item.split(' - ')[0]}</span> */}
+								{/* <span> — </span> */}
+								<span>{item.split(' - ')[1]}</span>
+							</div>
+						))}
+					</div>
 					<AudioPlayer
 						autoPlay
 						timeFormat="mm:ss"
+						listenInterval={1000}
+						onListen={handleListen}
 						src="/sounds/competitors.mp3"
 						defaultDuration={<>25:17</>}
 						defaultCurrentTime={<>00:00</>}

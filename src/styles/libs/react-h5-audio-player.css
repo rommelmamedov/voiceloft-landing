@@ -4,7 +4,8 @@
 	flex-direction: column;
 	line-height: 1;
 	font-family: inherit;
-	width: 50%;
+	/* width: 50%; */
+	max-width: 700px;
 	margin: 0 auto;
 	/* padding: 10px 15px; */
 	padding: 20px 40px;
@@ -76,7 +77,7 @@
 	height: 20px;
 	flex: 1 0 auto;
 	align-self: center;
-	margin: 0 calc(10px + 1%);
+	margin: 0 calc(20px + 1%);
 	cursor: pointer;
 	user-select: none;
 	-webkit-user-select: none;
@@ -273,13 +274,9 @@
 	outline: 0;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 992px) {
 	.rhap_container {
+		max-width: unset;
 		width: 100%;
-		padding: 10px;
-	}
-
-	.rhap_progress-container {
-		margin: 0 calc(20px + 1%);
 	}
 }
