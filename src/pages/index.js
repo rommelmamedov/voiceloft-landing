@@ -129,7 +129,13 @@ const Home = () => {
 								Our Global Voice Recognition is now available in more than 100 languages. It’s everything you know and love about our
 								asynchronous Automated Speech Recognition (ASR) engine, now with even more languages at your disposal.
 							</p>
-							<a className="read-more" href="https://docs.voiceloft.com/languages/" target="_blank" rel="noopener noreferrer">
+							<a
+								className="read-more"
+								href="https://docs.voiceloft.com/languages/"
+								title="Read more about supported languages"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								Read More
 							</a>
 						</div>
