@@ -80,7 +80,7 @@ const Home = () => {
 					<h2>The most accurate and inclusive speech-to-text on the market</h2>
 					<p>TED: The Global Opportunity to Accelerate Africa&apos;s Sustainable Future</p>
 					<Swiper spaceBetween={30} breakpoints={swiperBreakpoints}>
-						{competitors.map(({ name, accuracy, style }, index) => (
+						{competitors.map(({ name, accuracy, duration, style }, index) => (
 							<SwiperSlide key={name}>
 								<div className={styles.competitor} key={name}>
 									<div className={styles['competitor-image-wrapper']} style={style}>
@@ -88,7 +88,7 @@ const Home = () => {
 									</div>
 									<em>{name}</em>
 									<strong id={index < competitors.length ? 'competitors' : 'voiceloft'}>
-										<CountUp end={accuracy} duration={3} suffix=" %" />
+										<CountUp end={accuracy} duration={duration} suffix=" %" />
 									</strong>
 								</div>
 							</SwiperSlide>
