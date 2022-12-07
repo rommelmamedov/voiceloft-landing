@@ -25,3 +25,20 @@ export const getElementsCoordinates = element => {
 		top: rect.top + window.scrollY,
 	};
 };
+
+export const highlightCurrentTranscriptElement = event => {
+	const transcriptWrapper = document.getElementById('competitors-audio-transcript');
+	const transcriptElements = transcriptWrapper.querySelectorAll('div');
+	const currentTranscriptElement = document.querySelector(`[data-time="${getCurrentTimeInSeconds(event.srcElement.currentTime)}"]`);
+
+	if (currentTranscriptElement) {
+		transcriptElements.forEach(item => (item.dataset.active = false));
+		currentTranscriptElement.dataset.active = true;
+
+		transcriptWrapper.scroll({
+			top: currentTranscriptElement.offsetTop - 849,
+			left: 0,
+			behavior: 'smooth',
+		});
+	}
+};

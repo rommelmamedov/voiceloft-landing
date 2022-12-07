@@ -60,11 +60,12 @@ export const compareResultVoices = [
 // (up to 1 minute and 10 mb)
 
 export const competitors = [
-	{ name: 'Voiceloft', accuracy: 96, style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' } },
-	{ name: 'Rev', accuracy: 65, style: { background: 'linear-gradient(90deg, #ccf3ff 0.3%, #bceefe 125%)' } },
-	{ name: 'Verbit', accuracy: 65, style: { background: 'linear-gradient(90deg, #a7fbec 0.3%, #ace8dd 125%)' } },
-	{ name: 'Speechmatics', accuracy: 65, style: { background: 'linear-gradient(90deg, #f1f7d1 0.3%, #e8f0be 125%)' } },
-	{ name: 'Deepgram', accuracy: 65, style: { background: 'linear-gradient(90deg, #ffe5e5 0.3%, #ffd9d9 125%)' } },
+	{ name: 'Voiceloft', accuracy: 93, style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' } },
+	{ name: 'Speechmatics', accuracy: 73, style: { background: 'linear-gradient(90deg, #f1f7d1 0.3%, #e8f0be 125%)' } },
+	{ name: 'Verbit', accuracy: 69, style: { background: 'linear-gradient(90deg, #a7fbec 0.3%, #ace8dd 125%)' } },
+	{ name: 'AssemblyAI', accuracy: 68, style: { background: 'linear-gradient(90deg, #ccf3ff 0.3%, #bceefe 125%)' } },
+	{ name: 'Deepgram', accuracy: 66, style: { background: 'linear-gradient(90deg, #ffe5e5 0.3%, #ffd9d9 125%)' } },
+	{ name: 'Rev', accuracy: 54, style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' } },
 ];
 
 export const competitorsAudioContent = `

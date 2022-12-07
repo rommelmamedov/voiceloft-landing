@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useCallback } from 'react';
 import CountUp from 'react-countup';
 import AudioPlayer from 'react-h5-audio-player';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,7 +21,7 @@ import {
 	competitorsAudioTranscript,
 	sttVoices,
 } from '../constants';
-import { getCurrentTimeInSeconds, getElementsCoordinates } from '../utils';
+import { highlightCurrentTranscriptElement } from '../utils';
 
 const swiperBreakpoints = {
 	780: { slidesPerView: 2 },
@@ -31,19 +30,6 @@ const swiperBreakpoints = {
 };
 
 const Home = () => {
-	const handleListen = useCallback(event => {
-		const element = document.getElementById(getCurrentTimeInSeconds(event.srcElement.currentTime));
-
-		if (element) {
-			element.style.color = 'var(--blue)';
-			document.getElementById('competitors-audio-transcript').scroll({
-				top: element.offsetTop - 700,
-				left: 0,
-				behavior: 'smooth',
-			});
-		}
-	}, []);
-
 	return (
 		<Layout className="home" title="Speech recognition system">
 			<Intro
@@ -92,7 +78,7 @@ const Home = () => {
 			<section className={styles.competitors}>
 				<div className="container">
 					<h2>The most accurate and inclusive speech-to-text on the market</h2>
-					<p>NASA: First All-Female Space Walk audio</p>
+					<p>TED: The Global Opportunity to Accelerate Africa&apos;s Sustainable Future</p>
 					<Swiper spaceBetween={30} breakpoints={swiperBreakpoints}>
 						{competitors.map(({ name, accuracy, style }, index) => (
 							<SwiperSlide key={name}>
@@ -108,26 +94,27 @@ const Home = () => {
 							</SwiperSlide>
 						))}
 					</Swiper>
+					<AudioPlayer
+						autoPlay
+						timeFormat="mm:ss"
+						listenInterval={500}
+						src="/sounds/competitors.mp3"
+						defaultDuration={<>25:17</>}
+						defaultCurrentTime={<>00:00</>}
+						customControlsSection={['MAIN_CONTROLS']}
+						onListen={highlightCurrentTranscriptElement}
+						onSeeked={highlightCurrentTranscriptElement}
+					/>
 					{/* <pre id="competitors-audio">{competitorsAudioContent}</pre> */}
 					<div className={styles.transcript} id="competitors-audio-transcript">
 						{competitorsAudioTranscript.map((item, index) => (
-							<div key={index} id={item.split(' - ')[0]}>
+							<div key={index} data-time={item.split(' - ')[0]} data-active="false">
 								{/* <span>{item.split(' - ')[0]}</span> */}
 								{/* <span> — </span> */}
 								<span>{item.split(' - ')[1]}</span>
 							</div>
 						))}
 					</div>
-					<AudioPlayer
-						autoPlay
-						timeFormat="mm:ss"
-						listenInterval={1000}
-						onListen={handleListen}
-						src="/sounds/competitors.mp3"
-						defaultDuration={<>25:17</>}
-						defaultCurrentTime={<>00:00</>}
-						customControlsSection={['MAIN_CONTROLS']}
-					/>
 				</div>
 			</section>
 			<SeparatorSVG />
