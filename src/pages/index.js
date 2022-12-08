@@ -131,7 +131,7 @@ const Home = () => {
 							</p>
 							<a
 								className="read-more"
-								href="https://www.notion.so/voiceloft/Supported-languages-8ec4d48f0e414591a0adc9adda6f6eff"
+								href="https://voiceloft.notion.site/Supported-languages-8ec4d48f0e414591a0adc9adda6f6eff"
 								title="Read more about supported languages"
 								target="_blank"
 								rel="noopener noreferrer"
