@@ -2,9 +2,17 @@ import Link from 'next/link';
 
 const navigationItems = [
 	{ title: 'About', href: '/about' },
-	{ title: 'API Docs', href: 'https://docs.voiceloft.com', props: { target: '_blank', rel: 'noopener noreferrer' } },
+	{
+		title: 'API Docs',
+		href: 'https://voiceloft.notion.site/API-Documentation-c4d19bb5c19d44288bc11e596b6122d3',
+		props: { target: '_blank', rel: 'noopener noreferrer' },
+	},
 	{ title: 'Contact', href: '/contact' },
-	{ title: 'Supported languages', href: 'https://docs.voiceloft.com/languages/', props: { target: '_blank', rel: 'noopener noreferrer' } },
+	{
+		title: 'Supported languages',
+		href: 'https://www.notion.so/voiceloft/Supported-languages-8ec4d48f0e414591a0adc9adda6f6eff',
+		props: { target: '_blank', rel: 'noopener noreferrer' },
+	},
 ];
 
 const socialMedias = [
