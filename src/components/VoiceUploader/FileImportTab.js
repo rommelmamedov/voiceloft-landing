@@ -1,14 +1,13 @@
-import axios from 'axios';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
 import { useDropzone } from 'react-dropzone';
 import { Toaster, toast } from 'react-hot-toast';
 
 import {
 	acceptedFileTypes,
 	audioFileDurationValidator,
+	fetchFileUpload,
 	getFilesFromEvent,
 	handleDropRejected,
 	maximumAcceptedFileSize,
@@ -18,45 +17,14 @@ import { Button } from '@components/Button';
 
 import fileImport from '@icons/file-import.svg';
 
-// replace the old one with this one
-const onUploadFile = async (file, setProgress) => {
-	if (!file) {
-		return;
-	}
-
-	try {
-		let formData = new FormData();
-		formData.append('media', file);
-
-		const options = {
-			headers: { 'Content-Type': 'multipart/form-data' },
-			onUploadProgress: progressEvent => {
-				const percentage = (progressEvent.loaded * 100) / progressEvent.total;
-				setProgress(+percentage.toFixed(2));
-			},
-		};
-
-		const {
-			data: { data },
-		} = await axios.post('https://demo-landing.voiceloft.com/v1/upload', formData, options);
-
-		console.log('File was uploaded successfylly:', data);
-	} catch (e) {
-		console.error(e);
-		const error = e.response && e.response.data ? e.response.data.error : 'Sorry! something went wrong.';
-		alert(error);
-	}
-};
-
 export const FileImportTab = () => {
 	const [file, setFile] = useState(null);
-	const [progress, setProgress] = useState(10);
+	const [progress, setProgress] = useState(67);
 
 	const handleDrop = useCallback(async ([file]) => {
 		console.log(file);
 		setFile(file);
-		const res = await onUploadFile(file);
-		console.log('🚀 ~ file: FileImportTab.js:69 ~ handleDrop ~ res', res);
+		await fetchFileUpload(file, setProgress);
 	}, []);
 
 	const handleError = useCallback(error => {
@@ -80,9 +48,13 @@ export const FileImportTab = () => {
 
 	if (file && isUploading) {
 		return (
-			<div>
+			<div className="file-uploading-wrapper">
 				<p>Uploading...</p>
-				<CircularProgressbar value={progress} text={`${progress}%`} />;<strong>{file.name}</strong>
+				<CircularProgressbar value={progress} text={`${progress}%`} strokeWidth={2.5} />
+				<strong>
+					<Image src={fileImport} alt="" />
+					{file.name}
+				</strong>
 				<button
 					onClick={() => {
 						setFile(null);

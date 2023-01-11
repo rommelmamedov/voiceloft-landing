@@ -3,13 +3,16 @@
 @import url('src/styles/grid.css');
 
 /* Libs */
+/* TODO: Make it into module, because these will not be on all the pages. */
 @import url('src/styles/libs/swiper.css');
 @import url('src/styles/libs/react-h5-audio-player.css');
+@import url('src/styles/libs/react-circular-progressbar.css');
+/* !Refactor */
+@import url('src/styles/modules/VoiceUploader.css');
+
 /* Components */
 @import url('src/styles/components/Header.css');
 @import url('src/styles/components/Footer.css');
 @import url('src/styles/components/Button.css');
 @import url('src/styles/components/Intro.css');
 @import url('src/styles/components/Motto.css');
-/* TODO: Make it into module, because it will not be on all the pages. */
-@import url('src/styles/modules/VoiceUploader.css');

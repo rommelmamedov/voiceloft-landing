@@ -1,7 +1,9 @@
+import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
 import { formatBytes, getAudioFileDuration } from '../utils';
 
+const uploadAPIEndpoint = 'https://demo-landing.voiceloft.com/v1/upload';
 // const maximumAcceptedFileDuration = 600; // NOTE: 10 Minutes in seconds.
 const maximumAcceptedFileDuration = 12600; // NOTE: 10 Minutes in seconds.
 // export const maximumAcceptedFileSize = 52_428_800; // NOTE: 50 Mb in bytes.
@@ -90,20 +92,43 @@ export const handleDropRejected = async ([rejection]) => {
 
 	errors.forEach(({ code, message }) => {
 		if (code === 'file-invalid-type') {
-			toast.error(`Invalid file type (${file.type}). Only audio files are accepted.`);
+			toast.error(`Invalid file type (${file.type})! Only audio files are accepted.`);
 		}
 		if (code === 'too-many-files') {
-			toast.error('Too many files. Maximum accepted number of files is 1.');
+			toast.error('Too many files! Maximum accepted number of files is 1.');
 		}
 		if (code === 'duration-too-large') {
 			toast.error(message);
 		}
 		if (code === 'file-too-large') {
 			toast.error(
-				`File (${file.name}) - ${formatBytes(file.size)} is too large. Maximum accepted file size is ${formatBytes(
+				`File (${file.name}) - ${formatBytes(file.size)} is too large! Maximum accepted file size is ${formatBytes(
 					maximumAcceptedFileSize
 				)}.`
 			);
 		}
 	});
+};
+
+export const fetchFileUpload = async (file, setProgress) => {
+	try {
+		const formData = new FormData();
+		formData.append('media', file);
+
+		const options = {
+			headers: { 'Content-Type': 'multipart/form-data' },
+			onUploadProgress: progressEvent => {
+				const percentage = (progressEvent.loaded * 100) / progressEvent.total;
+				setProgress(+percentage.toFixed(2));
+			},
+		};
+
+		const response = await axios.post(uploadAPIEndpoint, formData, options);
+		console.log('File was uploaded successfully:', response);
+		toast.success(`${file.name} was uploaded successfully!`);
+		return response;
+	} catch (error) {
+		console.error(error);
+		toast.error(error.message);
+	}
 };
