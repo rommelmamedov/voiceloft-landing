@@ -8,11 +8,11 @@ import { Intro } from '@components/Intro';
 import { Layout } from '@components/Layout';
 import { SeparatorSVG } from '@components/SeparatorSVG';
 import { VoiceButton } from '@components/VoiceButton';
+import { UploaderSection } from '@components/VoiceUploader/UploaderSection';
 
-// import { VoiceUploader } from '@components/VoiceUploader';
 import speechIdentification from '@imgs/speech-identification.webp';
 
-import { triangle, voice } from '@styles/components/VoiceButton.module.css';
+import { triangle, voice } from '@styles/modules/VoiceButton.module.css';
 import styles from '@styles/pages/Home.module.css';
 
 import {
@@ -118,6 +118,8 @@ const Home = () => {
 				</div>
 			</section>
 			<SeparatorSVG />
+			<UploaderSection />
+			<SeparatorSVG />
 			<section className={styles['speech-identification']}>
 				<div className="container">
 					<div className="section-wrapper-flex">
@@ -143,7 +145,6 @@ const Home = () => {
 				</div>
 			</section>
 			<SeparatorSVG />
-			{/* <VoiceUploader /> */}
 		</Layout>
 	);
 };

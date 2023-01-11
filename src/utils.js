@@ -42,3 +42,26 @@ export const highlightCurrentTranscriptElement = event => {
 		});
 	}
 };
+
+export const formatBytes = (bytes, decimals = 2) => {
+	if (!+bytes) return '0 Bytes';
+
+	const kilobyte = 1024;
+	const fixedPoint = decimals < 0 ? 0 : decimals;
+	const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+	const index = Math.floor(Math.log(bytes) / Math.log(kilobyte));
+
+	return `${parseFloat((bytes / Math.pow(kilobyte, index)).toFixed(fixedPoint))} ${sizes[index]}`;
+};
+
+export const getAudioFileDuration = file =>
+	new Promise((resolve, reject) => {
+		const reader = new FileReader();
+		reader.onload = () => {
+			const media = new Audio(reader.result);
+			media.onloadedmetadata = () => resolve(media.duration);
+		};
+		reader.readAsDataURL(file);
+		reader.onerror = error => reject(error);
+	});
