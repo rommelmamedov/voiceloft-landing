@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { useDropzone } from 'react-dropzone';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 import {
 	acceptedFileTypes,
@@ -19,18 +19,36 @@ import fileImport from '@icons/file-import.svg';
 
 export const FileImportTab = () => {
 	const [file, setFile] = useState(null);
-	const [progress, setProgress] = useState(67);
+	const [progress, setProgress] = useState(0);
+	const [controller, setController] = useState(null);
+	const [uploadedFileToken, setUploadedFileToken] = useState(null);
 
 	const handleDrop = useCallback(async ([file]) => {
 		console.log(file);
+		const controller = new AbortController();
 		setFile(file);
-		await fetchFileUpload(file, setProgress);
+		// NOTE: An AbortController or its signal can not be reused nor reset.
+		// If you need to "reset" it, you have to create a new AbortController instance and use that instead for each new request.
+		setController(controller);
+
+		const uploadedFileToken = await fetchFileUpload(file, setProgress, controller);
+
+		setUploadedFileToken(uploadedFileToken);
+		setFile(null);
+		setProgress(0);
 	}, []);
 
 	const handleError = useCallback(error => {
 		console.error(error);
 		toast.error(error.message);
 	}, []);
+
+	const handleCancelUpload = useCallback(() => {
+		controller.abort();
+		setFile(null);
+		setProgress(0);
+		setUploadedFileToken(null);
+	}, [controller]);
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
 		accept: { 'audio/*': acceptedFileTypes },
@@ -44,24 +62,16 @@ export const FileImportTab = () => {
 		validator: audioFileDurationValidator,
 	});
 
-	const isUploading = true;
-
-	if (file && isUploading) {
+	if (file) {
 		return (
 			<div className="file-uploading-wrapper">
 				<p>Uploading...</p>
 				<CircularProgressbar value={progress} text={`${progress}%`} strokeWidth={2.5} />
 				<strong>
-					<Image src={fileImport} alt="" />
+					<Image src={fileImport} alt={file.name} />
 					{file.name}
 				</strong>
-				<button
-					onClick={() => {
-						setFile(null);
-					}}
-				>
-					Cancel
-				</button>
+				<button onClick={handleCancelUpload}>Cancel</button>
 			</div>
 		);
 	}
@@ -81,7 +91,6 @@ export const FileImportTab = () => {
 			>
 				Choose file
 			</Button>
-			<Toaster position="top-right" />
 		</div>
 	);
 };

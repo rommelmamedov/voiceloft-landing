@@ -110,25 +110,32 @@ export const handleDropRejected = async ([rejection]) => {
 	});
 };
 
-export const fetchFileUpload = async (file, setProgress) => {
+export const fetchFileUpload = async (file, setProgress, controller) => {
 	try {
 		const formData = new FormData();
-		formData.append('media', file);
+		formData.append('file', file);
 
-		const options = {
-			headers: { 'Content-Type': 'multipart/form-data' },
+		const config = {
+			headers: {
+				'Content-Type': 'multipart/form-data',
+			},
 			onUploadProgress: progressEvent => {
 				const percentage = (progressEvent.loaded * 100) / progressEvent.total;
-				setProgress(+percentage.toFixed(2));
+				if (percentage < 100) {
+					setProgress(+percentage.toFixed(0));
+				}
 			},
+			signal: controller.signal,
 		};
 
-		const response = await axios.post(uploadAPIEndpoint, formData, options);
-		console.log('File was uploaded successfully:', response);
+		const response = await axios.post(uploadAPIEndpoint, formData, config);
+		setProgress(100);
 		toast.success(`${file.name} was uploaded successfully!`);
-		return response;
+		return response.data.token;
 	} catch (error) {
-		console.error(error);
-		toast.error(error.message);
+		if (!error.message === 'canceled') {
+			console.error(error);
+			toast.error(error.message);
+		}
 	}
 };
