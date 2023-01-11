@@ -10,6 +10,7 @@
 	"proseWrap": "preserve",
 	"importOrder": [
 		"@libs/(.*)$",
+		"@features/(.*)$",
 		"@components/(.*)$",
 		"@imgs/(.*)$",
 		"@vectors/(.*)$",

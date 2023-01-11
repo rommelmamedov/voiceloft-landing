@@ -56,9 +56,6 @@ export const compareResultVoices = [
 	},
 ];
 
-// Compare results with your files
-// (up to 1 minute and 10 mb)
-
 export const competitors = [
 	{ name: 'Voiceloft', accuracy: 93, duration: 6, style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' } },
 	{ name: 'Speechmatics', accuracy: 73, duration: 5, style: { background: 'linear-gradient(90deg, #f1f7d1 0.3%, #e8f0be 125%)' } },

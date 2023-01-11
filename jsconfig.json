@@ -3,6 +3,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@libs/*": ["src/libs/*"],
+			"@features/*": ["src/features/*"],
 			"@components/*": ["src/components/*"],
 			"@imgs/*": ["src/assets/imgs/rasters/*"],
 			"@vectors/*": ["src/assets/imgs/vectors/*"],
