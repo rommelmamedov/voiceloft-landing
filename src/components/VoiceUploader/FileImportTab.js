@@ -6,10 +6,10 @@ import { toast } from 'react-hot-toast';
 
 import {
 	acceptedFileTypes,
-	audioFileDurationValidator,
 	fetchFileUpload,
-	getFilesFromEvent,
+	getAudioFileDuration,
 	handleDropRejected,
+	maximumAcceptedFileDuration,
 	maximumAcceptedFileSize,
 } from '@features/fileImport';
 
@@ -17,26 +17,44 @@ import { Button } from '@components/Button';
 
 import fileImport from '@icons/file-import.svg';
 
-export const FileImportTab = () => {
+export const FileImportTab = ({ setIsModalFormOpen }) => {
 	const [file, setFile] = useState(null);
 	const [progress, setProgress] = useState(0);
 	const [controller, setController] = useState(null);
 	const [uploadedFileToken, setUploadedFileToken] = useState(null);
 
-	const handleDrop = useCallback(async ([file]) => {
-		console.log(file);
-		const controller = new AbortController();
-		setFile(file);
-		// NOTE: An AbortController or its signal can not be reused nor reset.
-		// If you need to "reset" it, you have to create a new AbortController instance and use that instead for each new request.
-		setController(controller);
+	const handleDrop = useCallback(
+		async ([file]) => {
+			console.log(file);
+			const duration = await getAudioFileDuration(file);
+			const formattedDuration = new Date(duration * 1000).toISOString().substring(14, 19);
 
-		const uploadedFileToken = await fetchFileUpload(file, setProgress, controller);
+			console.log({ duration, formattedDuration });
 
-		setUploadedFileToken(uploadedFileToken);
-		setFile(null);
-		setProgress(0);
-	}, []);
+			if (duration > maximumAcceptedFileDuration) {
+				return toast.error(
+					`File duration is too larger (${file.name} - ${formattedDuration}). Maximum accepted file duration is 10 minutes.`
+				);
+			}
+
+			const controller = new AbortController();
+			setFile(file);
+			// NOTE: An AbortController or its signal can not be reused nor reset.
+			// If you need to "reset" it, you have to create a new AbortController instance and use that instead for each new request.
+			setController(controller);
+
+			const uploadedFileToken = await fetchFileUpload(file, setProgress, controller);
+
+			setFile(null);
+
+			if (uploadedFileToken) {
+				setUploadedFileToken(uploadedFileToken);
+				setProgress(0);
+				setIsModalFormOpen(true);
+			}
+		},
+		[setIsModalFormOpen]
+	);
 
 	const handleError = useCallback(error => {
 		console.error(error);
@@ -52,14 +70,12 @@ export const FileImportTab = () => {
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
 		accept: { 'audio/*': acceptedFileTypes },
-		getFilesFromEvent,
 		maxSize: maximumAcceptedFileSize,
 		multiple: false,
 		onDrop: handleDrop,
 		onDropRejected: handleDropRejected,
 		onError: handleError,
 		useFsAccessApi: false,
-		validator: audioFileDurationValidator,
 	});
 
 	if (file) {

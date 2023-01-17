@@ -1,13 +1,15 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
-import { formatBytes, getAudioFileDuration } from '../utils';
+import { formatBytes } from '../utils';
 
 const uploadAPIEndpoint = 'https://demo-landing.voiceloft.com/v1/upload';
-// const maximumAcceptedFileDuration = 600; // NOTE: 10 Minutes in seconds.
-const maximumAcceptedFileDuration = 12600; // NOTE: 10 Minutes in seconds.
-// export const maximumAcceptedFileSize = 52_428_800; // NOTE: 50 Mb in bytes.
-export const maximumAcceptedFileSize = 1252_428_800; // NOTE: 50 Mb in bytes.
+export const maximumAcceptedFileDuration = 600; // NOTE: 10 Minutes in seconds.
+export const maximumAcceptedFileSize = 52_428_800; // NOTE: 50 Mb in bytes.
+
+// NOTE: Mocks for testing purpose.
+// const maximumAcceptedFileDuration = 12600; // NOTE: 10 Minutes in seconds.
+// export const maximumAcceptedFileSize = 1252_428_800; // NOTE: 50 Mb in bytes.
 
 export const acceptedFileTypes = [
 	'.3gp',
@@ -49,43 +51,16 @@ export const acceptedFileTypes = [
 	'.cda',
 ];
 
-export const audioFileDurationValidator = file => {
-	if (file.duration) {
-		const formattedDuration = new Date(file.duration * 1000).toISOString().substring(14, 19);
-
-		if (file.duration > maximumAcceptedFileDuration) {
-			return {
-				code: 'duration-too-large',
-				message: `File duration is too larger (${file.name} - ${formattedDuration}). Maximum accepted file duration is 10 minutes.`,
-			};
-		}
-	}
-
-	return null;
-};
-
-export const getFilesFromEvent = async event => {
-	let promises = [];
-	const files = event.target?.files || event.dataTransfer?.files;
-
-	if (files) {
-		for (let index = 0; index < files.length; index++) {
-			const file = files[index];
-
-			const promise = new Promise((resolve, reject) => {
-				getAudioFileDuration(file).then(duration => {
-					file.duration = duration;
-					resolve(file);
-				});
-			});
-
-			promises.push(promise);
-		}
-		return await Promise.all(promises);
-	}
-
-	return event;
-};
+export const getAudioFileDuration = file =>
+	new Promise((resolve, reject) => {
+		const reader = new FileReader();
+		reader.onload = () => {
+			const media = new Audio(reader.result);
+			media.onloadedmetadata = () => resolve(media.duration);
+		};
+		reader.readAsDataURL(file);
+		reader.onerror = error => reject(error);
+	});
 
 export const handleDropRejected = async ([rejection]) => {
 	const { errors, file } = rejection;
@@ -96,9 +71,6 @@ export const handleDropRejected = async ([rejection]) => {
 		}
 		if (code === 'too-many-files') {
 			toast.error('Too many files! Maximum accepted number of files is 1.');
-		}
-		if (code === 'duration-too-large') {
-			toast.error(message);
 		}
 		if (code === 'file-too-large') {
 			toast.error(
@@ -131,6 +103,7 @@ export const fetchFileUpload = async (file, setProgress, controller) => {
 		const response = await axios.post(uploadAPIEndpoint, formData, config);
 		setProgress(100);
 		toast.success(`${file.name} was uploaded successfully!`);
+
 		return response.data.token;
 	} catch (error) {
 		if (!error.message === 'canceled') {

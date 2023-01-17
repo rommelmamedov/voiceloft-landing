@@ -6,9 +6,9 @@ import speechRecord from '@icons/speech-record.svg';
 
 export const SpeechRecordTab = () => {
 	return (
-		<>
+		<div className="speech-record-wrapper">
 			<Image src={speechRecord} alt="Start recording" />
-			<h2>Start recording</h2>
+			<h2>Click on microphone and start recording</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 			<Button
 				icon={
@@ -20,6 +20,6 @@ export const SpeechRecordTab = () => {
 			>
 				Record
 			</Button>
-		</>
+		</div>
 	);
 };

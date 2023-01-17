@@ -65,6 +65,8 @@ export const competitors = [
 	{ name: 'Rev', accuracy: 54, duration: 3, style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' } },
 ];
 
+export const providers = ['Amazon', 'Deepgram', 'Google', 'Microsoft', 'Rev', 'Speechmatics', 'Verbit'];
+
 export const competitorsAudioContent = `
 Mary Robinson: Vanessa, thank you so much
 

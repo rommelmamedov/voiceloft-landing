@@ -54,14 +54,3 @@ export const formatBytes = (bytes, decimals = 2) => {
 
 	return `${parseFloat((bytes / Math.pow(kilobyte, index)).toFixed(fixedPoint))} ${sizes[index]}`;
 };
-
-export const getAudioFileDuration = file =>
-	new Promise((resolve, reject) => {
-		const reader = new FileReader();
-		reader.onload = () => {
-			const media = new Audio(reader.result);
-			media.onloadedmetadata = () => resolve(media.duration);
-		};
-		reader.readAsDataURL(file);
-		reader.onerror = error => reject(error);
-	});
