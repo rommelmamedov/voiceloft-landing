@@ -1,39 +1,47 @@
 import classNames from 'classnames';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { FileImportTab } from '@components/VoiceUploader/FileImportTab';
+import { ModalForm } from '@components/VoiceUploader/ModalForm';
 import { SpeechRecordTab } from '@components/VoiceUploader/SpeechRecordTab';
 import { YouTubeTab } from '@components/VoiceUploader/YouTubeTab';
 
-const tabs = [
-	{
-		tab: 'Speech record',
-		className: 'speech-record',
-		content: <SpeechRecordTab />,
-	},
-	{
-		tab: 'Import audio file',
-		className: 'file-import',
-		content: <FileImportTab />,
-	},
-	{
-		tab: 'YouTube link',
-		className: 'you-tube',
-		content: <YouTubeTab />,
-	},
-];
-
 export const UploaderSection = () => {
 	const [activeTab, setActiveTab] = useState('file-import');
+	const [isModalFormOpen, setIsModalFormOpen] = useState(false);
 
 	const handleClick = useCallback(event => {
-		// NOTE: Order of the class names matters.
-		// event.target.previousElementSibling?.classList.add('previous-sibling');
 		setActiveTab(event.target.classList[0]);
 	}, []);
 
+	const handleSubmit = useCallback(event => {
+		console.log('do something');
+	}, []);
+
+	const tabs = useMemo(
+		() => [
+			{
+				tab: 'Speech record',
+				className: 'speech-record',
+				content: <SpeechRecordTab />,
+			},
+			{
+				tab: 'Import audio file',
+				className: 'file-import',
+				content: <FileImportTab setIsModalFormOpen={setIsModalFormOpen} />,
+			},
+			{
+				tab: 'YouTube link',
+				className: 'you-tube',
+				content: <YouTubeTab />,
+			},
+		],
+		[]
+	);
+
 	return (
 		<section className="upload">
+			<button onClick={() => setIsModalFormOpen(true)}>Modal</button>
 			<div className="container">
 				<div className="upload-container">
 					<div className="tab-buttons">
@@ -59,6 +67,7 @@ export const UploaderSection = () => {
 					</div>
 				</div>
 			</div>
+			<ModalForm isModalFormOpen={isModalFormOpen} setIsModalFormOpen={setIsModalFormOpen} />
 		</section>
 	);
 };

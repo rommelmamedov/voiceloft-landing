@@ -5,6 +5,7 @@
 /* Libs */
 /* TODO: Make it into module, because these will not be on all the pages. */
 @import url('src/styles/libs/swiper.css');
+@import url('src/styles/libs/react-pure-modal.css');
 @import url('src/styles/libs/react-h5-audio-player.css');
 @import url('src/styles/libs/react-circular-progressbar.css');
 /* !Refactor */

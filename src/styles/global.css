@@ -85,6 +85,14 @@ a.read-more {
 	margin-bottom: 40px;
 }
 
+/* option[value=''][disabled] {
+	color: red;
+} */
+
+select[value=''] {
+	color: red;
+}
+
 @media (max-width: 992px) {
 	.separator-svg {
 		margin-bottom: 80px;
