@@ -17,11 +17,10 @@ import { Button } from '@components/Button';
 
 import fileImport from '@icons/file-import.svg';
 
-export const FileImportTab = ({ setIsModalFormOpen }) => {
+export const FileImportTab = ({ setIsModalFormOpen, setUploadedFileToken }) => {
 	const [file, setFile] = useState(null);
 	const [progress, setProgress] = useState(0);
 	const [controller, setController] = useState(null);
-	const [uploadedFileToken, setUploadedFileToken] = useState(null);
 
 	const handleDrop = useCallback(
 		async ([file]) => {
@@ -53,7 +52,7 @@ export const FileImportTab = ({ setIsModalFormOpen }) => {
 				setIsModalFormOpen(true);
 			}
 		},
-		[setIsModalFormOpen]
+		[setIsModalFormOpen, setUploadedFileToken]
 	);
 
 	const handleError = useCallback(error => {
@@ -66,7 +65,7 @@ export const FileImportTab = ({ setIsModalFormOpen }) => {
 		setFile(null);
 		setProgress(0);
 		setUploadedFileToken(null);
-	}, [controller]);
+	}, [controller, setUploadedFileToken]);
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
 		accept: { 'audio/*': acceptedFileTypes },

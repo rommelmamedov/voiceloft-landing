@@ -9,6 +9,7 @@ import { YouTubeTab } from '@components/VoiceUploader/YouTubeTab';
 export const UploaderSection = () => {
 	const [activeTab, setActiveTab] = useState('file-import');
 	const [isModalFormOpen, setIsModalFormOpen] = useState(false);
+	const [uploadedFileToken, setUploadedFileToken] = useState(null);
 
 	const handleClick = useCallback(event => {
 		setActiveTab(event.target.classList[0]);
@@ -28,7 +29,7 @@ export const UploaderSection = () => {
 			{
 				tab: 'Import audio file',
 				className: 'file-import',
-				content: <FileImportTab setIsModalFormOpen={setIsModalFormOpen} />,
+				content: <FileImportTab setIsModalFormOpen={setIsModalFormOpen} setUploadedFileToken={setUploadedFileToken} />,
 			},
 			{
 				tab: 'YouTube link',
@@ -67,7 +68,7 @@ export const UploaderSection = () => {
 					</div>
 				</div>
 			</div>
-			<ModalForm isModalFormOpen={isModalFormOpen} setIsModalFormOpen={setIsModalFormOpen} />
+			<ModalForm isModalFormOpen={isModalFormOpen} setIsModalFormOpen={setIsModalFormOpen} token={uploadedFileToken} />
 		</section>
 	);
 };

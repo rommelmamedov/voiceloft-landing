@@ -57,8 +57,8 @@
 }
 .pure-modal .panel-body {
 	background-color: #fff;
-	box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
+	box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
 }
 .pure-modal .panel-heading {
 	background: #f0f0f0;
@@ -67,23 +67,15 @@
 	margin: 0;
 	padding: 12px 45px 12px 15px;
 }
+
 .pure-modal .close {
-	top: 10px;
-	right: 10px;
-	z-index: 1;
-	width: 30px;
-	height: 30px;
-	background: hsla(0, 0%, 94.1%, 0.8);
-	border-radius: 15px;
-	color: #8c8c8c;
-	line-height: 30px;
-	transition: color 0.1s ease-in-out;
 	cursor: pointer;
-	text-align: center;
+	display: flex;
+	position: absolute;
+	top: 12px;
+	right: 12px;
 }
-.pure-modal .panel-heading .close:hover {
-	color: #000;
-}
+
 .pure-modal .panel-body {
 	padding: 60px 40px;
 }

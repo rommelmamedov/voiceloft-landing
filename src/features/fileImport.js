@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
+import { baseURL } from '../constants';
 import { formatBytes } from '../utils';
 
-const uploadAPIEndpoint = 'https://demo-landing.voiceloft.com/v1/upload';
 export const maximumAcceptedFileDuration = 600; // NOTE: 10 Minutes in seconds.
 export const maximumAcceptedFileSize = 52_428_800; // NOTE: 50 Mb in bytes.
 
@@ -100,7 +100,7 @@ export const fetchFileUpload = async (file, setProgress, controller) => {
 			signal: controller.signal,
 		};
 
-		const response = await axios.post(uploadAPIEndpoint, formData, config);
+		const response = await axios.post(`${baseURL}/upload`, formData, config);
 		setProgress(100);
 		toast.success(`${file.name} was uploaded successfully!`);
 
