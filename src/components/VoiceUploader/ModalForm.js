@@ -5,7 +5,7 @@ import { fetchFormSubmission } from '@features/formSubmission';
 
 import { Button } from '@components/Button';
 
-import { providers } from '../../constants';
+import { companyEmailRegEx, providers } from '../../constants';
 
 export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
 	const [formValues, setFormValues] = useState({
@@ -99,6 +99,8 @@ export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
 						placeholder="Enter company email"
 						value={formValues.email}
 						required
+						title="Only a company emails are allowed."
+						pattern={companyEmailRegEx}
 						onChange={handleChange}
 					/>
 					<label htmlFor="provider">Provider</label>
