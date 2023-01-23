@@ -106,7 +106,7 @@
 	max-width: 500px;
 }
 
-.tab-content button {
+.tab-content button.action-button {
 	justify-content: center;
 	min-width: 260px;
 	margin-top: 30px;
@@ -165,3 +165,16 @@
 }
 
 @import url('./ModalForm.css');
+
+/*  */
+
+button.record-button {
+	display: flex;
+	padding: 0;
+	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.092);
+	border: 0;
+	width: 140px;
+	height: 140px;
+	/* mi */
+}

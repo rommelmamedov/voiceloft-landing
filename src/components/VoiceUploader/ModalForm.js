@@ -8,6 +8,7 @@ import { Button } from '@components/Button';
 import { companyEmailRegEx, providers } from '../../constants';
 
 export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
+	const [isLoading, setIsLoading] = useState(false);
 	const [formValues, setFormValues] = useState({
 		name: '',
 		lastName: '',
@@ -23,7 +24,9 @@ export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
 	const handleSubmit = useCallback(
 		async event => {
 			event.preventDefault();
+			setIsLoading(true);
 			await fetchFormSubmission({ ...formValues, token });
+			setIsLoading(false);
 		},
 		[formValues, token]
 	);
@@ -41,7 +44,6 @@ export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
 			scrollable={false}
 			closeButton={
 				<svg
-					xmlns="http://www.w3.org/2000/svg"
 					width="28"
 					height="28"
 					viewBox="0 0 24 24"
@@ -90,7 +92,6 @@ export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
 						required
 						onChange={handleChange}
 					/>
-					{/* TODO: Email format validation is needed - only corporate emails are allowed. No gmails etc. We need to show an error message for each filled if they are filled wrong or empty. */}
 					<label htmlFor="email">Company Email</label>
 					<input
 						id="email"
@@ -121,7 +122,9 @@ export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
 							</option>
 						))}
 					</select>
-					<Button type="submit">Compare</Button>
+					<Button type="submit" disabled={isLoading}>
+						{isLoading ? 'Comparing...' : 'Compare'}
+					</Button>
 				</form>
 			</div>
 		</PureModal>

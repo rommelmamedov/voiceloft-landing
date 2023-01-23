@@ -10,6 +10,7 @@
     "clean": "rm -rf .next"
   },
   "dependencies": {
+    "@sarafhbk/react-audio-recorder": "~1.1.2",
     "axios": "~1.2.3",
     "next": "~13.1.4",
     "react": "~18.2.0",

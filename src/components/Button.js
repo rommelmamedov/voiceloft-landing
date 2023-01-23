@@ -1,6 +1,8 @@
-export const Button = ({ children, content, icon, ...otherProps }) => {
+import classNames from 'classnames';
+
+export const Button = ({ children, content, icon, className, ...otherProps }) => {
 	return (
-		<button className="button" {...otherProps}>
+		<button className={classNames('button', className)} {...otherProps}>
 			{icon}
 			{children ?? content}
 		</button>
