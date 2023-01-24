@@ -20,7 +20,14 @@ const About = () => {
 				title="Who are we?"
 				description="We are a team of passionate entrepreneurs, engineers, and data scientists that aim to do the impossible. Teaching machines to talk and understand speech better than a human does. Machines should be more efficient in this specific task than humans are, but they are not. We are changing that!"
 			/>
-			<svg className={styles.aboutSvg} width="100%" height="559" viewBox="0 0 1440 559" fill="none" preserveAspectRatio="none">
+			<svg
+				className={styles.aboutSvg}
+				width="100%"
+				height="559"
+				viewBox="0 0 1440 559"
+				fill="none"
+				preserveAspectRatio="none"
+			>
 				<path
 					d="M-3.98499 0.233165C101.646 38.6966 174.222 146.381 270.688 204.718C373.68 267.013 507.206 232.762 634.594 216.327C730.811 203.916 856.089 177.256 893.221 303.016C907.01 349.699 910.758 406.853 922.945 455.24C937.363 512.48 964.647 545.375 1006.45 555.137C1141.05 586.529 1325.15 382.298 1457.54 424.842"
 					stroke="var(--blue)"
@@ -32,12 +39,19 @@ const About = () => {
 				<div className="container">
 					<svg viewBox="0 0 360 140">
 						<text id="counter-1" fill="#ccf3ff" transform="matrix(1 0 0 1 10.9488 133.6656)" />
-						<text id="counter-2" fill="none" stroke="var(--blue)" strokeMiterlimit="10" transform="matrix(1 0 0 1 -0.9911 122.9283)" />
+						<text
+							id="counter-2"
+							fill="none"
+							stroke="var(--blue)"
+							strokeMiterlimit="10"
+							transform="matrix(1 0 0 1 -0.9911 122.9283)"
+						/>
 					</svg>
 					<p>
-						We constantly benchmark our solution against our competitors for a range of use cases specifically designed to replicate the
-						real-world. Our models are developed and iterated throughout this process, along with our expertise within the ASR market. These
-						tests help to highlight where we can improve and how we compare against our global competitors.
+						We constantly benchmark our solution against our competitors for a range of use cases specifically
+						designed to replicate the real-world. Our models are developed and iterated throughout this
+						process, along with our expertise within the ASR market. These tests help to highlight where we
+						can improve and how we compare against our global competitors.
 					</p>
 					<small>*All benchmarking data collected by Voiceloft as part of benchmarking activities.</small>
 				</div>
@@ -49,7 +63,8 @@ const About = () => {
 				</div>
 				<div className="container">
 					<p>
-						You shouldn’t have to adjust the way you speak so that speech recognition systems can understand you, let us worry about that.{' '}
+						You shouldn’t have to adjust the way you speak so that speech recognition systems can understand
+						you, let us worry about that.
 					</p>
 					<h1>
 						Sorry, <br /> I didn’t <br /> get you
@@ -59,12 +74,13 @@ const About = () => {
 			<section className={styles.product}>
 				<div className="container">
 					<p>
-						We are continually innovating to ensure our language offering is both relevant and far-reaching by collecting high quality and
-						high volume datasets. We have several languages in research and are collecting data to further train these models.{' '}
+						We are continually innovating to ensure our language offering is both relevant and far-reaching by
+						collecting high quality and high volume datasets. We have several languages in research and are
+						collecting data to further train these models.
 					</p>
 					<p>
-						We provide high-quality training data with our leading technology platform, managed services, and our global crowd to power AI
-						globally.
+						We provide high-quality training data with our leading technology platform, managed services, and
+						our global crowd to power AI globally.
 					</p>
 				</div>
 			</section>

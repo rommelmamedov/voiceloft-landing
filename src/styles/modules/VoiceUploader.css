@@ -112,48 +112,13 @@
 	margin-top: 30px;
 }
 
-/* TODO: START: Move to different file */
+/* Tab content wrappers */
 
-.file-upload-progress {
-	display: flex;
-	align-items: center;
-	gap: 50px;
-	flex-direction: column;
-	padding: 30px;
+.file-import-wrapper {
+	background-color: #f9fdff;
+	border: 1px dashed #272ffb;
+	border-radius: 10px;
 }
-
-.file-upload-progress strong {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	color: #000;
-	font-size: 30px;
-	font-weight: 500;
-}
-
-.file-upload-progress strong img {
-	width: 42px;
-	height: 42px;
-	object-fit: contain;
-}
-
-.file-upload-progress button {
-	display: inline-block;
-	min-width: unset;
-	margin-top: unset;
-	padding: 0;
-	background-color: transparent;
-	border: 0;
-	color: var(--blue);
-	font-size: 26px;
-	font-weight: 300;
-	cursor: pointer;
-	text-decoration: underline;
-}
-
-@import url('./ModalForm.css');
-
-/*  */
 
 .file-import-wrapper,
 .speech-record-wrapper {
@@ -166,20 +131,14 @@
 	padding: 100px;
 }
 
-.file-import-wrapper {
-	background-color: #f9fdff;
-	border: 1px dashed #272ffb;
-	border-radius: 10px;
-}
-
-em.timer {
+.speech-record-wrapper em.timer {
 	margin-top: 30px;
 	font-size: 48px;
 	font-style: normal;
 	font-weight: 500;
 }
 
-.audio-result {
+.speech-record-wrapper .audio-result {
 	width: 100%;
 	margin-top: 30px;
 }

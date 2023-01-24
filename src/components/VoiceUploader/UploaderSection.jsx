@@ -9,7 +9,6 @@ import { YouTubeTab } from '@components/VoiceUploader/YouTubeTab';
 
 export const UploaderSection = () => {
 	const [file, setFile] = useState(null);
-	console.log('🚀 ~ file: UploaderSection.jsx:12 ~ UploaderSection ~ file', file);
 	const [progress, setProgress] = useState(0);
 	const [controller, setController] = useState(null);
 	const [activeTab, setActiveTab] = useState('file-import');

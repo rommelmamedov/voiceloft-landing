@@ -5,6 +5,8 @@ import { fetchFormSubmission } from '@features/formSubmission';
 
 import { Button } from '@components/Button';
 
+import styles from '@styles/modules/ModalForm.module.css';
+
 import { companyEmailRegEx, providers } from '../../constants';
 
 export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
@@ -56,7 +58,7 @@ export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
 				</svg>
 			}
 		>
-			<div className="modal-form-body">
+			<div className={styles['modal-form-body']}>
 				<h2>Compare Results</h2>
 				<p>Please fill out the form to get the results.</p>
 				<form onSubmit={handleSubmit}>

@@ -11,7 +11,14 @@ export const Header = () => {
 			<div className="container">
 				<nav>
 					<Link href="/">
-						<Image className="voiceloft" src="/imgs/logo.svg" alt="Voiceloft Logo" width={200} height={60} priority />
+						<Image
+							className="voiceloft"
+							src="/imgs/logo.svg"
+							alt="Voiceloft Logo"
+							width={200}
+							height={60}
+							priority
+						/>
 					</Link>
 					<Button content="Schedule a call" onClick={handleClick} />
 				</nav>

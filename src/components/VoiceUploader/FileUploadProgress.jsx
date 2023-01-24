@@ -3,6 +3,8 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 
 import fileImport from '@icons/file-import.svg';
 
+import styles from '@styles/modules/FileUploadProgress.module.css';
+
 export const FileUploadProgress = ({
 	controller,
 	file,
@@ -25,7 +27,7 @@ export const FileUploadProgress = ({
 	};
 
 	return (
-		<div className="file-upload-progress">
+		<div className={styles['file-upload-progress']}>
 			<p>Uploading...</p>
 			<CircularProgressbar value={progress} text={`${progress}%`} strokeWidth={2.5} />
 			<strong>
