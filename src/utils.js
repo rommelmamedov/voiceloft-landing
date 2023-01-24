@@ -1,3 +1,5 @@
+export const wait = delay => new Promise(resolve => setTimeout(resolve, delay));
+
 export const getProgressStyle = ({ isAudioPlaying, audio, style }) =>
 	isAudioPlaying
 		? {
@@ -29,7 +31,9 @@ export const getElementsCoordinates = element => {
 export const highlightCurrentTranscriptElement = event => {
 	const transcriptWrapper = document.getElementById('competitors-audio-transcript');
 	const transcriptElements = transcriptWrapper.querySelectorAll('div');
-	const currentTranscriptElement = document.querySelector(`[data-time="${getCurrentTimeInSeconds(event.srcElement.currentTime)}"]`);
+	const currentTranscriptElement = document.querySelector(
+		`[data-time="${getCurrentTimeInSeconds(event.srcElement.currentTime)}"]`
+	);
 
 	if (currentTranscriptElement) {
 		transcriptElements.forEach(item => (item.dataset.active = false));

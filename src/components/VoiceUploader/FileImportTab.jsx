@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { useCallback, useState } from 'react';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { toast } from 'react-hot-toast';
 
@@ -17,11 +16,15 @@ import { Button } from '@components/Button';
 
 import fileImport from '@icons/file-import.svg';
 
-export const FileImportTab = ({ setIsModalFormOpen, setUploadedFileToken }) => {
-	const [file, setFile] = useState(null);
-	const [progress, setProgress] = useState(0);
-	const [controller, setController] = useState(null);
+import { wait } from '../../utils';
 
+export const FileImportTab = ({
+	setFile,
+	setProgress,
+	setController,
+	setIsModalFormOpen,
+	setUploadedFileToken,
+}) => {
 	const handleDropAccepted = useCallback(
 		async ([file]) => {
 			const duration = await getAudioFileDuration(file);
@@ -47,23 +50,18 @@ export const FileImportTab = ({ setIsModalFormOpen, setUploadedFileToken }) => {
 			if (uploadedFileToken) {
 				setUploadedFileToken(uploadedFileToken);
 				setProgress(0);
+				setController(null);
+				await wait(500);
 				setIsModalFormOpen(true);
 			}
 		},
-		[setIsModalFormOpen, setUploadedFileToken]
+		[setController, setFile, setIsModalFormOpen, setProgress, setUploadedFileToken]
 	);
 
 	const handleError = useCallback(error => {
 		console.error(error);
 		toast.error(error.message);
 	}, []);
-
-	const handleCancelUpload = useCallback(() => {
-		controller.abort();
-		setFile(null);
-		setProgress(0);
-		setUploadedFileToken(null);
-	}, [controller, setUploadedFileToken]);
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
 		accept: { 'audio/*': acceptedFileTypes },
@@ -75,22 +73,8 @@ export const FileImportTab = ({ setIsModalFormOpen, setUploadedFileToken }) => {
 		useFsAccessApi: false,
 	});
 
-	if (file) {
-		return (
-			<div className="file-uploading-wrapper">
-				<p>Uploading...</p>
-				<CircularProgressbar value={progress} text={`${progress}%`} strokeWidth={2.5} />
-				<strong>
-					<Image src={fileImport} alt={file.name} />
-					{file.name}
-				</strong>
-				<button onClick={handleCancelUpload}>Cancel</button>
-			</div>
-		);
-	}
-
 	return (
-		<div className="file-uploader-wrapper" {...getRootProps()}>
+		<div className="file-import-wrapper" {...getRootProps()}>
 			<input {...getInputProps()} />
 			<Image src={fileImport} alt="Drag and drop file" />
 			<h2>{isDragActive ? 'Drop the file here...' : 'Drag and drop file here, or click to select file.'}</h2>

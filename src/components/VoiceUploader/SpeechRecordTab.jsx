@@ -1,10 +1,10 @@
 import { useAudioRecorder } from '@sarafhbk/react-audio-recorder';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import { toast } from 'react-hot-toast';
 
-import { getAudioFileDuration, maximumAcceptedFileDuration } from '@features/fileImport';
+import { fetchFileUpload, maximumAcceptedFileDuration } from '@features/fileImport';
 
 import { Button } from '@components/Button';
 
@@ -12,9 +12,20 @@ import { Pause } from '@icons/Pause';
 import { Record } from '@icons/Record';
 import { Resume } from '@icons/Resume';
 import { Stop } from '@icons/Stop';
+import { Upload } from '@icons/Upload';
 import speechRecord from '@icons/speech-record.svg';
 
-export const SpeechRecordTab = () => {
+import { wait } from '../../utils';
+
+export const SpeechRecordTab = ({
+	setFile,
+	setProgress,
+	setController,
+	setIsModalFormOpen,
+	setUploadedFileToken,
+}) => {
+	const [fileFromUrl, setFileFromUrl] = useState(null);
+	const [defaultDuration, setDefaultDuration] = useState(null);
 	const {
 		audioResult,
 		errorMessage,
@@ -26,6 +37,13 @@ export const SpeechRecordTab = () => {
 		timer,
 	} = useAudioRecorder();
 
+	const handleStopRecording = useCallback(() => {
+		const formattedDuration = new Date(timer * 1000).toISOString().substring(14, 19);
+
+		setDefaultDuration(formattedDuration);
+		stopRecording();
+	}, [stopRecording, timer]);
+
 	useEffect(() => {
 		if (errorMessage) {
 			toast.error(errorMessage);
@@ -34,47 +52,86 @@ export const SpeechRecordTab = () => {
 
 	useEffect(() => {
 		(async () => {
-			if (audioResult) {
-				// const duration = await getAudioFileDuration(audioResult);
-				// const formattedDuration = new Date(duration * 1000).toISOString().substring(14, 19);
-				// if (duration > maximumAcceptedFileDuration) {
-				// 	stopRecording();
-				// 	toast.error(
-				// 		`File duration is too larger (${file.name} - ${formattedDuration}). Maximum accepted file duration is 10 minutes.`
-				// 	);
-				// 	return;
-				// }
+			if (audioResult && status === 'idle') {
+				const response = await fetch(audioResult);
+				const blob = await response.blob();
+				const fileFromUrl = new File([blob], `Voiceloft - ${new Date().toDateString()}`);
+
+				setFile(fileFromUrl);
+				setFileFromUrl(fileFromUrl);
 			}
 		})();
-	}, [audioResult, stopRecording]);
+	}, [audioResult, status, setFile]);
 
-	console.log('🚀 ~ file: SpeechRecordTab.js:20 ~ SpeechRecordTab ~ timer', timer);
-	console.log('🚀 ~ file: SpeechRecordTab.js:20 ~ SpeechRecordTab ~ audioResult', audioResult);
+	useEffect(() => {
+		if (timer && timer >= maximumAcceptedFileDuration) {
+			const formattedDuration = new Date(timer * 1000).toISOString().substring(14, 19);
+
+			handleStopRecording();
+			toast.error(
+				`Duration of the recorded file is too large ${formattedDuration}). Maximum accepted file duration is 10 minutes.`
+			);
+		}
+	}, [handleStopRecording, timer]);
+
+	const handleUpload = async () => {
+		if (!fileFromUrl) {
+			toast.error('Sorry we could not detect the file. 🥲');
+			return;
+		}
+
+		const controller = new AbortController();
+		// NOTE: An AbortController or its signal can not be reused nor reset.
+		// If you need to "reset" it, you have to create a new AbortController instance and use that instead for each new request.
+		setController(controller);
+
+		const uploadedFileToken = await fetchFileUpload(fileFromUrl, setProgress, controller);
+
+		setFileFromUrl(null);
+
+		if (uploadedFileToken) {
+			setUploadedFileToken(uploadedFileToken);
+			setProgress(0);
+			setController(null);
+			await wait(500);
+			setIsModalFormOpen(true);
+		}
+	};
 
 	return (
 		<div className="speech-record-wrapper">
 			<Image src={speechRecord} alt="Start recording" />
 			<h2>Click on microphone and start recording</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-			{audioResult && (
+			{audioResult && status === 'idle' && (
 				<AudioPlayer
 					timeFormat="mm:ss"
 					className="audio-result"
-					listenInterval={500}
 					src={audioResult}
-					// defaultDuration={<>25:17</>}
-					defaultCurrentTime={<>00:00</>}
+					defaultDuration={defaultDuration}
 					customControlsSection={['MAIN_CONTROLS']}
 				/>
 			)}
 			{status !== 'idle' && <em className="timer">{new Date(timer * 1000).toISOString().substr(11, 8)}</em>}
-			<Button
-				className="action-button"
-				onClick={status === 'idle' ? startRecording : stopRecording}
-				icon={status === 'idle' ? <Record /> : <Stop />}
-			>
-				{status === 'idle' ? 'Record' : 'Stop'}
-			</Button>
+			{audioResult && status === 'idle' && (
+				<>
+					<Button className="action-button" onClick={handleUpload} icon={<Upload />}>
+						Upload
+					</Button>
+					<Button className="action-button record-again" onClick={handleStopRecording} icon={<Record />}>
+						Record Again
+					</Button>
+				</>
+			)}
+			{(!audioResult || status !== 'idle') && (
+				<Button
+					className="action-button"
+					onClick={status === 'idle' ? startRecording : handleStopRecording}
+					icon={status === 'idle' ? <Record /> : <Stop />}
+				>
+					{status === 'idle' ? 'Record' : 'Stop'}
+				</Button>
+			)}
 			{status !== 'idle' && (
 				<Button
 					className="action-button"

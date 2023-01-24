@@ -2,11 +2,16 @@ import classNames from 'classnames';
 import { useCallback, useMemo, useState } from 'react';
 
 import { FileImportTab } from '@components/VoiceUploader/FileImportTab';
+import { FileUploadProgress } from '@components/VoiceUploader/FileUploadProgress';
 import { ModalForm } from '@components/VoiceUploader/ModalForm';
 import { SpeechRecordTab } from '@components/VoiceUploader/SpeechRecordTab';
 import { YouTubeTab } from '@components/VoiceUploader/YouTubeTab';
 
 export const UploaderSection = () => {
+	const [file, setFile] = useState(null);
+	console.log('🚀 ~ file: UploaderSection.jsx:12 ~ UploaderSection ~ file', file);
+	const [progress, setProgress] = useState(0);
+	const [controller, setController] = useState(null);
 	const [activeTab, setActiveTab] = useState('file-import');
 	const [isModalFormOpen, setIsModalFormOpen] = useState(false);
 	const [uploadedFileToken, setUploadedFileToken] = useState(null);
@@ -20,13 +25,24 @@ export const UploaderSection = () => {
 			{
 				tab: 'Speech record',
 				className: 'speech-record',
-				content: <SpeechRecordTab />,
+				content: (
+					<SpeechRecordTab
+						setFile={setFile}
+						setProgress={setProgress}
+						setController={setController}
+						setIsModalFormOpen={setIsModalFormOpen}
+						setUploadedFileToken={setUploadedFileToken}
+					/>
+				),
 			},
 			{
 				tab: 'Import audio file',
 				className: 'file-import',
 				content: (
 					<FileImportTab
+						setFile={setFile}
+						setProgress={setProgress}
+						setController={setController}
 						setIsModalFormOpen={setIsModalFormOpen}
 						setUploadedFileToken={setUploadedFileToken}
 					/>
@@ -62,7 +78,19 @@ export const UploaderSection = () => {
 					<div className="tab-list">
 						{tabs.map(({ content, className }, index) => (
 							<div key={index} className={classNames('tab-content', { active: activeTab === className })}>
-								{content}
+								{file && controller ? (
+									<FileUploadProgress
+										controller={controller}
+										file={file}
+										setController={setController}
+										setFile={setFile}
+										setUploadedFileToken={setUploadedFileToken}
+										progress={progress}
+										setProgress={setProgress}
+									/>
+								) : (
+									content
+								)}
 							</div>
 						))}
 					</div>

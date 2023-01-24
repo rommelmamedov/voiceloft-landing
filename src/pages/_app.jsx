@@ -40,7 +40,10 @@ const MyApp = ({ Component, pageProps }) => {
 				}
 			`}</style>
 			{/* Global Site Tag (gtag.js) - Google Analytics */}
-			<Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+			<Script
+				strategy="afterInteractive"
+				src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+			/>
 			<Script
 				id="gtag-init"
 				strategy="afterInteractive"
@@ -72,7 +75,7 @@ const MyApp = ({ Component, pageProps }) => {
 				}}
 			/>
 			<Component {...pageProps} />
-			<Toaster position="top-right" />
+			<Toaster position="top-right" toastOptions={{ duration: 3500 }} />
 		</>
 	);
 };
