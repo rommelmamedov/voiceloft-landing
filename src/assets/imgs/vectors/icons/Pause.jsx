@@ -1,4 +1,4 @@
-export const Record = props => (
+export const Pause = props => (
 	<svg
 		width="28"
 		height="28"

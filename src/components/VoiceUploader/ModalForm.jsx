@@ -35,8 +35,6 @@ export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
 		setFormValues(formValues => ({ ...formValues, [event.target.name]: event.target.value }));
 	}, []);
 
-	console.log(formValues);
-
 	return (
 		<PureModal
 			isOpen={isModalFormOpen}

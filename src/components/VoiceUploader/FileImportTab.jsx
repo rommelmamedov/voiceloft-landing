@@ -22,18 +22,16 @@ export const FileImportTab = ({ setIsModalFormOpen, setUploadedFileToken }) => {
 	const [progress, setProgress] = useState(0);
 	const [controller, setController] = useState(null);
 
-	const handleDrop = useCallback(
+	const handleDropAccepted = useCallback(
 		async ([file]) => {
-			console.log(file);
 			const duration = await getAudioFileDuration(file);
 			const formattedDuration = new Date(duration * 1000).toISOString().substring(14, 19);
 
-			console.log({ duration, formattedDuration });
-
 			if (duration > maximumAcceptedFileDuration) {
-				return toast.error(
+				toast.error(
 					`File duration is too larger (${file.name} - ${formattedDuration}). Maximum accepted file duration is 10 minutes.`
 				);
+				return;
 			}
 
 			const controller = new AbortController();
@@ -71,7 +69,7 @@ export const FileImportTab = ({ setIsModalFormOpen, setUploadedFileToken }) => {
 		accept: { 'audio/*': acceptedFileTypes },
 		maxSize: maximumAcceptedFileSize,
 		multiple: false,
-		onDrop: handleDrop,
+		onDropAccepted: handleDropAccepted,
 		onDropRejected: handleDropRejected,
 		onError: handleError,
 		useFsAccessApi: false,

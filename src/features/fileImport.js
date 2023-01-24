@@ -74,9 +74,9 @@ export const handleDropRejected = async ([rejection]) => {
 		}
 		if (code === 'file-too-large') {
 			toast.error(
-				`File (${file.name}) - ${formatBytes(file.size)} is too large! Maximum accepted file size is ${formatBytes(
-					maximumAcceptedFileSize
-				)}.`
+				`File (${file.name}) - ${formatBytes(
+					file.size
+				)} is too large! Maximum accepted file size is ${formatBytes(maximumAcceptedFileSize)}.`
 			);
 		}
 	});

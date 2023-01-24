@@ -15,10 +15,6 @@ export const UploaderSection = () => {
 		setActiveTab(event.target.classList[0]);
 	}, []);
 
-	const handleSubmit = useCallback(event => {
-		console.log('do something');
-	}, []);
-
 	const tabs = useMemo(
 		() => [
 			{
@@ -29,7 +25,12 @@ export const UploaderSection = () => {
 			{
 				tab: 'Import audio file',
 				className: 'file-import',
-				content: <FileImportTab setIsModalFormOpen={setIsModalFormOpen} setUploadedFileToken={setUploadedFileToken} />,
+				content: (
+					<FileImportTab
+						setIsModalFormOpen={setIsModalFormOpen}
+						setUploadedFileToken={setUploadedFileToken}
+					/>
+				),
 			},
 			{
 				tab: 'YouTube link',
@@ -42,7 +43,6 @@ export const UploaderSection = () => {
 
 	return (
 		<section className="upload">
-			<button onClick={() => setIsModalFormOpen(true)}>Modal</button>
 			<div className="container">
 				<div className="upload-container">
 					<div className="tab-buttons">
@@ -68,7 +68,11 @@ export const UploaderSection = () => {
 					</div>
 				</div>
 			</div>
-			<ModalForm isModalFormOpen={isModalFormOpen} setIsModalFormOpen={setIsModalFormOpen} token={uploadedFileToken} />
+			<ModalForm
+				isModalFormOpen={isModalFormOpen}
+				setIsModalFormOpen={setIsModalFormOpen}
+				token={uploadedFileToken}
+			/>
 		</section>
 	);
 };

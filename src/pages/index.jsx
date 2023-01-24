@@ -47,7 +47,12 @@ const Home = () => {
 						<div className={styles.voices}>
 							{sttVoices.map((voiceProps, index) => (
 								<div className={styles['voice-wrapper']} key={index}>
-									<Image src={`/imgs/persons/${index + 1}.webp`} alt={voiceProps.text} width={64} height={64} />
+									<Image
+										src={`/imgs/persons/${index + 1}.webp`}
+										alt={voiceProps.text}
+										width={64}
+										height={64}
+									/>
 									<VoiceButton {...voiceProps} audio={`/sounds/${index + 1}.mp3`} />
 								</div>
 							))}
@@ -58,7 +63,10 @@ const Home = () => {
 										<Ellipsis />
 									</div>
 									<svg className={triangle} width={24} height={18} viewBox="0 0 24 18">
-										<path d="M.845.265h22.403l-2.425 1.043A45.894 45.894 0 0 0 .845 17.901V.265z" fill="#e8f0be" />
+										<path
+											d="M.845.265h22.403l-2.425 1.043A45.894 45.894 0 0 0 .845 17.901V.265z"
+											fill="#e8f0be"
+										/>
 									</svg>
 								</div>
 							</div>
@@ -66,9 +74,10 @@ const Home = () => {
 						<div className={styles.description}>
 							<h2>Speech to text</h2>
 							<p>
-								There are many challenges with using automatic speech recognition within real-world applications including noisy
-								environments, different dialects, accents and context specifics. So, we are using our expertise to provide solutions,
-								enabling ASR to be used effectively within use cases regardless of the environmental conditions.
+								There are many challenges with using automatic speech recognition within real-world
+								applications including noisy environments, different dialects, accents and context specifics.
+								So, we are using our expertise to provide solutions, enabling ASR to be used effectively
+								within use cases regardless of the environmental conditions.
 							</p>
 						</div>
 					</div>
@@ -84,7 +93,12 @@ const Home = () => {
 							<SwiperSlide key={name}>
 								<div className={styles.competitor} key={name}>
 									<div className={styles['competitor-image-wrapper']} style={style}>
-										<Image src={`/imgs/competitor-logos/${name.toLowerCase()}.svg`} alt={name} width={110} height={110} />
+										<Image
+											src={`/imgs/competitor-logos/${name.toLowerCase()}.svg`}
+											alt={name}
+											width={110}
+											height={110}
+										/>
 									</div>
 									<em>{name}</em>
 									<strong id={index < competitors.length ? 'competitors' : 'voiceloft'}>
@@ -95,7 +109,6 @@ const Home = () => {
 						))}
 					</Swiper>
 					<AudioPlayer
-						autoPlay
 						timeFormat="mm:ss"
 						listenInterval={500}
 						src="/sounds/competitors.mp3"
@@ -128,8 +141,9 @@ const Home = () => {
 							<h2>Supported languages</h2>
 							<p>Easy to integrate, simple to scale.</p>
 							<p>
-								Our Global Voice Recognition is now available in more than 100 languages. It’s everything you know and love about our
-								asynchronous Automated Speech Recognition (ASR) engine, now with even more languages at your disposal.
+								Our Global Voice Recognition is now available in more than 100 languages. It’s everything you
+								know and love about our asynchronous Automated Speech Recognition (ASR) engine, now with even
+								more languages at your disposal.
 							</p>
 							<a
 								className="read-more"

@@ -9,8 +9,6 @@ export const fetchFormSubmission = async formValues => {
 			headers: { 'Content-Type': 'application/json' },
 		});
 
-		console.log('🚀 ~ file: formSubmission.js:11 ~ fetchFileUpload ~ response', response);
-
 		toast.success(`You successfully submitted the form!`);
 	} catch (error) {
 		console.error(error);
