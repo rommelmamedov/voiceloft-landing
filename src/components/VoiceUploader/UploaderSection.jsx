@@ -96,9 +96,11 @@ export const UploaderSection = () => {
 				</div>
 			</div>
 			<ModalForm
+				setFile={setFile}
 				isModalFormOpen={isModalFormOpen}
 				setIsModalFormOpen={setIsModalFormOpen}
 				token={uploadedFileToken}
+				setUploadedFileToken={setUploadedFileToken}
 			/>
 		</section>
 	);

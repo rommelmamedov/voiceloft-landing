@@ -8,30 +8,35 @@ import { Button } from '@components/Button';
 import styles from '@styles/modules/ModalForm.module.css';
 
 import { companyEmailRegEx, providers } from '../../constants';
+import { wait } from '../../utils';
 
-export const ModalForm = ({ token, isModalFormOpen, setIsModalFormOpen }) => {
+const defaultFormValues = {
+	name: '',
+	lastName: '',
+	company: '',
+	email: '',
+	provider: '',
+};
+
+export const ModalForm = ({ token, isModalFormOpen, setFile, setIsModalFormOpen, setUploadedFileToken }) => {
 	const [isLoading, setIsLoading] = useState(false);
-	const [formValues, setFormValues] = useState({
-		name: '',
-		lastName: '',
-		company: '',
-		email: '',
-		provider: '',
-	});
+	const [formValues, setFormValues] = useState(defaultFormValues);
 
 	const handleCloseModalForm = useCallback(() => {
 		setIsModalFormOpen(false);
 	}, [setIsModalFormOpen]);
 
-	const handleSubmit = useCallback(
-		async event => {
-			event.preventDefault();
-			setIsLoading(true);
-			await fetchFormSubmission({ ...formValues, token });
-			setIsLoading(false);
-		},
-		[formValues, token]
-	);
+	const handleSubmit = async event => {
+		event.preventDefault();
+		setIsLoading(true);
+		await fetchFormSubmission({ ...formValues, token });
+		await wait(700);
+		setIsLoading(false);
+		setIsModalFormOpen(false);
+		setFormValues(defaultFormValues);
+		setUploadedFileToken(null);
+		setFile(null);
+	};
 
 	const handleChange = useCallback(event => {
 		setFormValues(formValues => ({ ...formValues, [event.target.name]: event.target.value }));

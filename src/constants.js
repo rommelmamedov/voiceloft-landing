@@ -1,6 +1,18 @@
 export const baseURL = 'https://demo-landing.voiceloft.com/v1';
+
 export const companyEmailRegEx =
 	'^[a-zA-Z0-9.%+-]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!yahoo.co.in)(?!aol.com)(?!live.com)(?!@yandex.ru)(?!@yandex.com)(?!@mail.ru)(?!@icloud.com)(?!outlook.com)[a-zA-Z0-9-]+.[a-zA-Z0-9-.]{2,61}$';
+
+export const providers = [
+	'Amazon',
+	'Assembly',
+	'Microsoft',
+	'Rev',
+	'Speechmatics',
+	// 'Google',
+	// 'Deepgram',
+	// 'Verbit',
+];
 
 export const sttVoices = [
 	{
@@ -98,8 +110,6 @@ export const competitors = [
 		style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' },
 	},
 ];
-
-export const providers = ['Amazon', 'Deepgram', 'Google', 'Microsoft', 'Rev', 'Speechmatics', 'Verbit'];
 
 export const competitorsAudioContent = `
 Mary Robinson: Vanessa, thank you so much

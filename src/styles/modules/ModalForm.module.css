@@ -45,6 +45,8 @@
 	background-position-y: center;
 }
 
-.modal-form-body button.button {
-	margin-top: 40px;
+.modal-form-body button {
+	margin: 40px auto 0;
+	width: 100%;
+	justify-content: center;
 }
