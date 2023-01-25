@@ -9,7 +9,6 @@ export const YouTubeTab = () => {
 		<>
 			<Image src={youTube} alt="Paste YouTube link" />
 			<h2>Paste YouTube link</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 			<Button
 				icon={
 					<svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">

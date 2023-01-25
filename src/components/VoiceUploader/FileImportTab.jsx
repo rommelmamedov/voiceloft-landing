@@ -78,7 +78,6 @@ export const FileImportTab = ({
 			<input {...getInputProps()} />
 			<Image src={fileImport} alt="Drag and drop file" />
 			<h2>{isDragActive ? 'Drop the file here...' : 'Drag and drop file here, or click to select file.'}</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 			<Button
 				className="action-button"
 				icon={

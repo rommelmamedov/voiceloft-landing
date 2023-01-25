@@ -39,7 +39,7 @@ const Home = () => {
 						<br /> language, dialect and accent is real
 					</>
 				}
-				description="Our technology understands the most people across the world. The most accessible engine that can help businesses better understand and connect with their customers, regardless of demographic, pitch, dialect, modes of speech, or semantics."
+				description="Our technology understands people from all around the world. We provide the most accessible engine to help businesses better connect with their customers, regardless of demographic, pitch, dialect, speech modes, or semantics."
 			/>
 			<section className={styles.stt}>
 				<div className="container">
@@ -74,10 +74,10 @@ const Home = () => {
 						<div className={styles.description}>
 							<h2>Speech to text</h2>
 							<p>
-								There are many challenges with using automatic speech recognition within real-world
-								applications including noisy environments, different dialects, accents and context specifics.
-								So, we are using our expertise to provide solutions, enabling ASR to be used effectively
-								within use cases regardless of the environmental conditions.
+								There are many challenges in using automatic speech recognition in real-world applications,
+								such as noisy environments, various dialects, accents, and context-specific criteria. Thus, we
+								are working to provide solutions that make ASR effective in different use cases regardless of
+								environmental conditions.
 							</p>
 						</div>
 					</div>
@@ -138,12 +138,12 @@ const Home = () => {
 					<div className="section-wrapper-flex">
 						<Image src={speechIdentification} alt="Speech Identification" width={536} />
 						<div className={styles.description}>
-							<h2>Supported languages</h2>
+							<h2>100+ supported languages</h2>
 							<p>Easy to integrate, simple to scale.</p>
 							<p>
-								Our Global Voice Recognition is now available in more than 100 languages. It’s everything you
-								know and love about our asynchronous Automated Speech Recognition (ASR) engine, now with even
-								more languages at your disposal.
+								Our Global Voice Recognition is now available in more than 100 languages. It`s all the
+								features you know and love with our asynchronous Automated Speech Recognition (ASR) engine,
+								now with even more languages available.
 							</p>
 							<a
 								className="read-more"

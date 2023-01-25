@@ -102,7 +102,6 @@ export const SpeechRecordTab = ({
 		<div className="speech-record-wrapper">
 			<Image src={speechRecord} alt="Start recording" />
 			<h2>Click on microphone and start recording</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 			{audioResult && status === 'idle' && (
 				<AudioPlayer
 					timeFormat="mm:ss"
