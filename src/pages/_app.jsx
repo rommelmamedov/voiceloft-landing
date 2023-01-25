@@ -2,6 +2,7 @@ import { Jost } from '@next/font/google';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 import { FB_PIXEL_ID, pageView as fbPageView } from '@libs/facebook-pixel';
 import { GA_TRACKING_ID, pageView as gtagPageView } from '@libs/gtag';
@@ -39,7 +40,10 @@ const MyApp = ({ Component, pageProps }) => {
 				}
 			`}</style>
 			{/* Global Site Tag (gtag.js) - Google Analytics */}
-			<Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+			<Script
+				strategy="afterInteractive"
+				src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+			/>
 			<Script
 				id="gtag-init"
 				strategy="afterInteractive"
@@ -71,6 +75,7 @@ const MyApp = ({ Component, pageProps }) => {
 				}}
 			/>
 			<Component {...pageProps} />
+			<Toaster position="top-right" toastOptions={{ duration: 3500 }} />
 		</>
 	);
 };

@@ -10,7 +10,14 @@ const Contact = () => {
 				title="Have a Question?"
 				description="Whether you want to ask us about Voiceloft services or anything else, we will do our best to answer you. Feel free to contact us at any time. We will respond to you as soon as possible."
 			/>
-			<svg className={styles.contactSvg} width="100%" height="300" viewBox="0 0 1440 160" fill="none" preserveAspectRatio="none">
+			<svg
+				className={styles.contactSvg}
+				width="100%"
+				height="300"
+				viewBox="0 0 1440 160"
+				fill="none"
+				preserveAspectRatio="none"
+			>
 				<path
 					d="M-50.3836 103.331C93.3197 98.2453 237.091 101.434 380.823 98.6222C457.656 97.1206 534.006 94.9125 610.408 84.6896C699.072 72.8213 787.214 56.1919 875.555 41.5877C953.806 28.643 1032.71 15.4573 1111.85 13.3106C1167.85 11.7935 1219.53 12.5494 1272.67 36.6312C1317.19 56.8061 1357.82 86.9888 1401.75 108.76C1457.39 136.332 1510.04 138.336 1569.35 138.901C1748.83 140.591 1910.35 16.7292 2090.78 24.3944"
 					stroke="var(--blue)"
@@ -58,7 +65,14 @@ const Contact = () => {
 					</div>
 				</div>
 			</section>
-			<svg className={styles.contactSvg} width="100%" height="300" viewBox="0 0 1440 300" fill="none" preserveAspectRatio="none">
+			<svg
+				className={styles.contactSvg}
+				width="100%"
+				height="300"
+				viewBox="0 0 1440 300"
+				fill="none"
+				preserveAspectRatio="none"
+			>
 				<path
 					d="M1439.8 203.995C1265.68 208.316 1092.52 227.924 918.646 236.447C710.58 246.652 649 252.353 384 207.054C165.5 169.704 111.306 81.9139 15.5004 85.5006C-52.2944 88.0424 -104.695 157.503 -165.816 207.054C-217.02 248.566 -262.274 308.191 -312.561 352.595C-376.267 408.831 -439.57 417.557 -511.11 424.261C-727.571 444.51 -938.141 231.146 -1155 262.521"
 					stroke="var(--blue)"

@@ -1,5 +1,13 @@
 export const SeparatorSVG = props => (
-	<svg className="separator-svg" width="100%" height="133" viewBox="0 0 1440 133" fill="none" preserveAspectRatio="none" {...props}>
+	<svg
+		className="separator-svg"
+		width="100%"
+		height="133"
+		viewBox="0 0 1440 133"
+		fill="none"
+		preserveAspectRatio="none"
+		{...props}
+	>
 		<path
 			stroke="var(--blue)"
 			strokeWidth="0.26123"

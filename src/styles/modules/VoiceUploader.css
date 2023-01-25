@@ -25,8 +25,8 @@
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 23px;
-	cursor: pointer;
 	transition: all 0.25s;
+	cursor: pointer;
 }
 
 .tab-buttons button:nth-child(2) {
@@ -34,24 +34,14 @@
 	border-right: 1px solid #dcdcdc;
 }
 
-/* ??not sure? */
-.previousSibling {
-	border-bottom-right-radius: 10px;
-}
-
 .tab-buttons button.active {
 	background-color: var(--white);
-	top: -10px;
 	transition: top 0.25s;
-	border-bottom: none;
-	border-top: 1px solid #dcdcdc;
-	border-left: 1px solid #dcdcdc;
-	border-right: 1px solid #dcdcdc;
-	border-bottom-right-radius: 0px;
 }
 
-.tab-buttons button.active + button {
-	border-bottom-left-radius: 10px;
+.tab-buttons button[disabled] {
+	opacity: 0.3;
+	cursor: not-allowed;
 }
 
 .tab-buttons button::before {
@@ -89,8 +79,7 @@
 	display: none;
 	align-items: center;
 	flex-direction: column;
-	padding: 100px;
-	border: 1px solid #dcdcdc;
+	padding: 30px;
 	border-top: 0;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
@@ -117,8 +106,43 @@
 	max-width: 500px;
 }
 
-.tab-content button {
-	margin-top: 30px;
-	min-width: 300px;
+.tab-content button.action-button {
 	justify-content: center;
+	min-width: 260px;
+	margin-top: 30px;
+}
+
+/* Tab content wrappers */
+
+.file-import-wrapper {
+	background-color: #f9fdff;
+	border: 1px dashed #272ffb;
+	border-radius: 10px;
+}
+
+.file-import-wrapper,
+.speech-record-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 100px;
+}
+
+.speech-record-wrapper em.timer {
+	margin-top: 30px;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 500;
+}
+
+.speech-record-wrapper .audio-result {
+	width: 100%;
+	margin-top: 30px;
+}
+
+.speech-record-wrapper .record-again {
+	background-color: #d17272;
 }

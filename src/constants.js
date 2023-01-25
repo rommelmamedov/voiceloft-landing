@@ -1,3 +1,19 @@
+export const baseURL = 'https://landing.voiceloft.com/v1';
+
+export const companyEmailRegEx =
+	'^[a-zA-Z0-9.%+-]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!yahoo.co.in)(?!aol.com)(?!live.com)(?!@yandex.ru)(?!@yandex.com)(?!@mail.ru)(?!@icloud.com)(?!outlook.com)[a-zA-Z0-9-]+.[a-zA-Z0-9-.]{2,61}$';
+
+export const providers = [
+	'Amazon',
+	'Assembly',
+	'Microsoft',
+	'Rev',
+	'Speechmatics',
+	// 'Google',
+	// 'Deepgram',
+	// 'Verbit',
+];
+
 export const sttVoices = [
 	{
 		style: { backgroundColor: '#a7fbec', color: '#03b998', progressColor: '#ace8dd' },
@@ -56,16 +72,43 @@ export const compareResultVoices = [
 	},
 ];
 
-// Compare results with your files
-// (up to 1 minute and 10 mb)
-
 export const competitors = [
-	{ name: 'Voiceloft', accuracy: 93, duration: 6, style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' } },
-	{ name: 'Speechmatics', accuracy: 73, duration: 5, style: { background: 'linear-gradient(90deg, #f1f7d1 0.3%, #e8f0be 125%)' } },
-	{ name: 'Verbit', accuracy: 69, duration: 5, style: { background: 'linear-gradient(90deg, #a7fbec 0.3%, #ace8dd 125%)' } },
-	{ name: 'AssemblyAI', accuracy: 68, duration: 4, style: { background: 'linear-gradient(90deg, #ccf3ff 0.3%, #bceefe 125%)' } },
-	{ name: 'Deepgram', accuracy: 66, duration: 4, style: { background: 'linear-gradient(90deg, #ffe5e5 0.3%, #ffd9d9 125%)' } },
-	{ name: 'Rev', accuracy: 54, duration: 3, style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' } },
+	{
+		name: 'Voiceloft',
+		accuracy: 93,
+		duration: 6,
+		style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' },
+	},
+	{
+		name: 'Speechmatics',
+		accuracy: 73,
+		duration: 5,
+		style: { background: 'linear-gradient(90deg, #f1f7d1 0.3%, #e8f0be 125%)' },
+	},
+	{
+		name: 'Verbit',
+		accuracy: 69,
+		duration: 5,
+		style: { background: 'linear-gradient(90deg, #a7fbec 0.3%, #ace8dd 125%)' },
+	},
+	{
+		name: 'AssemblyAI',
+		accuracy: 68,
+		duration: 4,
+		style: { background: 'linear-gradient(90deg, #ccf3ff 0.3%, #bceefe 125%)' },
+	},
+	{
+		name: 'Deepgram',
+		accuracy: 66,
+		duration: 4,
+		style: { background: 'linear-gradient(90deg, #ffe5e5 0.3%, #ffd9d9 125%)' },
+	},
+	{
+		name: 'Rev',
+		accuracy: 54,
+		duration: 3,
+		style: { background: 'linear-gradient(90deg, #231f209c 0.3%, var(--white) 125%)' },
+	},
 ];
 
 export const competitorsAudioContent = `
