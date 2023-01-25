@@ -1,4 +1,4 @@
-export const baseURL = 'https://demo-landing.voiceloft.com/v1';
+export const baseURL = 'https://landing.voiceloft.com/v1';
 
 export const companyEmailRegEx =
 	'^[a-zA-Z0-9.%+-]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!yahoo.co.in)(?!aol.com)(?!live.com)(?!@yandex.ru)(?!@yandex.com)(?!@mail.ru)(?!@icloud.com)(?!outlook.com)[a-zA-Z0-9-]+.[a-zA-Z0-9-.]{2,61}$';
