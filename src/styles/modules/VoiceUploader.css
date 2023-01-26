@@ -144,5 +144,101 @@
 }
 
 .speech-record-wrapper .record-again {
-	background-color: #d17272;
+	background-color: #985959;
+}
+
+@media (max-width: 1200px) {
+	.tab-buttons button.you-tube {
+		display: none;
+		border-top-right-radius: 0;
+	}
+
+	.tab-buttons button:nth-child(2) {
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-top-right-radius: 10px;
+	}
+
+	.tab-content img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.tab-content h2 {
+		font-size: 36px;
+	}
+
+	.tab-content button.action-button {
+		min-width: 220px;
+	}
+}
+
+@media (max-width: 920px) {
+	.tab-content h2 {
+		font-size: 32px;
+	}
+
+	.file-import-wrapper,
+	.speech-record-wrapper {
+		padding: 40px;
+	}
+
+	.speech-record-wrapper em.timer {
+		margin-top: 0px;
+		font-size: 42px;
+	}
+}
+
+@media (max-width: 780px) {
+	.tab-buttons {
+		flex-direction: column;
+	}
+
+	.tab-buttons button.speech-record {
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+}
+
+@media (max-width: 500px) {
+	.tab-buttons {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 420px) {
+	.tab-buttons button {
+		padding: 20px;
+	}
+
+	.tab-content {
+		padding: 20px;
+	}
+
+	.file-import-wrapper,
+	.speech-record-wrapper {
+		padding: 20px;
+	}
+
+	.speech-record-wrapper em.timer {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.tab-content h2 {
+		font-size: 28px;
+		margin: 20px 0;
+		line-height: 1.3;
+	}
+
+	.tab-content button.action-button {
+		margin-top: 15px;
+		min-width: 180px;
+		font-size: 14px;
+		padding: 10px;
+	}
+
+	.tab-content button.action-button svg {
+		width: 20px;
+	}
 }
