@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useCallback, useState } from 'react';
 import CountUp from 'react-countup';
 import AudioPlayer from 'react-h5-audio-player';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -30,6 +31,12 @@ const swiperBreakpoints = {
 };
 
 const Home = () => {
+	const [isTranscriptReadable, setIsTranscriptReadable] = useState(false);
+
+	const handlePlay = useCallback(() => setIsTranscriptReadable(true), []);
+	const handlePause = useCallback(() => setIsTranscriptReadable(false), []);
+	const handleReadMore = useCallback(() => setIsTranscriptReadable(true), []);
+
 	return (
 		<Layout className="home" title="Speech recognition system">
 			<Intro
@@ -112,21 +119,35 @@ const Home = () => {
 						timeFormat="mm:ss"
 						listenInterval={500}
 						src="/sounds/competitors.mp3"
+						onPlay={() => setIsTranscriptReadable(true)}
+						onPause={() => setIsTranscriptReadable(false)}
 						defaultDuration={<>25:17</>}
 						defaultCurrentTime={<>00:00</>}
 						customControlsSection={['MAIN_CONTROLS']}
 						onListen={highlightCurrentTranscriptElement}
 						onSeeked={highlightCurrentTranscriptElement}
 					/>
-					{/* <pre id="competitors-audio">{competitorsAudioContent}</pre> */}
-					<div className={styles.transcript} id="competitors-audio-transcript">
+					<div
+						className={styles.transcript}
+						id="competitors-audio-transcript"
+						style={{ overflowY: isTranscriptReadable ? 'scroll' : 'hidden' }}
+					>
 						{competitorsAudioTranscript.map((item, index) => (
 							<div key={index} data-time={item.split(' - ')[0]} data-active="false">
-								{/* <span>{item.split(' - ')[0]}</span> */}
-								{/* <span> — </span> */}
 								<span>{item.split(' - ')[1]}</span>
 							</div>
 						))}
+						{!isTranscriptReadable && (
+							<span className={styles.transcriptShadow}>
+								<button
+									onClick={handleReadMore}
+									title="Read content of transcript"
+									aria-label="Read content of transcript"
+								>
+									Read More
+								</button>
+							</span>
+						)}
 					</div>
 				</div>
 			</section>
@@ -149,6 +170,7 @@ const Home = () => {
 								className="read-more"
 								href="https://voiceloft.notion.site/Supported-languages-8ec4d48f0e414591a0adc9adda6f6eff"
 								title="Read more about supported languages"
+								aria-label="Read more about supported languages"
 								target="_blank"
 								rel="noopener noreferrer"
 							>

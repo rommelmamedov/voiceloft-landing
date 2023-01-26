@@ -117,7 +117,7 @@ export const SpeechRecordTab = ({
 					<Button className="action-button" onClick={handleUpload} icon={<Upload />}>
 						Upload
 					</Button>
-					<Button className="action-button record-again" onClick={handleStopRecording} icon={<Record />}>
+					<Button className="action-button record-again" onClick={startRecording} icon={<Record />}>
 						Record Again
 					</Button>
 				</>
